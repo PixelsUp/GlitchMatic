@@ -235,10 +235,10 @@ The game combines elements of speedrunning and roguelike gameplay. The player ra
 
 ## 10. Development Roadmap
 
-### Milestone 1
+### Milestone 1: Prototype
 
 - Finalize the core game concept.
-- Develop early concept art and design the gameplay loop.
+- Develop early Pre-Alpha build with a playable environment. This version will have an initial view of the final game.
 
 ### Milestone 2
 
