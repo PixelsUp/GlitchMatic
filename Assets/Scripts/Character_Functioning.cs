@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Character_Functioning : MonoBehaviour
 {
-    public float speed = 5f; // Character movement speed
-    public float rollSpeed = 10f; // Speed during the roll
-    public float rollCooldown = 4f; // Time to regenerate one roll charge
-    public int maxRollCharges = 1; // Maximum roll charges
+    public float speed = 15f; // Character movement speed
+    public float rollSpeed = 35f; // Speed during the roll
+    public float rollRegenCooldown = 5f; // Time to regenerate one roll charge (changed to 5 seconds)
+    public float rollCooldownBetweenUses = 2.5f; // Cooldown between roll uses (set to 2.5 seconds)
+    public int maxRollCharges = 2; // Maximum roll charges 
     public float invincibilityDuration = 0.4f; // Duration of invincibility during roll
 
     public float hp = 100f; // Character's health
@@ -19,6 +20,7 @@ public class Character_Functioning : MonoBehaviour
     private bool isInvincible = false; // Whether the character has invincibility frames
     private int currentRollCharges; // Current roll charges
     private bool canRoll = true; // Whether the character can roll
+    private bool rollOnCooldown = false; // New flag to manage cooldown between rolls
 
     void Start()
     {
@@ -33,8 +35,8 @@ public class Character_Functioning : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // Check for roll input (space bar or another key)
-        if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0)
+        // Check for roll input (space bar set default, should use maybe two keys to do so)
+        if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown)
         {
             StartCoroutine(Roll());
         }
@@ -48,12 +50,12 @@ public class Character_Functioning : MonoBehaviour
         }
     }
 
+    // Main rolling coroutine with 1.5-second cooldown between uses
     IEnumerator Roll()
     {
         isRolling = true;
         isInvincible = true;
         currentRollCharges--; // Use a roll charge
-        canRoll = false;
 
         // Roll in the current movement direction
         Vector2 rollDirection = movement.normalized;
@@ -67,16 +69,24 @@ public class Character_Functioning : MonoBehaviour
         yield return new WaitForSeconds(invincibilityDuration); // Invincibility frames duration
         isInvincible = false;
 
-        yield return new WaitForSeconds(rollCooldown); // Cooldown between rolls
-        canRoll = true;
+        // Start the cooldown only between consecutive rolls
+        StartCoroutine(RollCooldown());
     }
 
-    // Coroutine to regenerate roll charges
+    // Coroutine to handle the cooldown between roll uses
+    IEnumerator RollCooldown()
+    {
+        rollOnCooldown = true;
+        yield return new WaitForSeconds(rollCooldownBetweenUses); // 2.5-second cooldown between rolls
+        rollOnCooldown = false;
+    }
+
+    // Coroutine to regenerate roll charges, now with 5 seconds per roll
     IEnumerator RegenerateRollCharge()
     {
         while (true)
         {
-            yield return new WaitForSeconds(rollCooldown);
+            yield return new WaitForSeconds(rollRegenCooldown); // 5-second wait time for each charge regeneration
             if (currentRollCharges < maxRollCharges)
             {
                 currentRollCharges++; // Regenerate one roll charge

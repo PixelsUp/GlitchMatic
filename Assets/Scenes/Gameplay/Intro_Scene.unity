@@ -539,11 +539,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488c9dc0fdb11e040bedcd91716740ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
-  rollSpeed: 200
-  rollCooldown: 4
-  maxRollCharges: 1
-  invincibilityDuration: 0.4
+  speed: 15
+  rollSpeed: 100
+  rollRegenCooldown: 5
+  rollCooldownBetweenUses: 2.5
+  maxRollCharges: 2
+  invincibilityDuration: 0.3
   hp: 100
   stamina: 100
   resistance: 10
