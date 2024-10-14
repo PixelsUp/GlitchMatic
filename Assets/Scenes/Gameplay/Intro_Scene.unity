@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 988175502}
   - component: {fileID: 988175501}
   - component: {fileID: 988175505}
+  - component: {fileID: 988175506}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -534,7 +535,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988175500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 488c9dc0fdb11e040bedcd91716740ff, type: 3}
   m_Name: 
@@ -545,6 +546,27 @@ MonoBehaviour:
   rollCooldownBetweenUses: 2.5
   maxRollCharges: 2
   invincibilityDuration: 0.3
+  hp: 100
+  stamina: 100
+  resistance: 10
+--- !u!114 &988175506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988175500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d456f981ce83f54da889b281ac250d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  rollSpeed: 50
+  rollRegenCooldown: 5
+  rollCooldownBetweenUses: 2
+  maxRollCharges: 2
+  invincibilityDuration: 0.4
   hp: 100
   stamina: 100
   resistance: 10
@@ -560,6 +582,7 @@ GameObject:
   - component: {fileID: 1673171022}
   - component: {fileID: 1673171021}
   - component: {fileID: 1673171020}
+  - component: {fileID: 1673171024}
   m_Layer: 0
   m_Name: Camera_Character
   m_TagString: Untagged
@@ -574,7 +597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673171019}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9c9c86325703414aa4cc1a8c723cff2, type: 3}
   m_Name: 
@@ -660,6 +683,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673171024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673171019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6da6d9f9789e4c438d96c0cc6f12e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 988175504}
+  offset: {x: 0, y: 0, z: -750}
+  smoothSpeed: 0.1
+  minX: 130
+  maxX: 210
+  minY: 130
+  maxY: 160
 --- !u!1 &2099883710
 GameObject:
   m_ObjectHideFlags: 0
