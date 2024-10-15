@@ -43,10 +43,5 @@ public class Proyectil : MonoBehaviour
             // Destruye el proyectil después de la colisión
             Destroy(gameObject);
         }
-        else if (colision.CompareTag("Muro")) // O destrúyelo si golpea un muro
-        {
-            Destroy(gameObject); // Destruir el proyectil si colisiona con el entorno
-        }
     }
-
 }
