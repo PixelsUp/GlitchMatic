@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3192239808020813322}
   - component: {fileID: 1931767033971767107}
-  - component: {fileID: -7003381261904661206}
   - component: {fileID: -5168745428933874598}
+  - component: {fileID: -2236076803659155045}
   m_Layer: 0
   m_Name: prefab_Arrow
   m_TagString: Untagged
@@ -86,21 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7003381261904661206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5818374948066685075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3db8ad800a85894a83ed98fbbbb2736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 30
-  dano: 15
-  tiempoDeVida: 10
 --- !u!61 &-5168745428933874598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +131,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.21}
   m_EdgeRadius: 0
+--- !u!114 &-2236076803659155045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818374948066685075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3db8ad800a85894a83ed98fbbbb2736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 30
+  dano: 15
+  tiempoDeVida: 5
