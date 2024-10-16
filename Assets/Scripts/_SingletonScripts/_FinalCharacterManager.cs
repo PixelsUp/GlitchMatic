@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class _CharacterManager : MonoBehaviour
+public class _FinalCharacterManager : MonoBehaviour
 {
-    public static _CharacterManager Instance { get; private set; }
+    public static _FinalCharacterManager Instance { get; private set; }
 
     public float speed = 15f; // Character movement speed
     public float rollSpeed = 35f; // Speed during the roll
@@ -17,6 +18,7 @@ public class _CharacterManager : MonoBehaviour
     public float resistance = 10f; // Character's resistance
 
     private Vector2 movement; // Movement vector
+    private Vector2 smoothMovement; // Smoothed movement vector for smooth transitions
     private Rigidbody2D rb; // Character Rigidbody2D component
     private bool isRolling = false; // Whether the character is currently rolling
     private bool isInvincible = false; // Whether the character has invincibility frames
@@ -24,17 +26,36 @@ public class _CharacterManager : MonoBehaviour
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
 
+    private float smoothTime = 0.05f; // Time for smoothing movement
+
     void Awake()
     {
-        // Singleton pattern to ensure one instance of the character
+        // Ensure that the instance persists between scenes
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy duplicate instances
         }
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // Keep this instance across scenes
+        }
+    }
+
+    // This will be called after every scene is loaded
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void LoadCharacter()
+    {
+        // Check if character instance exists
+        if (Instance == null)
+        {
+            // Instantiate character from resources
+            GameObject characterPrefab = Resources.Load("Playable/Character") as GameObject;
+            if (characterPrefab != null)
+            {
+                GameObject newCharacter = Instantiate(characterPrefab);
+                DontDestroyOnLoad(newCharacter);
+            }
         }
     }
 
@@ -48,10 +69,13 @@ public class _CharacterManager : MonoBehaviour
     void Update()
     {
         // Handle movement input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        // Check for roll input (space bar set default, should use maybe two keys to do so)
+        // Normalize movement to avoid faster diagonal movement
+        movement = new Vector2(moveX, moveY).normalized;
+
+        // Check for roll input
         if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown)
         {
             StartCoroutine(Roll());
@@ -60,11 +84,12 @@ public class _CharacterManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Smooth the movement over time using interpolation
+        smoothMovement = Vector2.Lerp(smoothMovement, movement, smoothTime / Time.fixedDeltaTime);
+
         if (!isRolling) // Normal movement if not rolling
         {
-            // Smooth the movement using Lerp
-            Vector2 targetPosition = rb.position + movement * speed * Time.fixedDeltaTime;
-            rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + smoothMovement * speed * Time.fixedDeltaTime);
         }
     }
 
