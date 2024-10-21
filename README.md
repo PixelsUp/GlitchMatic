@@ -153,7 +153,7 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 ### Detailed Mechanics
 
-- **Movement**: Standard movement mechanics (run, attack).
+- **Movement**: Standard movement mechanics (run, attack), with a glimpse of RPG systems, such as the roll mechanic.
 - **Combat**: Fast-paced, with a variety of weapons (glitch guns, melee attacks).
 - **Time Mechanic**: Players race to clear as many rooms as possible before dying.
 - **Upgrading**: As players progress through levels, they can upgrade their character, making each playthrough easier.
@@ -165,8 +165,8 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 ### Objects, Weapons, and Power-ups
 
-- **Glitch Weapons**: Reflect the chaotic nature of the world.
-- **Power-ups**: Personalize each playthrough and empower the player.
+- **Glitch Weapons**: Reflect the chaotic nature of the world. Distinction between melee and ranged options,
+- **Power-ups**: Personalize each playthrough and empower the player. They are selected in shop rooms.
 
 ### Software Architecture
 
@@ -183,11 +183,14 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 ### Characters
 
 - **The Glitch Hunter**: A lone protagonist determined to fix the glitches.
+    - His destiny is to try to destroy the glitches happening in the world, which leads him to the tower which holds the origin of the disaster. He will attempt to end it all, unknowingly entering a         neverending crusade.
 - **Tower Inhabitants**: Glitchy enemies with AI that evolves based on player behavior. These entities came from various eras and places across time, and they will do everything they can to stop the Hunter from achieving his goal.
 
 ### Environments and Places
 
-- **Tower Rooms**: Procedurally generated rooms provide unique experiences to enhance replayability.
+- **Tower Rooms**: Procedurally generated rooms with varied challenges that enhance replayability. There will be a selection of themes which spawn randomly every three rooms. These make its so the player is constantly engaging with different enemies with different strengths.
+    - The rooms are neverending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it 
+    by creating more and harder rooms as the player gets closer to it.
 
 ---
 
@@ -204,6 +207,8 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 
 ### 2D Pixel Art
 
+- The style was determined to be Pixel Art in order to avoid innecessary complications, as it tends well to the aesthetic of the game and its main components.
+
 ---
 
 ## 7. Animation
@@ -218,17 +223,22 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 
 ## 8. Sound
 
-### Ambient Sound and Music
+### 8.1 Ambient Sound and Music  
+A glitch-inspired soundtrack with synthetic and distorted sounds to emphasize the unstable world. The main menu features a glitch-inspired loop with synthetic and distorted elements. The music flows seamlessly, allowing it to loop perfectly without any noticeable start or end points, creating a hypnotic, continuous atmosphere. This fits the theme of a destabilized world, where the audio subtly distorts reality. The composition relies on digital, glitchy textures, and sparse melodic elements to evoke an unsettling, futuristic mood.
 
-- A glitch-inspired soundtrack filled with synthetic and distorted sounds to reflect the unstable world.
+Each area or room in the game also features its own soundtrack, consisting of short 6-10 second loops. These loops share the same drum base for consistency, but differ in basslines and additional elements to distinguish the atmosphere of each room. The short loops are essential to creating smooth transitions between rooms, avoiding abrupt changes in the music and maintaining immersion.
 
-### Sound Effects
+### 8.2 Sound Effects  
+Sound effects are essential for immersing players in the distinct environments of each room while maintaining the glitch theme tied to the protagonist. Although each room has a unique setting, many sound effects will be shared across rooms to ensure consistency. For example, certain enemy death sounds will remain common, reflecting the idea that defeating them glitches them into the protagonist's unstable reality. Similarly, weapon and environmental sounds may be adapted to fit each theme, but core elements—like subtle glitch distortions—will unify the audio experience. This approach allows for creative diversity while maintaining cohesion throughout the game.
 
-- Effects for enemy deaths, weapon usage, and environmental interactions fitting the overall theme.
-
-### Sound List
-
-- Footsteps, weapon attacks, enemy and character growls, and environmental glitches.
+### 8.3 Sound List  
+- Footsteps  
+- Weapon attacks  
+- Enemy deaths  
+- Growls and vocalizations  
+- Environmental interactions  
+- Door sounds  
+- Object pickups  
 
 ---
 
