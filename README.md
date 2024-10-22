@@ -136,12 +136,21 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 ## 3. Planning and Costs
 
-- **Human Team**: Six members responsible for game design, programming, art, sound, and project management.
-- **Estimated Development Time**: Four months of development time with clear milestones and checkpoints.
-- **Associated Costs**:
-  - **Software licenses**: Game engine, art software, and sound editing tools.
-  - **Marketing and promotion budget**: Social media campaigns, trailers, and early access demos.
-  - **Potential porting to consoles**: Costs for porting the game from PC to consoles.
+### Human Team  
+Our team consists of six members, each specializing in different areas of the game's development:  
+- **Game Design**: Conceptualizing gameplay mechanics and creating the overall game design.  
+- **Programming**: Coding the game, creating systems, and implementing gameplay mechanics using Unity. Unity is the chosen game engine due to its robust toolset, cross-platform support, and flexibility in handling 2D games. Unity’s extensive asset store and community support will allow us to accelerate development and find solutions efficiently.  
+- **Art**: Creating 2D pixel art assets, including characters, environments, and items, as well as concept art.  
+- **Sound**: Producing sound effects and music, ensuring a glitchy, immersive audio experience.  
+- **Project Management**: Managing timelines, coordinating tasks between team members, and ensuring we meet development goals.  
+
+### Estimated Development Time  
+We estimate a development time of two to three months, with clear milestones and checkpoints along the way. These milestones will help us stay on track and allow for adjustments as necessary. Regular reviews will ensure that we are meeting our goals at each stage.
+
+### Estimated Development Time  
+  - **Software licenses**: Game engine (Unity), art software, and sound editing tools.
+  - **Marketing and promotion budget**: Social media campaigns, trailers, and early access demos. A LinkTree has been developed with all the according websites.
+  - **Potential porting to consoles**:  While the initial development will focus on PC, we are considering porting the game to consoles like PlayStation and Xbox. This will involve additional costs for platform certification, development kits, and ensuring compatibility across different systems. Porting will depend on the game's success and demand from the player base.
 
 ---
 
@@ -196,18 +205,22 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 
 ## 6. Art
 
-### General Aesthetic
+### General Aesthetic  
+  The general aesthetic of the game is heavily influenced by retro and glitch-inspired themes, where digital distortion becomes a core visual element. The game will feature pixel art reminiscent of older 2D titles but enhanced with modern glitch effects, such as pixelation distortion, color shifts, and broken environmental assets, to evoke a world constantly on the verge of collapse.
 
-- **Pixel Art**: Retro-inspired, with glitch effects and distortions adding to the game’s chaotic atmosphere.
-- **Visual Style**: Dark, futuristic with a focus on digital corruption and broken environments.
+### Pixel Art  
+  The pixel art style is retro-inspired, bringing a nostalgic feel to the game. However, the addition of glitch effects, such as pixel scrambling and color disintegration, creates a chaotic, disorienting atmosphere. These distortions emphasize the core game theme of a fractured, unstable reality. By using pixel art, we can keep development streamlined while leveraging the aesthetic's simplicity to enhance visual effects without overcomplicating the production pipeline.
 
-### Concept Art
+### Visual Style  
+  The game’s visual style is dark, futuristic, and focused on the idea of digital corruption. Broken environments, distorted assets, and glitchy characters contribute to an overall feeling of instability. The color palette will reflect this with muted tones, punctuated by bright, glitchy visuals. Shadows, light distortions, and flickering environments will play an important role in conveying a world on the edge of collapse.
 
-- Early sketches of characters, weapons, and enemies will be used as a guide for final assets.
+### Concept Art  
+  Early sketches of characters, weapons, and enemies will guide the development of final assets. These concept pieces will serve as the foundation for designing the pixel art versions of in-game elements. Each character and enemy design will incorporate glitch-inspired traits to visually distinguish them as part of the unstable digital world.
 
-### 2D Pixel Art
+### 2D Pixel Art  
+  The decision to use 2D pixel art helps avoid unnecessary complications while perfectly suiting the game's aesthetic. The simplicity of pixel art allows us to focus on glitch effects and detailed environmental storytelling. This style complements the digital instability and chaotic nature of the game's world, enabling smooth gameplay transitions and easier asset creation.
 
-- The style was determined to be Pixel Art in order to avoid innecessary complications, as it tends well to the aesthetic of the game and its main components.
+Additionally, we will create social media links and marketing content to showcase the development process. Concept art, early character animations, and teasers will be shared across platforms like Twitter, Instagram, and YouTube. These posts will help build excitement and draw in our target audience.
 
 ---
 
@@ -223,15 +236,15 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 
 ## 8. Sound
 
-### 8.1 Ambient Sound and Music  
+### Ambient Sound and Music  
 A glitch-inspired soundtrack with synthetic and distorted sounds to emphasize the unstable world. The main menu features a glitch-inspired loop with synthetic and distorted elements. The music flows seamlessly, allowing it to loop perfectly without any noticeable start or end points, creating a hypnotic, continuous atmosphere. This fits the theme of a destabilized world, where the audio subtly distorts reality. The composition relies on digital, glitchy textures, and sparse melodic elements to evoke an unsettling, futuristic mood.
 
 Each area or room in the game also features its own soundtrack, consisting of short 6-10 second loops. These loops share the same drum base for consistency, but differ in basslines and additional elements to distinguish the atmosphere of each room. The short loops are essential to creating smooth transitions between rooms, avoiding abrupt changes in the music and maintaining immersion.
 
-### 8.2 Sound Effects  
+### Sound Effects  
 Sound effects are essential for immersing players in the distinct environments of each room while maintaining the glitch theme tied to the protagonist. Although each room has a unique setting, many sound effects will be shared across rooms to ensure consistency. For example, certain enemy death sounds will remain common, reflecting the idea that defeating them glitches them into the protagonist's unstable reality. Similarly, weapon and environmental sounds may be adapted to fit each theme, but core elements—like subtle glitch distortions—will unify the audio experience. This approach allows for creative diversity while maintaining cohesion throughout the game.
 
-### 8.3 Sound List  
+### Sound List  
 - Footsteps  
 - Weapon attacks  
 - Enemy deaths  
@@ -246,21 +259,22 @@ Sound effects are essential for immersing players in the distinct environments o
 
 ### Basic Menu Designs
 
-- **Simple UI**: Glitch-themed UI reflecting the game’s concept of digital instability.
+- **Simple UI**: The game's interface will feature a simple, glitch-themed UI that complements the overall concept of digital instability. The main menu will include glitch effects like distorted text, flickering elements, and digital artifacts to immerse players in the chaotic, unstable world from the very beginning. Buttons and transitions will incorporate visual glitch effects, giving the interface a dynamic and unpredictable feel. The UI will remain intuitive and easy to navigate, ensuring that the visual theme does not interfere with functionality. Each section of the menu such as the start game, settings, and exit will have a minimalistic design but maintain thematic consistency with the glitch-based aesthetics.
 - **Flow Diagram**: 
 
 ---
 
 ## 10. Development Roadmap
 
-### Milestone 1: Prototype
+### Milestone 1: Prototype  
 
-- Finalize the core game concept.
-- Develop early Pre-Alpha build with a playable environment. This version will have an initial view of the final game.
+- The first milestone focuses on finalizing the core game concept and developing an early Pre-Alpha build. This prototype will offer a basic, yet playable, environment where players can experience the core mechanics, aesthetics, and gameplay loops. The prototype will represent an initial view of the final game, including the main character's movements, environmental interactions, and early glitch effects. 
 
-### Milestone 2
+- In parallel with development, we will begin crafting social media content, establishing our online presence, and producing marketing assets to generate interest. Short gameplay teasers, sneak peeks at character designs, and environmental showcases will be posted regularly to gain traction in the community. The social media strategy will build a following that will be crucial for funding campaigns and eventual game release.
 
-- Implement core mechanics (movement, combat, AI behavior).
+### Milestone 2: Beta Build
+
+- Implement and clean core mechanics (movement, combat, AI behavior).
 - Begin creating the procedural room generation system.
 
 ### Milestone 3: Testing & Polishing
