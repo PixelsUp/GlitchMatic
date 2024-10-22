@@ -111,8 +111,27 @@ The main character is a **Glitch Hunter** who enters the tower with a mission to
 Additionally, players can purchase in-game currency with real money to unlock cosmetic items like character skins and weapon skins, which do not affect gameplay balance, ensuring a fair experience for both paying and non-paying users.
 
 - **Empathy map**
+
+<p align= "center"><strong> Empathy Map </strong> </p>
+<p align="center">
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Empathymap.jpg)" width= '500' height='300'/>
+</p>
+<p align=center>Figura 2.1 Empathy Map</p>
+  
 - **Canvas**
+<p align= "center"><strong> Canvas </strong> </p>
+<p align="center">
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg)" width= '500' height='300'/>
+</p>
+<p align=center>Figura 2.2 Canvas</p>
+
+  
 - **Toolbox**
+<p align= "center"><strong> ToolBox </strong> </p>
+<p align="center">
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Toolbox.jpg)" width= '500' height='300'/>
+</p>
+<p align=center>Figura 2.3 ToolBox</p>
 
 ### Monetization Model
 
