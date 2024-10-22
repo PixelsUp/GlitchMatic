@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class AudioScript : MonoBehaviour
 {
+    private static AudioScript instance = null; // Variable para mantener una única instancia
     private AudioSource Source;
     public float fadeInDuration = 2f; // Duración del fade in en segundos
+    private float vol_aux = 0.5f;
 
     // Clips de audio para cada escena
     public AudioClip menuMusic;
@@ -17,13 +19,31 @@ public class AudioScript : MonoBehaviour
     public AudioClip gameMusic5;
     public AudioClip gameMusic6;
 
-    private bool isFirstTime = true; // Para controlar el fade in solo la primera vez que se reproduce una canción
+    void Awake()
+    {
+        // Verifica si ya existe una instancia de este objeto, si es así destruye la nueva
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // No destruyas este objeto al cambiar de escena
+        }
+
+        Source = GetComponent<AudioSource>();
+        if (Source == null)
+        {
+            Debug.LogError("No se encontró un AudioSource en el GameObject.");
+        }
+    }
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject); // No destruyas este objeto al cambiar de escena
-        Source = GetComponent<AudioSource>();
-
+        // Asegúrate de que el volumen sea 0 para hacer el fade in después
+        Source.volume = 0f;
         // Reproducir la música adecuada según la escena inicial
         PlayMusicForScene(SceneManager.GetActiveScene().name);
     }
@@ -55,7 +75,7 @@ public class AudioScript : MonoBehaviour
         // Usamos un switch para asignar la música dependiendo de la escena
         switch (sceneName)
         {
-            case "MenuScene":
+            case "MainMenu":
                 clipToPlay = menuMusic;
                 break;
             case "Intro_Scene":
@@ -78,32 +98,28 @@ public class AudioScript : MonoBehaviour
                 break;
             default:
                 Debug.LogWarning("Escena desconocida, sin música asignada");
-                break;
+                return;
         }
 
-        // Si tenemos una nueva pista, la asignamos y reproducimos con fade in solo la primera vez
-        if (clipToPlay != null && Source.clip != clipToPlay)
+        // Verifica si el clip a reproducir es el mismo que ya está en el AudioSource
+        if (Source.clip == clipToPlay)
         {
-            Source.clip = clipToPlay;
-            Source.Play();
-
-            if (isFirstTime)
-            {
-                StartCoroutine(FadeIn(Source, fadeInDuration)); // Solo aplicamos el fade in la primera vez
-                isFirstTime = false; // Para que no se repita el fade in
-            }
-            else
-            {
-                Source.volume = 1f; // Asegurarse de que el volumen esté al máximo después del primer fade in
-            }
+            return; // No hacer nada si la música ya está sonando y es la misma
         }
+
+        // Si tenemos una nueva pista, la asignamos y reproducimos
+        Source.clip = clipToPlay;
+        Source.Play();
+
+        // Siempre hacemos el fade in cuando se cambia la música
+        StartCoroutine(FadeIn(Source, fadeInDuration));
     }
 
     // Corutina para hacer el fade in de volumen
     IEnumerator FadeIn(AudioSource audioSource, float duration)
     {
         audioSource.volume = 0f; // Empezamos con el volumen en 0
-        float targetVolume = 1f; // El volumen al que queremos llegar
+        float targetVolume = vol_aux; // El volumen al que queremos llegar
 
         float currentTime = 0f;
 
