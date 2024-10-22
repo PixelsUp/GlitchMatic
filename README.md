@@ -162,20 +162,18 @@ We estimate a development time of two to three months, with clear milestones and
 
 ### Detailed Mechanics
 
-- **Movement**: Standard movement mechanics (run, attack), with a glimpse of RPG systems, such as the roll mechanic.
-- **Combat**: Fast-paced, with a variety of weapons (glitch guns, melee attacks).
-- **Time Mechanic**: Players race to clear as many rooms as possible before dying.
-- **Upgrading**: As players progress through levels, they can upgrade their character, making each playthrough easier.
+- **Movement**: Standard movement mechanics (run, attack), with a glimpse of RPG systems, such as the roll mechanic. The roll mechanic is a key concept of the game. Enemies are designed around it, making it hard to use and abuse, as it has a small amount of invencibility frames that assist in the elimination of certain theme bosses throughout the gameplay runs of the players.
+- **Combat**: Fast-paced, with a variety of weapons (glitch guns, melee attacks). The player will select between a melee option and a ranged option, which changes the way the enemies behave drastically. This makes it so the AI feels fresh every run and avoids any clear abusable strategies suited for speedrunning.
+- **Time Mechanic**: Players race to clear as many rooms as possible before dying. This mechanic makes the player hesitant to take their time against more defensive enemies and forces him to, when being competitive, organise their combat according to the rooms' exit and entrance.
 
 ### Levels and Missions
 
-- **Rooms**: Procedurally generated rooms with increasing difficulty.
-- **Glitch Hazards**: Obstacles that alter gameplay unpredictably.
+- **Rooms**: Procedurally generated rooms with increasing difficulty. Enemies are spawned differently every room, enhancing the replayability aspect of the game. They are built to be dynamic and inmersive. Enemies respond to the environment accordingly, making every room feel fresh and difficult in its own way.
+- **Glitch Hazards**: Obstacles that alter gameplay unpredictably. They are meant to be used as covers for the player or the enemies, as well as stopping its progress through certain stages.
 
 ### Objects, Weapons, and Power-ups
 
-- **Glitch Weapons**: Reflect the chaotic nature of the world. Distinction between melee and ranged options,
-- **Power-ups**: Personalize each playthrough and empower the player. They are selected in shop rooms.
+- **Glitch Weapons**: Reflect the chaotic nature of the world. Distinction between melee and ranged options, including swords, bows and guns. This makes the different room themes feel fresh and new for players to explore and experiment.
 
 ### Software Architecture
 
@@ -228,9 +226,9 @@ Additionally, we will create social media links and marketing content to showcas
 
 ### Animation Style
 
-- **Character Animations**: Smooth, responsive movements including running, jumping, and attacking.
-- **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment.
-- **Scenario Animations**: Glitchy environmental elements change unpredictably.
+- **Character Animations**: Smooth, responsive movements including running, rolling, and attacking. They respond to the players' inputs, selected to be as intuitive as possible. They try to be as clear as possible and interact responsively with the weapon animations of the character. These are developed to get a clear feel of the combat.
+- **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment. They act according to the players actions, as they are adjusted to be used along the main mechanics of the game.
+- **Scenario Animations**: Glitchy environmental elements change in every room, making the player feel better about the replayability of the game. They make the enemies feel more alive and intreractable.
 
 ---
 
