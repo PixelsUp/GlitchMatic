@@ -19,14 +19,14 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
 
 2. [Business and Monetization Model](#business-and-monetization-model)  
     2.1 [Business Model](#business-model)  
-    2.2 [Ad-Supported Model](#ad-supported-model)  
-    2.3 [Empathy Map](#empathy-map)  
-    2.4 [Canvas](#canvas)  
-    2.5 [Toolbox](#toolbox)  
-    2.6 [Monetization Model](#monetization-model)  
-        2.6.1 [Ad-Supported Gameplay](#ad-supported-gameplay)  
-        2.6.2 [In-Game Currency and Cosmetic Purchases](#in-game-currency-and-cosmetic-purchases)  
-    2.7 [Product and Pricing Tables](#product-and-pricing-tables)  
+        2.1.1 [Ad-Supported Model](#ad-supported-model)  
+        2.1.2 [Empathy Map](#empathy-map)  
+        2.1.3 [Canvas](#canvas)  
+        2.1.4 [Toolbox](#toolbox)  
+    2.2 [Monetization Model](#monetization-model)  
+        2.2.1 [Ad-Supported Gameplay](#ad-supported-gameplay)  
+        2.2.2 [In-Game Currency and Cosmetic Purchases](#in-game-currency-and-cosmetic-purchases)  
+    2.3 [Product and Pricing Tables](#product-and-pricing-tables)  
 
 3. [Planning and Costs](#planning-and-costs)  
     3.1 [Human Team](#human-team)  
@@ -55,10 +55,11 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
 
 7. [Animation](#animation)  
     7.1 [Animation Style](#animation-style)  
-    7.2 [Character Animations](#character-animations)  
-    7.3 [Enemy Animations](#enemy-animations)  
-    7.4 [Rigging & Skinning](#rigging-skinning)  
-    7.5 [Scenario Animations](#scenario-animations)  
+        7.1.1 [Character Animations](#character-animations)  
+        7.1.2 [Enemy Animations](#enemy-animations)  
+        7.1.3 [Scenario Animations](#scenario-animations)  
+        7.1.4 [Damage Animations](#damage-animations)  
+        7.1.5 [Death Animations](#death-animations)  
 
 8. [Sound](#sound)  
     8.1 [Ambient Sound and Music](#ambient-sound-and-music)  
@@ -72,7 +73,8 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
 10. [Development Roadmap](#development-roadmap)  
     10.1 [Milestone 1: Prototype](#milestone-1-prototype)  
     10.2 [Milestone 2](#milestone-2)  
-    10.3 [Milestone 3: Testing & Polishing](#milestone-3-testing-polishing)
+    10.3 [Milestone 3: Testing & Polishing](#milestone-3-testing-polishing)  
+    10.4 [Release Date](#release-date)
 
 
 ---
@@ -116,14 +118,14 @@ Additionally, players can purchase in-game currency with real money to unlock co
 <p align="center">
   <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Empathymap.jpg)" width= '500' height='300'/>
 </p>
-<p align=center>Figura 2.1 Empathy Map</p>
+<p align=center>Image 2.1 Empathy Map</p>
   
 - **Canvas**
 <p align= "center"><strong> Canvas </strong> </p>
 <p align="center">
   <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg)" width= '500' height='300'/>
 </p>
-<p align=center>Figura 2.2 Canvas</p>
+<p align=center>Image 2.2 Canvas</p>
 
   
 - **Toolbox**
@@ -131,7 +133,7 @@ Additionally, players can purchase in-game currency with real money to unlock co
 <p align="center">
   <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Toolbox.jpg)" width= '500' height='300'/>
 </p>
-<p align=center>Figura 2.3 ToolBox</p>
+<p align=center>Image 2.3 ToolBox</p>
 
 ### Monetization Model
 
@@ -166,7 +168,7 @@ Our team consists of six members, each specializing in different areas of the ga
 ### Estimated Development Time  
 We estimate a development time of two to three months, with clear milestones and checkpoints along the way. These milestones will help us stay on track and allow for adjustments as necessary. Regular reviews will ensure that we are meeting our goals at each stage.
 
-### Estimated Development Time  
+### Associated Costs
   - **Software licenses**: Game engine (Unity), art software, and sound editing tools.
   - **Marketing and promotion budget**: Social media campaigns, trailers, and early access demos. A LinkTree has been developed with all the according websites.
   - **Potential porting to consoles**:  While the initial development will focus on PC, we are considering porting the game to consoles like PlayStation and Xbox. This will involve additional costs for platform certification, development kits, and ensuring compatibility across different systems. Porting will depend on the game's success and demand from the player base.
@@ -189,6 +191,13 @@ We estimate a development time of two to three months, with clear milestones and
 
 - **Rooms**: Procedurally generated rooms with increasing difficulty. Enemies are spawned differently every room, enhancing the replayability aspect of the game. They are built to be dynamic and inmersive. Enemies respond to the environment accordingly, making every room feel fresh and difficult in its own way.
 - **Glitch Hazards**: Obstacles that alter gameplay unpredictably. They are meant to be used as covers for the player or the enemies, as well as stopping its progress through certain stages.
+
+### Controls
+
+- Movement: Players use WASD keys to move their character around the environmetn.
+- Rolling: When the Spacebar is pressed the character rolls. This allows for some invincibility frames, essential for surviving difficult encounters and allowing the player to dodge certain attacks.
+- Aiming: The mouse is used to aim the weapon at enemy targets.
+- Attacking: To either shoot or perform melee attacks, the left mouse button is pressed.
 
 ### Objects, Weapons, and Power-ups
 
