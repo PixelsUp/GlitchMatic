@@ -248,7 +248,8 @@ Additionally, we will create social media links and marketing content to showcas
 - **Character Animations**: Smooth, responsive movements including running, rolling, and attacking. They respond to the players' inputs, selected to be as intuitive as possible. They try to be as clear as possible and interact responsively with the weapon animations of the character. These are developed to get a clear feel of the combat.
 - **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment. They act according to the players actions, as they are adjusted to be used along the main mechanics of the game.
 - **Scenario Animations**: Glitchy environmental elements change in every room, making the player feel better about the replayability of the game. They make the enemies feel more alive and intreractable.
-
+- **Damage Animations**: When the main character or enemies take damage, a glitch effect briefly distorts their bodies, emphasizing the impact. This visual "glitch" animation gives the sensation that the character is destabilized by the attack.
+- **Death Animations**: Upon death, the glitch effect becomes more aggressive, fully corrupting their form. The character or enemy breaks apart into a chaotic sequence of glitchy distortions, signifying their complete destruction within the game world.
 ---
 
 ## 8. Sound
