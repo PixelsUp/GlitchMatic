@@ -22,7 +22,7 @@ public class Settings_options : MonoBehaviour
         setSfxVolume();
     }
 
-    private void LoadVolume()
+    public void LoadVolume()
     {
         masterSlider.value = PlayerPrefs.GetFloat("masterVolumen");
         musicSlider.value = PlayerPrefs.GetFloat("musicVolumen");
@@ -48,6 +48,18 @@ public class Settings_options : MonoBehaviour
         float sfx = sfxSlider.value;
         myMixer.SetFloat("sfx", Mathf.Log10(sfx) * 20);
         PlayerPrefs.SetFloat("sfxVolumen", sfx);
+    }
+
+    public void FullScreen()
+    {
+        if (Screen.fullScreen == true)
+        {
+            Screen.fullScreen = false;
+        }
+        else
+        {
+            Screen.fullScreen = true;
+        }
     }
 
     public void Back()
