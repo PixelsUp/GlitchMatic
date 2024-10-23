@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 511382086}
   - component: {fileID: 511382085}
   - component: {fileID: 511382089}
+  - component: {fileID: 511382090}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -310,7 +311,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -367,9 +368,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511382084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f52aff4d77c3f447b86eb5aef4f11c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 0}
+--- !u!114 &511382090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511382084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0896f1a21ebf3104ebc7ea2cf4c76e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &580495786
@@ -519,7 +533,7 @@ GameObject:
   - component: {fileID: 650874621}
   - component: {fileID: 650874620}
   m_Layer: 5
-  m_Name: OptionsButton
+  m_Name: AccountButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,8 +556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -609, y: -413}
-  m_SizeDelta: {x: 492.394, y: 92.672}
+  m_AnchoredPosition: {x: 557, y: -413}
+  m_SizeDelta: {x: 530.64, y: 92.672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650874620
 MonoBehaviour:
@@ -589,9 +603,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 511382089}
-        m_TargetAssemblyTypeName: MenuInicial, Assembly-CSharp
-        m_MethodName: Options
+      - m_Target: {fileID: 511382090}
+        m_TargetAssemblyTypeName: StartMenuScene, Assembly-CSharp
+        m_MethodName: Account
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -918,7 +932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.000065, y: 207.99998}
+  m_AnchoredPosition: {x: -531, y: -0.000015259}
   m_SizeDelta: {x: 368.094, y: 92.672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877168497
@@ -965,9 +979,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 511382089}
-        m_TargetAssemblyTypeName: MenuInicial, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 511382090}
+        m_TargetAssemblyTypeName: StartMenuScene, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1378,6 +1392,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825df8355ea69ed4a89e9cbd62599f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeInDuration: 2
+  menuMusic: {fileID: 0}
+  gameMusic1: {fileID: 0}
+  gameMusic2: {fileID: 0}
+  gameMusic3: {fileID: 0}
+  gameMusic4: {fileID: 0}
+  gameMusic5: {fileID: 0}
+  gameMusic6: {fileID: 0}
 --- !u!1 &1497833494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,9 +1746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Options
-
-'
+  m_text: Account
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d96722da47a8c8149b76b1f6d6e5e5f6, type: 2}
   m_sharedMaterial: {fileID: -3013631247690033034, guid: d96722da47a8c8149b76b1f6d6e5e5f6, type: 2}

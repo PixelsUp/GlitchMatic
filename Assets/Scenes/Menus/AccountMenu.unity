@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 511382086}
   - component: {fileID: 511382085}
   - component: {fileID: 511382089}
+  - component: {fileID: 511382090}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -383,7 +384,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -443,9 +444,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511382084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f52aff4d77c3f447b86eb5aef4f11c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 0}
+--- !u!114 &511382090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511382084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234fc23b55052d64780c3507350c772a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &580495786
@@ -1649,6 +1663,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825df8355ea69ed4a89e9cbd62599f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeInDuration: 2
+  menuMusic: {fileID: 0}
+  gameMusic1: {fileID: 0}
+  gameMusic2: {fileID: 0}
+  gameMusic3: {fileID: 0}
+  gameMusic4: {fileID: 0}
+  gameMusic5: {fileID: 0}
+  gameMusic6: {fileID: 0}
 --- !u!1 &1353186521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,7 +2243,7 @@ GameObject:
   - component: {fileID: 1653036850}
   - component: {fileID: 1653036849}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,9 +2313,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 511382089}
-        m_TargetAssemblyTypeName: MenuInicial, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 511382090}
+        m_TargetAssemblyTypeName: AccountScene, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
