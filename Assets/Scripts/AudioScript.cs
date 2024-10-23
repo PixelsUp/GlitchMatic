@@ -59,7 +59,7 @@ public class AudioScript : MonoBehaviour
         // Desubscribirse del evento de cambio de escena
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
+    
     // Método que se llama cuando una nueva escena es cargada
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
