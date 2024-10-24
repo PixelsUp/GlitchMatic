@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AudioScript : MonoBehaviour
+public class MusicScript : MonoBehaviour
 {
-    private static AudioScript instance = null; // Variable para mantener una única instancia
+    private static MusicScript instance = null; // Variable para mantener una única instancia
     private AudioSource Source;
     public float fadeInDuration = 2f; // Duración del fade in en segundos
     private float vol_aux = 0.5f;

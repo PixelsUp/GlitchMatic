@@ -7,6 +7,7 @@ public class Shop : MonoBehaviour
 {
     public void Back()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         SceneManager.LoadScene("MainMenu");
     }
 }

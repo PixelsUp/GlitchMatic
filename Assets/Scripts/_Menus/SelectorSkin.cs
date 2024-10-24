@@ -21,12 +21,14 @@ public class SelectorSkin : MonoBehaviour
 
     public void Back()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         SceneManager.LoadScene("MainMenu");
     }
 
     // Método para cambiar a la skin anterior
     public void CambiarASkinAnterior()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         currentSkinIndex--;
         if (currentSkinIndex < 0)
         {
@@ -38,6 +40,7 @@ public class SelectorSkin : MonoBehaviour
     // Método para cambiar a la skin siguiente
     public void CambiarASkinSiguiente()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         currentSkinIndex++;
         if (currentSkinIndex >= skins.Length)
         {
@@ -49,6 +52,7 @@ public class SelectorSkin : MonoBehaviour
     // Método para actualizar la imagen del skin actual
     private void ActualizarSkin()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         skinImage.sprite = skins[currentSkinIndex];
         nameText.text = skinNames[currentSkinIndex];
     }

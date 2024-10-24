@@ -52,6 +52,7 @@ public class Settings_options : MonoBehaviour
 
     public void FullScreen()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         if (Screen.fullScreen == true)
         {
             Screen.fullScreen = false;
@@ -64,6 +65,7 @@ public class Settings_options : MonoBehaviour
 
     public void Back()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         SceneManager.LoadScene("MainMenu");
     }
 }
