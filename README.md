@@ -116,14 +116,14 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 <p align= "center"><strong> Empathy Map </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Empathymap.jpg)" width= '500' height='300'/>
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Empathymap.jpg" width= '500' height='300'/>
 </p>
 <p align=center>Image 2.1 Empathy Map</p>
   
 - **Canvas**
 <p align= "center"><strong> Canvas </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg)" width= '500' height='300'/>
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '500' height='300'/>
 </p>
 <p align=center>Image 2.2 Canvas</p>
 
@@ -131,7 +131,7 @@ Additionally, players can purchase in-game currency with real money to unlock co
 - **Toolbox**
 <p align= "center"><strong> ToolBox </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Toolbox.jpg)" width= '500' height='300'/>
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Toolbox.jpg" width= '500' height='300'/>
 </p>
 <p align=center>Image 2.3 ToolBox</p>
 
@@ -219,15 +219,33 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 
 - **The Glitch Hunter**: A lone protagonist determined to fix the glitches.
     - His destiny is to try to destroy the glitches happening in the world, which leads him to the tower which holds the origin of the disaster. He will attempt to end it all, unknowingly entering a neverending crusade.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8cb0c156-9607-4a73-9592-3f189eb6d33d" width= '300' height='300'/>
+</p>
+<p align=center>Image 5.1 Glitch Hunter</p>
+
+
 - **Tower Inhabitants**: Glitchy enemies with AI that evolves based on player behavior. These entities came from various eras and places across time, and they will do everything they can to stop the Hunter from achieving his goal.
 
     The rooms are never ending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it by creating more and harder rooms as the player gets closer to it.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e54cab36-1e4b-4ab7-8023-51c3edd1fc69" width= '300' height='300'/>
+</p>
+<p align=center>Image 5.2 The Knight</p>
+
 
 ### Environments and Places
 
 - **Tower Rooms**: Procedurally generated rooms with varied challenges that enhance replayability. There will be a selection of themes which spawn randomly every three rooms. These make it so the player is constantly engaging with different enemies with different strengths.
   
     - The rooms are neverending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it by creating more and harder rooms as the player gets closer to it.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/642341ce-1c40-4444-a9c9-96a16aad847c" width= '500' height='300'/>
+</p>
+<p align=center>Image 5.3 Medieval Room</p>
 
 ---
 
@@ -238,12 +256,18 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 
 ### Pixel Art  
   The pixel art style is retro-inspired, bringing a nostalgic feel to the game. However, the addition of glitch effects, such as pixel scrambling and color disintegration, creates a chaotic, disorienting atmosphere. These distortions emphasize the core game theme of a fractured, unstable reality. By using pixel art, we can keep development streamlined while leveraging the aesthetic's simplicity to enhance visual effects without overcomplicating the production pipeline.
+  
 
 ### Visual Style  
   The game’s visual style is dark, futuristic, and focused on the idea of digital corruption. Broken environments, distorted assets, and glitchy characters contribute to an overall feeling of instability. The color palette will reflect this with muted tones, punctuated by bright, glitchy visuals. Shadows, light distortions, and flickering environments will play an important role in conveying a world on the edge of collapse.
 
 ### Concept Art  
   Early sketches of characters, weapons, and enemies will guide the development of final assets. These concept pieces will serve as the foundation for designing the pixel art versions of in-game elements. Each character and enemy design will incorporate glitch-inspired traits to visually distinguish them as part of the unstable digital world.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/270befe2-4f92-4c32-9d23-4f83ae70b800" width= '500' height='300'/>
+</p>
+<p align=center>Image 6.1 Character concept art with different variations</p>
 
 ### 2D Pixel Art  
   The decision to use 2D pixel art helps avoid unnecessary complications while perfectly suiting the game's aesthetic. The simplicity of pixel art allows us to focus on glitch effects and detailed environmental storytelling. This style complements the digital instability and chaotic nature of the game's world, enabling smooth gameplay transitions and easier asset creation.
@@ -257,10 +281,25 @@ Additionally, we will create social media links and marketing content to showcas
 ### Animation Style
 
 - **Character Animations**: Smooth, responsive movements including running, rolling, and attacking. They respond to the players' inputs, selected to be as intuitive as possible. They try to be as clear as possible and interact responsively with the weapon animations of the character. These are developed to get a clear feel of the combat.
+
+
 - **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment. They act according to the player's actions, as they are adjusted to be used along the main mechanics of the game.
 - **Scenario Animations**: Glitchy environmental elements change in every room, making the player feel better about the replayability of the game. They make the enemies feel more alive and intractable.
 - **Damage Animations**: When the main character or enemies take damage, a glitch effect briefly distorts their bodies, emphasizing the impact. This visual "glitch" animation gives the sensation that the character is destabilized by the attack.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c9931d22-0e6e-463d-bd6e-7534358f95ba" width= '300' height='300'/>
+</p>
+<p align=center>Image 7.1 Character hurt animation</p>
+
 - **Death Animations**: Upon death, the glitch effect becomes more aggressive, fully corrupting their form. The character or enemy breaks apart into a chaotic sequence of glitchy distortions, signifying their complete destruction within the game world.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b9c74592-8106-4127-9357-9890d7574d4c" width= '300' height='300'/>
+</p>
+<p align=center>Image 7.2 Character dead animation</p>
+
+
 ---
 
 ## 8. Sound
@@ -289,6 +328,12 @@ Sound effects are essential for immersing players in the distinct environments o
 ### Basic Menu Designs
 
 - **Simple UI**: The game's interface will feature a simple, glitch-themed UI that complements the overall concept of digital instability. The main menu will include glitch effects like distorted text, flickering elements, and digital artifacts to immerse players in the chaotic, unstable world from the very beginning. Buttons and transitions will incorporate visual glitch effects, giving the interface a dynamic and unpredictable feel. The UI will remain intuitive and easy to navigate, ensuring that the visual theme does not interfere with functionality. Each section of the menu such as the start game, settings, and exit will have a minimalistic design but maintain thematic consistency with the glitch-based aesthetics.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4e6f320a-80b5-44ed-9aad-3554eb8fe3ce" width= '500' height='300'/>
+</p>
+<p align=center>Image 9.1 Main menu</p>
+
 - **Flow Diagram**: 
 
 ---
