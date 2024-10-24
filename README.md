@@ -137,8 +137,8 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 ### Monetization Model
 
-- **Ad-Supported Gameplay**: Players will experience ads during natural breaks in gameplay after deaths. A pay-per-tap advertising feature is integrated, where players can watch an ad to double their in-game currency after death.
-- **In-Game Currency and Cosmetic Purchases**: Players can purchase in-game currency with real money or earn it through gameplay. The currency can be spent on cosmetic items such as character skins, weapon skins, and special visual effects.
+- **Ad-Supported Gameplay**: Players will experience ads during natural breaks in gameplay after deaths. A pay-per-tap advertising feature is integrated, where players can watch an ad to double their in-game currency after death. Players can also make a one-time payment to permanently remove all ads, providing a smoother, ad-free experience.
+- **In-Game Currency and Cosmetic Purchases**: Players can purchase in-game currency with real money or earn it through gameplay. To be archived in game, the player will finish different runs of the game loop to get a different small value that varies with how many rooms he has cleared. The currency can be spent on cosmetic items such as character skins, weapon skins, and special visual effects. They will be displayed and available for purchase in the shop.
 
 **No pay-to-win mechanics**: All purchasable items are purely cosmetic and do not provide any in-game advantages.
 
@@ -170,7 +170,7 @@ We estimate a development time of two to three months, with clear milestones and
 
 ### Associated Costs
   - **Software licenses**: Game engine (Unity), art software, and sound editing tools.
-  - **Marketing and promotion budget**: Social media campaigns, trailers, and early access demos. A LinkTree has been developed with all the according websites.
+  - **Marketing and promotion budget**: Social media campaigns, trailers, and early access demos. A LinkTree has been developed with all the corresponding websites.
   - **Potential porting to consoles**:  While the initial development will focus on PC, we are considering porting the game to consoles like PlayStation and Xbox. This will involve additional costs for platform certification, development kits, and ensuring compatibility across different systems. Porting will depend on the game's success and demand from the player base.
 
 ---
@@ -183,18 +183,18 @@ We estimate a development time of two to three months, with clear milestones and
 
 ### Detailed Mechanics
 
-- **Movement**: Standard movement mechanics (run, attack), with a glimpse of RPG systems, such as the roll mechanic. The roll mechanic is a key concept of the game. Enemies are designed around it, making it hard to use and abuse, as it has a small amount of invencibility frames that assist in the elimination of certain theme bosses throughout the gameplay runs of the players.
+- **Movement**: Standard movement mechanics (run, attack), with a glimpse of RPG systems, such as the roll mechanic. The roll mechanic is a key concept of the game. Enemies are designed around it, making it hard to use and abuse, as it has a small amount of invincibility frames that assist in the elimination of certain theme bosses throughout the gameplay runs of the players.
 - **Combat**: Fast-paced, with a variety of weapons (glitch guns, melee attacks). The player will select between a melee option and a ranged option, which changes the way the enemies behave drastically. This makes it so the AI feels fresh every run and avoids any clear abusable strategies suited for speedrunning.
 - **Time Mechanic**: Players race to clear as many rooms as possible before dying. This mechanic makes the player hesitant to take their time against more defensive enemies and forces him to, when being competitive, organise their combat according to the rooms' exit and entrance.
 
 ### Levels and Missions
 
-- **Rooms**: Procedurally generated rooms with increasing difficulty. Enemies are spawned differently every room, enhancing the replayability aspect of the game. They are built to be dynamic and inmersive. Enemies respond to the environment accordingly, making every room feel fresh and difficult in its own way.
+- **Rooms**: Procedurally generated rooms with increasing difficulty. Enemies are spawned differently every room, enhancing the replayability aspect of the game. They are built to be dynamic and immersive. Enemies respond to the environment accordingly, making every room feel fresh and difficult in its own way.
 - **Glitch Hazards**: Obstacles that alter gameplay unpredictably. They are meant to be used as covers for the player or the enemies, as well as stopping its progress through certain stages.
 
 ### Controls
 
-- Movement: Players use WASD keys to move their character around the environmetn.
+- Movement: Players use WASD keys to move their character around the environment.
 - Rolling: When the Spacebar is pressed the character rolls. This allows for some invincibility frames, essential for surviving difficult encounters and allowing the player to dodge certain attacks.
 - Aiming: The mouse is used to aim the weapon at enemy targets.
 - Attacking: To either shoot or perform melee attacks, the left mouse button is pressed.
@@ -218,14 +218,16 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 ### Characters
 
 - **The Glitch Hunter**: A lone protagonist determined to fix the glitches.
-    - His destiny is to try to destroy the glitches happening in the world, which leads him to the tower which holds the origin of the disaster. He will attempt to end it all, unknowingly entering a         neverending crusade.
+    - His destiny is to try to destroy the glitches happening in the world, which leads him to the tower which holds the origin of the disaster. He will attempt to end it all, unknowingly entering a neverending crusade.
 - **Tower Inhabitants**: Glitchy enemies with AI that evolves based on player behavior. These entities came from various eras and places across time, and they will do everything they can to stop the Hunter from achieving his goal.
+
+    The rooms are never ending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it by creating more and harder rooms as the player gets closer to it.
 
 ### Environments and Places
 
-- **Tower Rooms**: Procedurally generated rooms with varied challenges that enhance replayability. There will be a selection of themes which spawn randomly every three rooms. These make its so the player is constantly engaging with different enemies with different strengths.
-    - The rooms are neverending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it 
-    by creating more and harder rooms as the player gets closer to it.
+- **Tower Rooms**: Procedurally generated rooms with varied challenges that enhance replayability. There will be a selection of themes which spawn randomly every three rooms. These make it so the player is constantly engaging with different enemies with different strengths.
+  
+    - The rooms are neverending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it by creating more and harder rooms as the player gets closer to it.
 
 ---
 
@@ -255,8 +257,8 @@ Additionally, we will create social media links and marketing content to showcas
 ### Animation Style
 
 - **Character Animations**: Smooth, responsive movements including running, rolling, and attacking. They respond to the players' inputs, selected to be as intuitive as possible. They try to be as clear as possible and interact responsively with the weapon animations of the character. These are developed to get a clear feel of the combat.
-- **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment. They act according to the players actions, as they are adjusted to be used along the main mechanics of the game.
-- **Scenario Animations**: Glitchy environmental elements change in every room, making the player feel better about the replayability of the game. They make the enemies feel more alive and intreractable.
+- **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment. They act according to the player's actions, as they are adjusted to be used along the main mechanics of the game.
+- **Scenario Animations**: Glitchy environmental elements change in every room, making the player feel better about the replayability of the game. They make the enemies feel more alive and intractable.
 - **Damage Animations**: When the main character or enemies take damage, a glitch effect briefly distorts their bodies, emphasizing the impact. This visual "glitch" animation gives the sensation that the character is destabilized by the attack.
 - **Death Animations**: Upon death, the glitch effect becomes more aggressive, fully corrupting their form. The character or enemy breaks apart into a chaotic sequence of glitchy distortions, signifying their complete destruction within the game world.
 ---
