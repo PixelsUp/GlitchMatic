@@ -1298,6 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInDuration: 2
+  startMusic: {fileID: 8300000, guid: 1db041fef910a284096bd0bbb2a9d095, type: 3}
   menuMusic: {fileID: 8300000, guid: 967f545ea73ec7a4baecbdf78870914d, type: 3}
   gameMusic1: {fileID: 8300000, guid: 75acf086cd618004db5fff07ba78165c, type: 3}
   gameMusic2: {fileID: 8300000, guid: cd736ee1c1627a948a27091f107f89ac, type: 3}
