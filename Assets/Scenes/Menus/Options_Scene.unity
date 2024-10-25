@@ -703,8 +703,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -7.3, y: 0.0000038147}
   m_SizeDelta: {x: 27, y: -6.258009}
+=======
+  m_AnchoredPosition: {x: -4, y: 0.0000019073486}
+  m_SizeDelta: {x: 20, y: -12}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391953799
 >>>>>>> Stashed changes
@@ -788,10 +793,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
 =======
   m_Sprite: {fileID: 21300000, guid: 52b23ce9b6289064583b71c5b82f7ef1, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: c5ecd50df65f55c4a84bfda83d900aba, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
 >>>>>>> Stashed changes
   m_PreserveAspect: 0
@@ -1055,7 +1064,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: eaf5fec6c092bb340a4f7bed8cf9f5e4, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 3a3471e5b08764748af0777a90718566, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1206,7 +1219,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 2dbc8a4119b73be49819ed7e4fa5cd71, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 9303364dc5a99ab4aaa498f3f18a9fff, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1260,7 +1277,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 34, y: -17.243}
+=======
+  m_AnchoredPosition: {x: 61, y: 0.000017762}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 261.608, y: 34.485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725843639
@@ -1360,8 +1381,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -4.0999985, y: -0.0000019073486}
   m_SizeDelta: {x: 27, y: -5.25}
+=======
+  m_AnchoredPosition: {x: -4, y: 0}
+  m_SizeDelta: {x: 20, y: -12.000004}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789566557
 MonoBehaviour:
@@ -1383,7 +1409,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 52b23ce9b6289064583b71c5b82f7ef1, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: c5ecd50df65f55c4a84bfda83d900aba, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1437,7 +1467,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 34, y: 203}
+=======
+  m_AnchoredPosition: {x: 61, y: 205}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 261.608, y: 34.485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &816085775
@@ -1538,8 +1572,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -877, y: 452}
   m_SizeDelta: {x: 328.8173, y: 142.6327}
+=======
+  m_AnchoredPosition: {x: -899, y: 463}
+  m_SizeDelta: {x: 368.094, y: 163.4488}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887001882
 MonoBehaviour:
@@ -1728,7 +1767,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 2dbc8a4119b73be49819ed7e4fa5cd71, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 9303364dc5a99ab4aaa498f3f18a9fff, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1808,7 +1851,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 854f3d9def2e1244bb8104b4310f17cd, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 62d962d6a7cd6fd4aaaf1f3f95c3e736, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1896,8 +1943,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -5.2, y: 0}
   m_SizeDelta: {x: 27, y: -4.6999874}
+=======
+  m_AnchoredPosition: {x: -5.699997, y: -0.0000038146973}
+  m_SizeDelta: {x: 20, y: -12}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206344747
 MonoBehaviour:
@@ -1919,7 +1971,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 52b23ce9b6289064583b71c5b82f7ef1, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: c5ecd50df65f55c4a84bfda83d900aba, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1973,7 +2029,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 34, y: -252}
+=======
+  m_AnchoredPosition: {x: 60.999992, y: -246.54707}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 261.608, y: 34.485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292970103
@@ -2096,7 +2156,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: b14508a880f3c074cbe9b122c5f9b1cd, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 4aed110984b379c4c9cdcd6aeaac3021, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2171,7 +2235,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: b14508a880f3c074cbe9b122c5f9b1cd, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 4aed110984b379c4c9cdcd6aeaac3021, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2254,6 +2322,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_text: Character
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d96722da47a8c8149b76b1f6d6e5e5f6, type: 2}
@@ -2326,6 +2395,9 @@ MonoBehaviour:
 --- !u!222 &400464269
 =======
   m_Sprite: {fileID: 21300000, guid: b14508a880f3c074cbe9b122c5f9b1cd, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 4aed110984b379c4c9cdcd6aeaac3021, type: 3}
+>>>>>>> Stashed changes
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2336,6 +2408,9 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1838029395
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2343,10 +2418,13 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 400464266}
   m_CullTransparentMesh: 1
 --- !u!1 &1051851752
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 1838029392}
   m_CullTransparentMesh: 1
 --- !u!1 &2099915428
@@ -2598,8 +2676,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9303364dc5a99ab4aaa498f3f18a9fff, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
