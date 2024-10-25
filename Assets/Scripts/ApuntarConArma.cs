@@ -7,6 +7,7 @@ public class ApuntarConArma : MonoBehaviour
     private Transform aimTransform;
     private SpriteRenderer aimSpriteRenderer; // Para cambiar la escala del sprite
 
+
     private void Awake()
     {
         // Encontrar el objeto "Aim"
@@ -25,7 +26,6 @@ public class ApuntarConArma : MonoBehaviour
     {
         // Obtener la posición del ratón en el plano Z=0
         Vector3 mousePosition = GetMouseWorldPositionWithZ(0f);
-        Debug.Log("Mouse Position: " + mousePosition);
 
         // Calcular la dirección y el ángulo hacia el ratón
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
@@ -49,7 +49,7 @@ public class ApuntarConArma : MonoBehaviour
             aimTransform.eulerAngles = new Vector3(0, 0, angle);
         }
 
-        Debug.Log("Ángulo: " + angle.ToString());
+
     }
 
     // Método para obtener la posición del ratón en el mundo, en un plano con Z fijo

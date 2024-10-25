@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &622038313569333443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2588912604025885958}
+  m_Layer: 0
+  m_Name: Aim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2588912604025885958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622038313569333443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8040344290043744176}
+  m_Father: {fileID: 4391855643640338667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2926697039215362787
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,11 +58,11 @@ Transform:
   m_GameObject: {fileID: 2926697039215362787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.143, y: -0.034, z: 0}
+  m_LocalPosition: {x: 0.14300029, y: -0.03399979, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4391855643640338667}
+  m_Father: {fileID: 2588912604025885958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8828956397821549881
 SpriteRenderer:
@@ -95,6 +127,7 @@ GameObject:
   - component: {fileID: 4391855643640338667}
   - component: {fileID: 8707146185934370915}
   - component: {fileID: 8673820813732210866}
+  - component: {fileID: 2591869552968348619}
   m_Layer: 0
   m_Name: Prefab_Archer
   m_TagString: Untagged
@@ -115,7 +148,7 @@ Transform:
   m_LocalScale: {x: 24.53, y: 24.53, z: 24.53}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 8040344290043744176}
+  - {fileID: 2588912604025885958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8707146185934370915
@@ -182,10 +215,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489b18673a5293f47b3ddf6ff89d1e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protagonista: {fileID: 0}
   proyectilPrefab: {fileID: 5818374948066685075, guid: 38d611d28d63ca743a8414b7c78801d9, type: 3}
   puntoDisparo: {fileID: 8040344290043744176}
   velocidadMovimiento: 4
   vida: 50
   distanciaDeteccion: 50
   distanciaAtaque: 30
+--- !u!114 &2591869552968348619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361473524778984129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b09c1c676d556940a14a88e06b45297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

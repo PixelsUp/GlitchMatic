@@ -99,7 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   protagonista: {fileID: 0}
   velocidadMovimiento: 5
-  distanciaDeteccion: 20
+  distanciaDeteccion: 25
+  distanciaDeteccionAmpliada: 50
   distanciaAtaque: 4
   tiempoEntreAtaques: 1
   vida: 50
