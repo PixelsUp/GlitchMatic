@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public List<Transform> spawnPoints; // List of spawn points in the room.
+    public Transform[] spawnPoints; // List of spawn points in the room.
     public GameObject[] tier1Enemies;
     public GameObject[] tier2Enemies;
     public GameObject[] tier3Enemies;
@@ -14,6 +14,7 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Total spawn points: " + spawnPoints.Length); // Verifica el número de spawn points
         SpawnEnemies();
     }
 
@@ -25,7 +26,11 @@ public class EnemyManager : MonoBehaviour
         int tier3Chance = 100 - tier1Chance - tier2Chance;
 
         foreach (Transform spawnPoint in spawnPoints)
+
+
         {
+            Debug.Log("Spawning at: " + spawnPoint.name);  // Verifica que está recorriendo todos los spawn points
+
             int roll = Random.Range(1, 101); // Random number between 1 and 100
 
             if (roll <= tier1Chance)
@@ -51,6 +56,10 @@ public class EnemyManager : MonoBehaviour
 
         // Scale enemy health based on room progression
         Enemy enemy = enemyInstance.GetComponent<Enemy>();
-        enemy.health *= Mathf.Pow(scalingFactor, currentRoom);
+
+        if (enemy != null)
+        {
+            enemy.health *= Mathf.Pow(scalingFactor, currentRoom);
+        }
     }
 }

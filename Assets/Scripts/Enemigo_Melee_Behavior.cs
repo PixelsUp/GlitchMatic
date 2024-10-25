@@ -18,17 +18,27 @@ public class Enemigo_Melee_Behavior : MonoBehaviour
     private float danoAtaque = 20f;
 
     // Distancias relevantes
-    [SerializeField] private float distanciaDeteccion = 10f; // Distancia para detectar al protagonista
+    [SerializeField] private float distanciaDeteccion = 25f; // Distancia para detectar al protagonista
+    [SerializeField] private float distanciaDeteccionAmpliada = 50f; // Distancia ampliada cuando detecta
+
     [SerializeField] private float distanciaAtaque = 2f; // Distancia para atacar
     [SerializeField] private float tiempoEntreAtaques = 1f; // Tiempo de espera entre ataques
     [SerializeField] private int vida = 50; 
     private bool puedeAtacar = true; // Controla si el enemigo puede atacar
     private bool mirandoDerecha = true;
 
+    private bool protagonistaDetectado = false; // Para controlar el cambio de rango
+
     // Método Start: Inicialización del script
     void Start()
+{
+    protagonista = FindObjectOfType<Character_Functioning>();
+
+    if (protagonista == null)
     {
+        Debug.LogError("No se encontró al protagonista en la escena.");
     }
+}
 
     // Método Update: Llamamos a la máquina de estados cada frame
     void Update()
@@ -56,6 +66,8 @@ public class Enemigo_Melee_Behavior : MonoBehaviour
                     // Si el enemigo ya está mirando al protagonista, comienza a avanzar
                     Avanzar(posicionProtagonista);
                     estado = TEstado.AVANZANDO;
+                    protagonistaDetectado = true; // Marcar que el protagonista ha sido detectado
+                    distanciaDeteccion = distanciaDeteccionAmpliada; // Ampliar rango de detección
 
                 }
                 break;
@@ -68,9 +80,12 @@ public class Enemigo_Melee_Behavior : MonoBehaviour
                     estado = TEstado.ATACANDO;
                     Atacar();
                 }
-                else if (distanciaAlProtagonista > distanciaDeteccion)
+                else if (distanciaAlProtagonista > distanciaDeteccionAmpliada)
                 {
+                    // Si el protagonista se aleja más allá del rango ampliado, vuelve a BUSCANDO
                     estado = TEstado.BUSCANDO;
+                    protagonistaDetectado = false; // Protagonista ya no está en rango
+                    distanciaDeteccion = 25f; // Reducir el rango de nuevo
                 }
                 else
                 {

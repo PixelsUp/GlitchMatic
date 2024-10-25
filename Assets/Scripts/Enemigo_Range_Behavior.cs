@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemigo_Range_Behavior : MonoBehaviour
 {
     // Enlace al protagonista
-    [SerializeField] private Character_Functioning protagonista;
+    private Character_Functioning protagonista;
 
     // Prefab del proyectil que disparará el enemigo
     [SerializeField] private GameObject proyectilPrefab;
@@ -25,13 +25,29 @@ public class Enemigo_Range_Behavior : MonoBehaviour
     [SerializeField] private int vida = 50;
     private bool puedeDisparar = true;
     private bool mirandoDerecha = true;
+    private bool protagonistaDetectado = false; // Para controlar el cambio de rango
+
 
     // Distancias relevantes
-    [SerializeField] private float distanciaDeteccion = 10f; // Distancia para detectar al protagonista
+    [SerializeField] private float distanciaDeteccion = 50f; // Distancia para detectar al protagonista
     [SerializeField] private float distanciaAtaque = 20f; // Distancia para disparar
+
+    void Start()
+    {
+        protagonista = FindObjectOfType<Character_Functioning>();
+
+        if (protagonista == null)
+        {
+            Debug.LogError("No se encontró al protagonista en la escena.");
+        }
+    }
 
     void Update()
     {
+        if (protagonistaDetectado == true)
+        {
+            GirarHaciaObjetivo(posicionProtagonista);
+        }
         FSMRangedEnemy(); // Lógica de la máquina de estados
     }
 
@@ -51,6 +67,7 @@ public class Enemigo_Range_Behavior : MonoBehaviour
                 {
                     Avanzar(posicionProtagonista);
                     estado = TEstado.AVANZANDO;
+                    protagonistaDetectado = true;
                 }
                 break;
 
@@ -64,6 +81,7 @@ public class Enemigo_Range_Behavior : MonoBehaviour
                 else if (distanciaAlProtagonista > distanciaDeteccion)
                 {
                     estado = TEstado.BUSCANDO;
+                    protagonistaDetectado=false;
                 }
                 else
                 {
@@ -75,12 +93,15 @@ public class Enemigo_Range_Behavior : MonoBehaviour
                 // Verificar si el enemigo está dentro del rango de ataque
                 if ((distanciaAlProtagonista <= distanciaAtaque) && puedeDisparar)
                 {
+                    
                     StartCoroutine(DispararProyectilCoroutine());
+                    
                 }
                 else if (distanciaAlProtagonista > distanciaAtaque)
                 {
                     estado = TEstado.AVANZANDO;
                     Avanzar(posicionProtagonista);
+                    
                 }
                 break;
         }
