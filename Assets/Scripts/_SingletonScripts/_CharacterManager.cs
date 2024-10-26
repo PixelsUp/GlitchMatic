@@ -23,6 +23,7 @@ public class _CharacterManager : MonoBehaviour
     private int currentRollCharges; // Current roll charges
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
+    private Animator animator;
 
     void Awake()
     {
@@ -43,14 +44,25 @@ public class _CharacterManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentRollCharges = maxRollCharges; // Initialize roll charges
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+
         // Handle movement input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        bool isMoving = movement.sqrMagnitude > 0;
+        if (isMoving)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
         // Check for roll input (space bar set default, should use maybe two keys to do so)
         if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown)
         {
@@ -65,6 +77,7 @@ public class _CharacterManager : MonoBehaviour
             // Smooth the movement using Lerp
             Vector2 targetPosition = rb.position + movement * speed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
         }
     }
 
