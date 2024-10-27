@@ -26,7 +26,7 @@ public class _CharacterManager : MonoBehaviour
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
 
-    [SerializeField] private GameOverManagerScript GameOverManager;
+    [SerializeField] public GameOverManagerScript GameOverManager;
 
 
     void Awake()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverManagerScript : MonoBehaviour
 {
@@ -22,5 +23,11 @@ public class GameOverManagerScript : MonoBehaviour
     {
         Debug.Log("Activando pantalla de Game Over");
         gameOverUI.SetActive(true);
+    }
+
+    public void Back()
+    {
+        SfxScript.TriggerSfx("SfxButton1");
+        SceneManager.LoadScene("MainMenu");
     }
 }
