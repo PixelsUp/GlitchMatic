@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Options_Scene.unity
     guid: 2bfae91888322954baa387937372cc9b
+  - enabled: 1
+    path: Assets/Scenes/Menus/Pop_Up_Anuncios.unity
+    guid: 93f0128bf8cc6204c813eb5f4a1b64c1
   m_configObjects: {}
