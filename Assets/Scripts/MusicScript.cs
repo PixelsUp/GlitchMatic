@@ -83,7 +83,12 @@ public class MusicScript : MonoBehaviour
                 clipToPlay = menuMusic;
                 break;
             case "Intro_Scene":
-                clipToPlay = gameMusic1;
+                // Crear un arreglo con las pistas de música para la escena Intro_Scene
+                AudioClip[] gameMusic = { gameMusic1, gameMusic2, gameMusic3, gameMusic4, gameMusic5, gameMusic6 };
+
+                // Seleccionar un índice aleatorio del arreglo
+                int randNum = Random.Range(0, gameMusic.Length); // Esto generará un número entre 0 y 5
+                clipToPlay = gameMusic[randNum]; // Asignar la pista aleatoria
                 break;
             case "GameScene2":
                 clipToPlay = gameMusic2;
