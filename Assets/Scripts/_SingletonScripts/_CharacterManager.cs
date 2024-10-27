@@ -26,7 +26,7 @@ public class _CharacterManager : MonoBehaviour
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
     public bool puedeDisparar = true;
-    private float tiempoEntreDisparos = 1.5f; // Tiempo de espera entre disparos
+    private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
     private Transform aimTransform;
 
     [SerializeField] public GameOverManagerScript GameOverManager;
