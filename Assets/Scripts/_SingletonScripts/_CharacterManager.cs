@@ -25,13 +25,10 @@ public class _CharacterManager : MonoBehaviour
     private int currentRollCharges; // Current roll charges
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
-<<<<<<< HEAD
     private Animator animator;
-=======
     public bool puedeDisparar = true;
     private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
     private Transform aimTransform;
->>>>>>> Ajustes_Menus
 
     [SerializeField] public GameOverManagerScript GameOverManager;
     [SerializeField] private GameObject proyectilPrefab;
@@ -86,16 +83,11 @@ public class _CharacterManager : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-<<<<<<< HEAD
-
-        
-=======
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("Click");
             StartCoroutine(DispararProyectilCoroutine());
         }
->>>>>>> Ajustes_Menus
 
         // Check for roll input (space bar set default, should use maybe two keys to do so)
         if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown)
