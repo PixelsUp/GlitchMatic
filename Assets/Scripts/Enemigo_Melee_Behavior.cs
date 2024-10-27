@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemigo_Melee_Behavior : MonoBehaviour
 {
     // Enlace al protagonista
-    [SerializeField] Character_Functioning protagonista;
+    [SerializeField] _CharacterManager protagonista;
 
     // Definimos los posibles estados del enemigo
     private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO }
@@ -32,7 +32,7 @@ public class Enemigo_Melee_Behavior : MonoBehaviour
     // Método Start: Inicialización del script
     void Start()
 {
-    protagonista = FindObjectOfType<Character_Functioning>();
+    protagonista = _CharacterManager.Instance;
 
     if (protagonista == null)
     {
