@@ -26,6 +26,9 @@ public class _CharacterManager : MonoBehaviour
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
 
+    [SerializeField] public GameOverManagerScript GameOverManager;
+
+
     void Awake()
     {
         // Singleton pattern to ensure one instance of the character
@@ -45,10 +48,19 @@ public class _CharacterManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentRollCharges = maxRollCharges; // Initialize roll charges
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
+
     }
 
     void Update()
     {
+
+
+        // Ejemplo de daño para probar
+        if (Input.GetKeyDown(KeyCode.K)) // Presiona "K" para simular la muerte
+        {
+            TakeDamage(100f);
+        }
+
         // Handle movement input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -133,6 +145,7 @@ public class _CharacterManager : MonoBehaviour
     void Die()
     {
         Debug.Log("Character is dead!");
-        // Handle death logic here (e.g., respawn, game over)
+        GameOverManager.gameOver(); // Llama a gameOver() directamente
+
     }
 }

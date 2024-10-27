@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f52aff4d77c3f447b86eb5aef4f11c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMixer: {fileID: 0}
 --- !u!114 &511382090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0896f1a21ebf3104ebc7ea2cf4c76e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMixer: {fileID: 24100000, guid: ee3379f90bd5ada4892b56074b6cacb8, type: 2}
 --- !u!1 &580495786
 GameObject:
   m_ObjectHideFlags: 0
