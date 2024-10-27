@@ -116,14 +116,14 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 <p align= "center"><strong> Empathy Map </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Empathymap.jpg" width= '500' height='300'/>
+  <img src="https://github.com/user-attachments/assets/da72bd94-df1d-4156-b061-679eea30155b" width= '800' height='450'/>
 </p>
 <p align=center>Image 2.1 Empathy Map</p>
   
 - **Canvas**
 <p align= "center"><strong> Canvas </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '500' height='300'/>
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '800' height='500'/>
 </p>
 <p align=center>Image 2.2 Canvas</p>
 
@@ -131,7 +131,7 @@ Additionally, players can purchase in-game currency with real money to unlock co
 - **Toolbox**
 <p align= "center"><strong> ToolBox </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Toolbox.jpg" width= '500' height='300'/>
+  <img src="https://github.com/user-attachments/assets/9a797a2c-1c07-485c-8f45-d506eeab7520" width= '600' height='500'/>
 </p>
 <p align=center>Image 2.3 ToolBox</p>
 
