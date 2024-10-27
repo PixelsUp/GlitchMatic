@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class GameOverManagerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject gameOverUI; // Panel de Game Over
+
     void Start()
     {
-        
+        if (gameOverUI == null)
+        {
+            gameOverUI = GameObject.Find("GameOverScreen");
+            if (gameOverUI == null)
+            {
+                Debug.LogError("No se encontró GameOverScreen en la escena.");
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void gameOver()
     {
-        
+        Debug.Log("Activando pantalla de Game Over");
+        gameOverUI.SetActive(true);
     }
 }
