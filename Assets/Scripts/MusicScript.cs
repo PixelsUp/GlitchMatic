@@ -11,6 +11,7 @@ public class MusicScript : MonoBehaviour
     private float vol_aux = 0.5f;
 
     // Clips de audio para cada escena
+    public AudioClip startMusic;
     public AudioClip menuMusic;
     public AudioClip gameMusic1;
     public AudioClip gameMusic2;
@@ -75,6 +76,9 @@ public class MusicScript : MonoBehaviour
         // Usamos un switch para asignar la música dependiendo de la escena
         switch (sceneName)
         {
+            case "StartMenu":
+                clipToPlay = startMusic;
+                break;
             case "MainMenu":
                 clipToPlay = menuMusic;
                 break;

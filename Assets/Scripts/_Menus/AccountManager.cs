@@ -14,11 +14,18 @@ public class AccountManager : MonoBehaviour
     // Reference to the submit button (if you want to use one)
     public Button submitButton;
 
+    public bool prefs = false;
+
     private void Start()
     {
+        LoadUserData();
         // Optionally assign the button's onClick event to the SubmitLogin function
         if (submitButton != null)
         {
+            if (!prefs)
+            {
+                SfxScript.TriggerSfx("SfxButton1");
+            }
             submitButton.onClick.AddListener(SubmitLogin);
         }
 
@@ -29,6 +36,7 @@ public class AccountManager : MonoBehaviour
     // Function to handle user login when submit button is pressed
     public void SubmitLogin()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         string username = usernameInputField.text;
         string password = passwordInputField.text;
 
@@ -66,10 +74,12 @@ public class AccountManager : MonoBehaviour
             passwordInputField.text = savedPassword;
 
             feedbackText.text = "Welcome back, " + savedUsername + "!";
+            prefs = true;
         }
         else
         {
             feedbackText.text = "Please enter your username and password.";
+            prefs = false;
         }
     }
 

@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class _CharacterManager : MonoBehaviour
 {
+    public Slider healthBar;
     public static _CharacterManager Instance { get; private set; }
 
     public float speed = 15f; // Character movement speed
@@ -132,6 +134,7 @@ public class _CharacterManager : MonoBehaviour
         {
             float finalDamage = damage - resistance; // Apply resistance to damage
             hp -= finalDamage;
+            healthBar.value = hp / 100f; // Actualiza el slider. Asume que la vida máxima es 100
             if (hp <= 0)
             {
                 Die();
