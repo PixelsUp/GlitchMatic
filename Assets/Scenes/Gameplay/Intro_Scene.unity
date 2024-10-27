@@ -991,7 +991,10 @@ MonoBehaviour:
   hp: 100
   stamina: 100
   resistance: 10
+  puedeDisparar: 1
   GameOverManager: {fileID: 1997471968}
+  proyectilPrefab: {fileID: 8728173832650080140, guid: cc6fc83b2cb0b1d479f87ab4bf42c02d, type: 3}
+  puntoDisparo: {fileID: 1481431856}
 --- !u!114 &988175507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,6 +1398,7 @@ Transform:
   m_Children:
   - {fileID: 1250319748}
   - {fileID: 1847539791}
+  - {fileID: 1481431856}
   m_Father: {fileID: 988175504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1210622399
@@ -1642,7 +1646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1422293615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,6 +1706,37 @@ Transform:
   - {fileID: 326224773}
   - {fileID: 1126746726}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1481431855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481431856}
+  m_Layer: 0
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1481431856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481431855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.206, y: -0.007, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1210622398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673171019
 GameObject:

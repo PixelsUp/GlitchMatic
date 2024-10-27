@@ -27,6 +27,7 @@ public class _CharacterManager : MonoBehaviour
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
     public bool puedeDisparar = true;
     private float tiempoEntreDisparos = 1.5f; // Tiempo de espera entre disparos
+    private Transform aimTransform;
 
     [SerializeField] public GameOverManagerScript GameOverManager;
     [SerializeField] private GameObject proyectilPrefab;
@@ -160,21 +161,32 @@ public class _CharacterManager : MonoBehaviour
     {
         puedeDisparar = false; // Desactivar disparo hasta que pase el cooldown
 
-        Debug.Log("Entra");
         // Instanciar el proyectil en el punto de disparo
         GameObject proyectil = Instantiate(proyectilPrefab, puntoDisparo.position, Quaternion.identity);
 
+        // Obtener la posición del mouse en el mundo
+        Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posicionMouse.z = puntoDisparo.position.z; // Asegurar que el eje Z sea cero en un juego 2D
+
+
         // Obtener la posición del ratón en el plano Z=0
-        Vector3 mousePosition = GetMouseWorldPositionWithZ(0f);
+        //Vector3 mousePosition = GetMouseWorldPositionWithZ(0f);
 
         // Calcular la dirección y el ángulo hacia el ratón
-        Vector3 aimDirection = (mousePosition - transform.position).normalized;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        Vector3 direccion = (posicionMouse - puntoDisparo.position).normalized;
+        float angle = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+        // Voltear el arma en el eje X cuando el ratón está a la izquierda del personaje
+        //if (posicionMouse.x < transform.position.x)
+        //{
+        //    // Voltear horizontalmente
+        //    direccion = direccion * -1;
+        //}
 
         proyectil.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         // Asignar la dirección al proyectil
-        proyectil.GetComponent<Bullet_Main>().ConfigurarDireccion(aimDirection);
+        proyectil.GetComponent<Bullet_Main>().ConfigurarDireccion(direccion);
 
         // Esperar el tiempo entre disparos
         yield return new WaitForSeconds(tiempoEntreDisparos);

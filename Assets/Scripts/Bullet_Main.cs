@@ -25,7 +25,7 @@ public class Bullet_Main : MonoBehaviour
     void Update()
     {
         // Mueve el proyectil en la dirección asignada
-        transform.Translate(direccion * velocidad * Time.deltaTime);
+        transform.position += direccion * velocidad * Time.deltaTime;
     }
 
     // Detecta la colisión con un enemigo
