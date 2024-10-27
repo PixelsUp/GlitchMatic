@@ -116,14 +116,14 @@ Additionally, players can purchase in-game currency with real money to unlock co
 
 <p align= "center"><strong> Empathy Map </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Empathymap.jpg" width= '500' height='300'/>
+  <img src="https://github.com/user-attachments/assets/da72bd94-df1d-4156-b061-679eea30155b" width= '800' height='450'/>
 </p>
 <p align=center>Image 2.1 Empathy Map</p>
   
 - **Canvas**
 <p align= "center"><strong> Canvas </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '500' height='300'/>
+  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '800' height='500'/>
 </p>
 <p align=center>Image 2.2 Canvas</p>
 
@@ -131,7 +131,7 @@ Additionally, players can purchase in-game currency with real money to unlock co
 - **Toolbox**
 <p align= "center"><strong> ToolBox </strong> </p>
 <p align="center">
-  <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Toolbox.jpg" width= '500' height='300'/>
+  <img src="https://github.com/user-attachments/assets/9a797a2c-1c07-485c-8f45-d506eeab7520" width= '600' height='500'/>
 </p>
 <p align=center>Image 2.3 ToolBox</p>
 
@@ -330,12 +330,15 @@ Sound effects are essential for immersing players in the distinct environments o
 - **Simple UI**: The game's interface will feature a simple, glitch-themed UI that complements the overall concept of digital instability. The main menu will include glitch effects like distorted text, flickering elements, and digital artifacts to immerse players in the chaotic, unstable world from the very beginning. Buttons and transitions will incorporate visual glitch effects, giving the interface a dynamic and unpredictable feel. The UI will remain intuitive and easy to navigate, ensuring that the visual theme does not interfere with functionality. Each section of the menu such as the start game, settings, and exit will have a minimalistic design but maintain thematic consistency with the glitch-based aesthetics.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4e6f320a-80b5-44ed-9aad-3554eb8fe3ce" width= '500' height='300'/>
+  <img src="https://github.com/user-attachments/assets/4e6f320a-80b5-44ed-9aad-3554eb8fe3ce" width= '600' height='300'/>
 </p>
 <p align=center>Image 9.1 Main menu</p>
 
 - **Flow Diagram**: 
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/be9b9fbf-64f6-4c33-812e-58e778f3c6ba" width= '600' height='300'/>
+</p>
+<p align=center>Image 9.2 Flow Diagram</p>
 ---
 
 ## 10. Development Roadmap
