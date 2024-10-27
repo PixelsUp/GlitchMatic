@@ -34,7 +34,7 @@ public class Proyectil : MonoBehaviour
         if (colision.CompareTag("Player")) // Asegúrate de que el protagonista tiene el tag "Protagonista"
         {
             // Accede al script de vida del protagonista y le quita vida
-            Character_Functioning protagonista = colision.GetComponent<Character_Functioning>();
+            _CharacterManager protagonista = colision.GetComponent<_CharacterManager>();
             if (protagonista != null)
             {
                 protagonista.TakeDamage(dano); // Aplica el daño al protagonista

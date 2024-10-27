@@ -25,9 +25,17 @@ public class _CharacterManager : MonoBehaviour
     private int currentRollCharges; // Current roll charges
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
+<<<<<<< HEAD
     private Animator animator;
+=======
+    public bool puedeDisparar = true;
+    private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
+    private Transform aimTransform;
+>>>>>>> Ajustes_Menus
 
     [SerializeField] public GameOverManagerScript GameOverManager;
+    [SerializeField] private GameObject proyectilPrefab;
+    [SerializeField] private Transform puntoDisparo;
 
 
     void Awake()
@@ -78,8 +86,16 @@ public class _CharacterManager : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+<<<<<<< HEAD
 
         
+=======
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("Click");
+            StartCoroutine(DispararProyectilCoroutine());
+        }
+>>>>>>> Ajustes_Menus
 
         // Check for roll input (space bar set default, should use maybe two keys to do so)
         if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown)
@@ -143,6 +159,63 @@ public class _CharacterManager : MonoBehaviour
         }
     }
 
+    // Método para obtener la posición del ratón en el mundo, en un plano con Z fijo
+    public Vector3 GetMouseWorldPositionWithZ(float zPlane)
+    {
+        // Crear un rayo desde la cámara en la dirección del ratón
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        // Crear un plano en el cual interceptar el rayo (en Z=0 o el valor que definas)
+        Plane plane = new Plane(Vector3.forward, new Vector3(0, 0, zPlane));
+
+        float distance;
+        // Determinar el punto de intersección del rayo con el plano
+        if (plane.Raycast(ray, out distance))
+        {
+            Vector3 worldPosition = ray.GetPoint(distance);
+            return worldPosition;
+        }
+
+        return Vector3.zero; // Retorna algo por defecto si no se calcula la posición
+    }
+
+    public IEnumerator DispararProyectilCoroutine()
+    {
+        puedeDisparar = false; // Desactivar disparo hasta que pase el cooldown
+
+        // Instanciar el proyectil en el punto de disparo
+        GameObject proyectil = Instantiate(proyectilPrefab, puntoDisparo.position, Quaternion.identity);
+
+        // Obtener la posición del mouse en el mundo
+        Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posicionMouse.z = puntoDisparo.position.z; // Asegurar que el eje Z sea cero en un juego 2D
+
+
+        // Obtener la posición del ratón en el plano Z=0
+        //Vector3 mousePosition = GetMouseWorldPositionWithZ(0f);
+
+        // Calcular la dirección y el ángulo hacia el ratón
+        Vector3 direccion = (posicionMouse - puntoDisparo.position).normalized;
+        float angle = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+        // Voltear el arma en el eje X cuando el ratón está a la izquierda del personaje
+        //if (posicionMouse.x < transform.position.x)
+        //{
+        //    // Voltear horizontalmente
+        //    direccion = direccion * -1;
+        //}
+
+        proyectil.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        // Asignar la dirección al proyectil
+        proyectil.GetComponent<Bullet_Main>().ConfigurarDireccion(direccion);
+
+        // Esperar el tiempo entre disparos
+        yield return new WaitForSeconds(tiempoEntreDisparos);
+
+        puedeDisparar = true; // Activar disparo nuevamente después del cooldown
+    }
+
     // Example method to take damage
     public void TakeDamage(float damage)
     {
@@ -165,4 +238,6 @@ public class _CharacterManager : MonoBehaviour
         GameOverManager.gameOver(); // Llama a gameOver() directamente
 
     }
+
+
 }
