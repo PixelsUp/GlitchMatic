@@ -38,8 +38,8 @@ public class MenuInicial : MonoBehaviour
 
     public void Leaderboard()
     {
-        SfxScript.TriggerSfx("SfxButton1");
-        SceneManager.LoadScene("Leaderboard_Scene");
+        //SfxScript.TriggerSfx("SfxButton1");
+        //SceneManager.LoadScene("Leaderboard_Scene");
     }
 
     public void Quit()
