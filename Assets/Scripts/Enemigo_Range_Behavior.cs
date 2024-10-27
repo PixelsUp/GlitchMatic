@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo_Range_Behavior : MonoBehaviour
+public class Enemigo_Range_Behavior : Enemy
 {
     // Enlace al protagonista
-    private Character_Functioning protagonista;
+    private _CharacterManager protagonista;
 
     // Prefab del proyectil que disparará el enemigo
     [SerializeField] private GameObject proyectilPrefab;
@@ -24,7 +24,6 @@ public class Enemigo_Range_Behavior : MonoBehaviour
     private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
     [SerializeField] private int vida = 50;
     private bool puedeDisparar = true;
-    private bool mirandoDerecha = true;
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
 
 
@@ -34,7 +33,7 @@ public class Enemigo_Range_Behavior : MonoBehaviour
 
     void Start()
     {
-        protagonista = FindObjectOfType<Character_Functioning>();
+        protagonista = FindObjectOfType<_CharacterManager>();
 
         if (protagonista == null)
         {
@@ -142,44 +141,5 @@ public class Enemigo_Range_Behavior : MonoBehaviour
         yield return new WaitForSeconds(tiempoEntreDisparos);
 
         puedeDisparar = true; // Activar disparo nuevamente después del cooldown
-    }
-
-    // Método para girar al enemigo hacia el objetivo
-    private void GirarHaciaObjetivo(Vector3 objetivo)
-    {
-        // Calcula la diferencia en la posición en el eje X entre el enemigo y el objetivo
-        float direccion = objetivo.x - transform.position.x;
-
-        // Si el objetivo está a la derecha y el enemigo está mirando a la izquierda, o viceversa, cambiar la escala
-        if ((direccion > 0 && !mirandoDerecha) || (direccion < 0 && mirandoDerecha))
-        {
-            // Cambiar de dirección
-            Girar();
-        }
-    }
-
-    // Método que invierte la escala en X para simular un giro
-    private void Girar()
-    {
-        mirandoDerecha = !mirandoDerecha; // Cambiar el estado de dirección
-
-        // Obtener la escala actual del objeto
-        Vector3 escala = transform.localScale;
-
-        // Invertir la escala en X
-        escala.x *= -1;
-
-        // Aplicar la nueva escala al objeto
-        transform.localScale = escala;
-    }
-
-    // Función para recibir daño y restar vida al enemigo
-    public void TakeDamage(int damage)
-    {
-        vida -= damage;
-        if (vida <= 0)
-        {
-            Destroy(gameObject, 2f);
-        }
     }
 }

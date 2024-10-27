@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo_Melee_Behavior : MonoBehaviour
+public class Enemigo_Melee_Behavior : Enemy
 {
     // Enlace al protagonista
-    [SerializeField] _CharacterManager protagonista;
+    private _CharacterManager protagonista;
 
     // Definimos los posibles estados del enemigo
     private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO }
@@ -25,7 +25,6 @@ public class Enemigo_Melee_Behavior : MonoBehaviour
     [SerializeField] private float tiempoEntreAtaques = 1f; // Tiempo de espera entre ataques
     [SerializeField] private int vida = 50; 
     private bool puedeAtacar = true; // Controla si el enemigo puede atacar
-    private bool mirandoDerecha = true;
 
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
 
@@ -140,44 +139,5 @@ public class Enemigo_Melee_Behavior : MonoBehaviour
         yield return new WaitForSeconds(tiempoEntreAtaques); // Esperar un segundo
 
         puedeAtacar = true; // Activar el ataque de nuevo
-    }
-
-    private void GirarHaciaObjetivo(Vector3 objetivo)
-    {
-        // Calcula la diferencia en la posición en el eje X entre el enemigo y el objetivo
-        float direccion = objetivo.x - transform.position.x;
-
-        // Si el objetivo está a la derecha y el enemigo está mirando a la izquierda, o viceversa, cambiar la escala
-        if ((direccion > 0 && !mirandoDerecha) || (direccion < 0 && mirandoDerecha))
-        {
-            // Cambiar de dirección
-            Girar();
-        }
-    }
-
-    // Método que invierte la escala en X para simular un giro
-    private void Girar()
-    {
-        mirandoDerecha = !mirandoDerecha; // Cambiar el estado de dirección
-
-        // Obtener la escala actual del objeto
-        Vector3 escala = transform.localScale;
-
-        // Invertir la escala en X
-        escala.x *= -1;
-
-        // Aplicar la nueva escala al objeto
-        transform.localScale = escala;
-
-    }
-
-    // Función para recibir daño y restar vida al enemigo
-    public void TakeDamage(int damage)
-    {
-        vida -= damage;
-        if (vida <= 0)
-        {
-            Destroy(gameObject, 2f);
-        }
     }
 }
