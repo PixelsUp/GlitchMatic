@@ -31,9 +31,11 @@ public class _CharacterManager : MonoBehaviour
     private Transform aimTransform;
 
     [SerializeField] public GameOverManagerScript GameOverManager;
+    [SerializeField] public PauseScript pauseScript;
     [SerializeField] private GameObject proyectilPrefab;
     [SerializeField] private Transform puntoDisparo;
 
+    private bool isPaused = false; // Estado de pausa
 
     void Awake()
     {
@@ -62,6 +64,18 @@ public class _CharacterManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && hp > 0)
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+
         bool isMoving = movement.sqrMagnitude > 0;
 
         if (isMoving)
@@ -233,6 +247,20 @@ public class _CharacterManager : MonoBehaviour
         Debug.Log("Character is dead!");
         GameOverManager.gameOver(); // Llama a gameOver() directamente
         Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        pauseScript.Resume();
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    void Pause()
+    {
+        pauseScript.Pause();
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void ResetLife() //Intento de hacer para que la segunda partida empiece con hp correctas
