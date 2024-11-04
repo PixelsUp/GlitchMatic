@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI; // Panel de Game Over
+
+    private bool dead = false;
 
     void Start()
     {
@@ -22,6 +25,11 @@ public class GameOverManagerScript : MonoBehaviour
     public void gameOver()
     {
         Debug.Log("Activando pantalla de Game Over");
+        if (!dead)
+        {
+            SfxScript.TriggerSfx("SfxDead");
+            dead = true;
+        }
         gameOverUI.SetActive(true);
     }
 
@@ -29,5 +37,9 @@ public class GameOverManagerScript : MonoBehaviour
     {
         SfxScript.TriggerSfx("SfxButton1");
         SceneManager.LoadScene("MainMenu");
+        //_CharacterManager.ResetLife();
+
+        dead = false;
+        Time.timeScale = 1f;
     }
 }

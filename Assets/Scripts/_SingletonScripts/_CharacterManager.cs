@@ -220,6 +220,10 @@ public class _CharacterManager : MonoBehaviour
             {
                 Die();
             }
+            else
+            {
+                SfxScript.TriggerSfx("SfxHurt");
+            }
         }
     }
 
@@ -228,8 +232,13 @@ public class _CharacterManager : MonoBehaviour
     {
         Debug.Log("Character is dead!");
         GameOverManager.gameOver(); // Llama a gameOver() directamente
-
+        Time.timeScale = 0f;
     }
 
-
+    public void ResetLife() //Intento de hacer para que la segunda partida empiece con hp correctas
+    {
+        hp = 100f;
+        stamina = 100f;
+        resistance = 10f;
+    }
 }
