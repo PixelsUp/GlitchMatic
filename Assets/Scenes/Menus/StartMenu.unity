@@ -1306,6 +1306,9 @@ MonoBehaviour:
   gameMusic4: {fileID: 8300000, guid: 25e3e812af76f8d40bffd9a0e46ea78c, type: 3}
   gameMusic5: {fileID: 8300000, guid: 21e0584587d55e94ca06bac1cf1b3cdd, type: 3}
   gameMusic6: {fileID: 8300000, guid: 43018db526e4645438eaf123c2f8631f, type: 3}
+  deadMusic: {fileID: 8300000, guid: 27409a8fb201898468796b9e15d95500, type: 3}
+  bossUp50: {fileID: 8300000, guid: bf5a6ba1313deca448cd63f6755c8264, type: 3}
+  bossUnder50: {fileID: 8300000, guid: e306de6331a92d243ba545c90d2769ac, type: 3}
 --- !u!82 &1236262046
 AudioSource:
   m_ObjectHideFlags: 0

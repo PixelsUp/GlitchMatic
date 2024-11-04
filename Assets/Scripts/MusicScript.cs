@@ -19,6 +19,9 @@ public class MusicScript : MonoBehaviour
     public AudioClip gameMusic4;
     public AudioClip gameMusic5;
     public AudioClip gameMusic6;
+    public AudioClip deadMusic;
+    public AudioClip bossUp50;
+    public AudioClip bossUnder50;
 
     void Awake()
     {
@@ -68,7 +71,7 @@ public class MusicScript : MonoBehaviour
         PlayMusicForScene(scene.name);
     }
 
-    // Método para cambiar la música en función de la escena
+    // Método para ambiar la música en función de la escena
     void PlayMusicForScene(string sceneName)
     {
         AudioClip clipToPlay = null;
@@ -122,6 +125,28 @@ public class MusicScript : MonoBehaviour
 
         // Siempre hacemos el fade in cuando se cambia la música
         StartCoroutine(FadeIn(Source, fadeInDuration));
+    }
+
+    public void PlaySpecificMusic(AudioClip clip)
+    {
+        if (Source.clip == clip) return;
+
+        Source.Stop();
+        Source.clip = clip;
+        Source.Play();
+    }
+
+    // Método estático para acceder al método PlaySpecificMusic desde otros scripts
+    public static void TriggerMusic(AudioClip clip)
+    {
+        if (instance != null)
+        {
+            instance.PlaySpecificMusic(clip);
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró la instancia de MusicScript.");
+        }
     }
 
     // Corutina para hacer el fade in de volumen

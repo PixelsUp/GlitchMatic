@@ -36,6 +36,7 @@ public class _CharacterManager : MonoBehaviour
     [SerializeField] private Transform puntoDisparo;
 
     private bool isPaused = false; // Estado de pausa
+    public AudioClip DeadMusic;
 
     void Awake()
     {
@@ -245,6 +246,7 @@ public class _CharacterManager : MonoBehaviour
     void Die()
     {
         Debug.Log("Character is dead!");
+        MusicScript.TriggerMusic(DeadMusic);
         GameOverManager.gameOver(); // Llama a gameOver() directamente
         Time.timeScale = 0f;
     }
