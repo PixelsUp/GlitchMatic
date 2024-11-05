@@ -29,6 +29,8 @@ public class _CharacterManager : MonoBehaviour
     public bool puedeDisparar = true;
     private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
     private Transform aimTransform;
+    private bool isDead = false; // Variable para controlar si el personaje está muerto
+
 
     [SerializeField] public GameOverManagerScript GameOverManager;
     [SerializeField] public PauseScript pauseScript;
@@ -65,6 +67,9 @@ public class _CharacterManager : MonoBehaviour
 
     void Update()
     {
+
+        if (isDead) { return; }
+
         if (Input.GetKeyDown(KeyCode.Escape) && hp > 0)
         {
             if (isPaused)
@@ -91,7 +96,7 @@ public class _CharacterManager : MonoBehaviour
         // Ejemplo de daño para probar
         if (Input.GetKeyDown(KeyCode.K)) // Presiona "K" para simular la muerte
         {
-            TakeDamage(100f);
+            TakeDamage(200f);
         }
 
         // Handle movement input
@@ -228,9 +233,15 @@ public class _CharacterManager : MonoBehaviour
     {
         if (!isInvincible)
         {
-            float finalDamage = damage - resistance; // Apply resistance to damage
+            float finalDamage = damage - resistance; // Aplicar resistencia al daño
             hp -= finalDamage;
-            healthBar.value = hp / 100f; // Actualiza el slider. Asume que la vida máxima es 100
+            healthBar.value = hp / 100f; // Actualiza el slider. Se asume que la vida máxima es 100
+            animator.SetTrigger("IsHurt"); // Usar un trigger en lugar de un bool
+            StartCoroutine(ActivateInvincibility()); // Iniciar la corutina de invencibilidad
+
+            // Activar animación de daño
+
+
             if (hp <= 0)
             {
                 Die();
@@ -242,13 +253,33 @@ public class _CharacterManager : MonoBehaviour
         }
     }
 
+    private IEnumerator ActivateInvincibility()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(1f); // Duración de la invencibilidad (1 segundo)
+        isInvincible = false;
+    }
+
+    // Corrutina para desactivar "isHurt" después de un breve retraso
+
+
     // Method for character death
     void Die()
     {
         Debug.Log("Character is dead!");
+        isDead = true;
+        speed = 0f;
+        StartCoroutine(waitForDeath());
+
+    }
+    private IEnumerator waitForDeath()
+    {
+
+        yield return new WaitForSeconds(2f); // Duración de la invencibilidad (2 segundo)
+        Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);
         GameOverManager.gameOver(); // Llama a gameOver() directamente
-        Time.timeScale = 0f;
+
     }
 
     public void Resume()
