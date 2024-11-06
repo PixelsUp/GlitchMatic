@@ -285,14 +285,17 @@ public class _CharacterManager : MonoBehaviour
     void Die()
     {
         Debug.Log("Character is dead!");
-        isDead = true;
+        if (!isDead)
+        {
+            isDead = true;
+            SfxScript.TriggerSfx("SfxDead");
+        }
         speed = 0f;
         StartCoroutine(waitForDeath());
 
     }
     private IEnumerator waitForDeath()
     {
-        SfxScript.TriggerSfx("SfxDead");
         yield return new WaitForSeconds(2f); // Duración de la invencibilidad (2 segundo)
         Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);

@@ -94,6 +94,7 @@ public class Enemigo_Range_Behavior : Enemy
                 {
                     
                     StartCoroutine(DispararProyectilCoroutine());
+                    SfxScript.TriggerSfx("SfxBowShot");
                     
                 }
                 else if (distanciaAlProtagonista > distanciaAtaque)

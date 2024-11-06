@@ -27,7 +27,6 @@ public class GameOverManagerScript : MonoBehaviour
         Debug.Log("Activando pantalla de Game Over");
         if (!dead)
         {
-            SfxScript.TriggerSfx("SfxDead");
             dead = true;
         }
         gameOverUI.SetActive(true);

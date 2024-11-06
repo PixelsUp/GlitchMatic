@@ -13,6 +13,11 @@ public class SfxScript : MonoBehaviour
     public AudioClip sfxHurt;
     public AudioClip sfxDead;
     public AudioClip sfxEnemy;
+    public AudioClip sfxBowShot;
+    public AudioClip sfxSword1;
+    public AudioClip sfxSword2;
+    public AudioClip sfxSword3;
+    public AudioClip sfxImpactCaC;
 
     // Evento para reproducir efectos de sonido
     public static event Action<string> OnPlaySfx;
@@ -79,6 +84,21 @@ public class SfxScript : MonoBehaviour
                 break;
             case "SfxDead":
                 clipToPlay = sfxDead;
+                break;
+            case "SfxBowShot":
+                clipToPlay = sfxBowShot;
+                break;
+            case "SfxSword1":
+                clipToPlay = sfxSword1;
+                break;
+            case "SfxSword2":
+                clipToPlay = sfxSword2;
+                break;
+            case "SfxSword3":
+                clipToPlay = sfxSword3;
+                break;
+            case "SfxImpactCaC":
+                clipToPlay = sfxImpactCaC;
                 break;
             case "SfxEnemy":
                 clipToPlay = sfxEnemy;
