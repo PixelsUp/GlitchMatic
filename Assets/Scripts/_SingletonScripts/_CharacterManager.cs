@@ -281,11 +281,12 @@ public class _CharacterManager : MonoBehaviour
         MusicScript.TriggerMusic(DeadMusic);
         GameOverManager.gameOver(); // Llama a gameOver() directamente
 
-        DestroySingletonsOnDeath();
+        //DestroySingletonsOnDeath();
 
+        //Destroy(this.gameObject);
     }
 
-    void DestroySingletonsOnDeath()
+    /*void DestroySingletonsOnDeath()
     {
         // Destruir instancia del RoomManager si existe
         if (RoomManager.Instance != null)
@@ -293,7 +294,7 @@ public class _CharacterManager : MonoBehaviour
             Destroy(RoomManager.Instance.gameObject);
         }
 
-        /*
+        
         // Destruir instancia del CameraManager si existe
         if (_CameraManager.Instance != null)
         {
@@ -310,8 +311,9 @@ public class _CharacterManager : MonoBehaviour
         if (SfxScript.Instance != null)
         {
             Destroy(SfxScript.Instance.gameObject);
-        }*/
+        }
     }
+    */
 
     public void Resume()
     {
