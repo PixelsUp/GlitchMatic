@@ -31,6 +31,7 @@ public class _CharacterManager : MonoBehaviour
     private Transform aimTransform;
     private bool isDead = false; // Variable para controlar si el personaje está muerto
 
+    private SpriteRenderer characterSpriteRenderer;
 
     [SerializeField] public GameOverManagerScript GameOverManager;
     [SerializeField] public PauseScript pauseScript;
@@ -61,13 +62,26 @@ public class _CharacterManager : MonoBehaviour
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
         animator = GetComponent<Animator>();
 
-
+        //  Obtain characters spriterenderer
+        characterSpriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
     void Update()
     {
 
+        // Flip del personaje basado en la posición del mouse
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Si el ratón está a la izquierda del personaje, voltear el personaje
+        if (mousePosition.x < transform.position.x)
+        {
+            characterSpriteRenderer.flipX = true; // Hacer flip al personaje
+        }
+        else
+        {
+            characterSpriteRenderer.flipX = false; // Resetear el flip
+        }
         if (isDead) { return; }
 
         if (Input.GetKeyDown(KeyCode.Escape) && hp > 0)
