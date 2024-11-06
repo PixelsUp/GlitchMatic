@@ -43,11 +43,11 @@ public class GameOverManagerScript : MonoBehaviour
         }
 
 
-        // Destruir instancia del RoomManager si existe
+        /*// Destruir instancia del RoomManager si existe
         if (RoomManager.Instance != null)
         {
             Destroy(RoomManager.Instance.gameObject);
-        }
+        }*/
 
         
         // Destruir instancia del CameraManager si existe
