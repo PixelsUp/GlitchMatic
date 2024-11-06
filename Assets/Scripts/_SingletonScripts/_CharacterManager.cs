@@ -240,6 +240,9 @@ public class _CharacterManager : MonoBehaviour
             animator.SetTrigger("IsHurt"); // Usar un trigger en lugar de un bool
             StartCoroutine(ActivateInvincibility()); // Iniciar la corutina de invencibilidad
 
+            // Activar screenshake
+            _CameraManager.Instance.ShakeCamera();
+
             // Activar animación de daño
 
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class _CameraManager : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class _CameraManager : MonoBehaviour
 
     // Camera boundaries (level-dependent)
     public float minX, maxX, minY, maxY;
+
+    // Variables for screenshake effect
+    public float shakeDuration = 0.3f; // Duration of the screenshake effect
+    public float shakeMagnitude = 0.1f; // Magnitude of the shake effect
+
+    private bool isShaking = false;
+
 
     void Awake()
     {
@@ -40,7 +48,32 @@ public class _CameraManager : MonoBehaviour
         Vector3 clampedPosition = new Vector3(clampedX, clampedY, desiredPosition.z);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, clampedPosition, smoothSpeed);
 
+        // If shaking, apply random offset to the smoothed position
+        if (isShaking)
+        {
+            smoothedPosition += (Vector3)Random.insideUnitCircle * shakeMagnitude;
+        }
+
         // Update the camera's position
         transform.position = smoothedPosition;
+
+        
     }
+
+    // Method to start the screenshake effect
+    public void ShakeCamera()
+    {
+        if (!isShaking) // Start shaking if not already shaking
+        {
+            StartCoroutine(ShakeCoroutine());
+        }
+    }
+
+    private IEnumerator ShakeCoroutine()
+    {
+        isShaking = true;
+        yield return new WaitForSeconds(shakeDuration);
+        isShaking = false;
+    }
+
 }
