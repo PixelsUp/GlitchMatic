@@ -58,7 +58,7 @@ public class _CharacterManager : MonoBehaviour
     void Start()
     {
         GetComponent<SpriteRenderer>().enabled = true;
-
+        isDead = false;
         rb = GetComponent<Rigidbody2D>();
         currentRollCharges = maxRollCharges; // Initialize roll charges
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
