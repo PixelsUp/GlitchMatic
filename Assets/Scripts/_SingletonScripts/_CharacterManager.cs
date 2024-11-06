@@ -57,6 +57,8 @@ public class _CharacterManager : MonoBehaviour
 
     void Start()
     {
+        GetComponent<SpriteRenderer>().enabled = true;
+
         rb = GetComponent<Rigidbody2D>();
         currentRollCharges = maxRollCharges; // Initialize roll charges
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
@@ -296,7 +298,10 @@ public class _CharacterManager : MonoBehaviour
     }
     private IEnumerator waitForDeath()
     {
-        yield return new WaitForSeconds(2f); // Duración de la invencibilidad (2 segundo)
+        animator.SetTrigger("IsDead");
+        yield return new WaitForSeconds(1.35f);
+        GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.65f); // Duración de la invencibilidad (2 segundo)
         Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);
         GameOverManager.gameOver(); // Llama a gameOver() directamente
