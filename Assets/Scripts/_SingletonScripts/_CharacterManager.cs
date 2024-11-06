@@ -222,6 +222,7 @@ public class _CharacterManager : MonoBehaviour
         // Asignar la dirección al proyectil
         proyectil.GetComponent<Bullet_Main>().ConfigurarDireccion(direccion);
 
+        SfxScript.TriggerSfx("SfxAttack");
         // Esperar el tiempo entre disparos
         yield return new WaitForSeconds(tiempoEntreDisparos);
 
@@ -274,7 +275,7 @@ public class _CharacterManager : MonoBehaviour
     }
     private IEnumerator waitForDeath()
     {
-
+        SfxScript.TriggerSfx("SfxDead");
         yield return new WaitForSeconds(2f); // Duración de la invencibilidad (2 segundo)
         Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);
