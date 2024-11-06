@@ -34,9 +34,11 @@ public class Bullet_Main : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             // Obtener el script de enemigo y aplicar daño
-            var enemigo = collision.GetComponent<Enemy>();
+            //var enemigo = collision.GetComponent<Enemy>();
+            var enemigo = collision.GetComponentInParent<Enemy>();
             if (enemigo != null)
             {
+                Debug.Log("Proyectil impactó al enemigo. Daño aplicado: " + dano);
                 enemigo.TakeDamage(dano);
             }
 
