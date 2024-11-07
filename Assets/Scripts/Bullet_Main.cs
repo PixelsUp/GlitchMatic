@@ -28,14 +28,16 @@ public class Bullet_Main : MonoBehaviour
         transform.position += direccion * velocidad * Time.deltaTime;
     }
 
+
+    
     // Detecta la colisión con un enemigo
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
             // Obtener el script de enemigo y aplicar daño
-            //var enemigo = collision.GetComponent<Enemy>();
-            var enemigo = collision.GetComponentInParent<Enemy>();
+            var enemigo = collision.GetComponent<Enemy>();
+            //var enemigo = collision.GetComponentInParent<Enemy>();
             if (enemigo != null)
             {
                 Debug.Log("Proyectil impactó al enemigo. Daño aplicado: " + dano);
@@ -46,4 +48,19 @@ public class Bullet_Main : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    /*
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            var enemigo = collision.gameObject.GetComponent<Enemy>();
+            if (enemigo != null)
+            {
+                Debug.Log("Proyectil impactó al enemigo. Daño aplicado: " + dano);
+                enemigo.TakeDamage(dano);
+            }
+            Destroy(gameObject);
+        }
+    }*/
 }
+
