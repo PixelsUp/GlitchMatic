@@ -43,6 +43,7 @@ public class PauseScript : MonoBehaviour
     public void Exit()
     {
         SfxScript.TriggerSfx("SfxButton1");
+        DestroySingletonsOnDeath();
         SceneManager.LoadScene("MainMenu");
 
         //_CharacterManager.ResetLife();
@@ -94,6 +95,40 @@ public class PauseScript : MonoBehaviour
         float sfx = sfxSlider.value;
         myMixer.SetFloat("sfx", Mathf.Log10(sfx) * 20);
         PlayerPrefs.SetFloat("sfxVolumen", sfx);
+    }
+
+    void DestroySingletonsOnDeath()
+    {
+        if (_CharacterManager.Instance != null)
+        {
+            Destroy(_CharacterManager.Instance.gameObject);
+        }
+
+
+        /*// Destruir instancia del RoomManager si existe
+        if (RoomManager.Instance != null)
+        {
+            Destroy(RoomManager.Instance.gameObject);
+        }*/
+
+
+        // Destruir instancia del CameraManager si existe
+        if (_CameraManager.Instance != null)
+        {
+            Destroy(_CameraManager.Instance.gameObject);
+        }
+
+        /*// Destruir instancia del MusicScript si existe
+        if (MusicScript.Instance != null)
+        {
+            Destroy(MusicScript.Instance.gameObject);
+        }
+
+        // Destruir instancia del SfxScript si existe
+        if (SfxScript.Instance != null)
+        {
+            Destroy(SfxScript.Instance.gameObject);
+        }*/
     }
 
     public void FullScreen()
