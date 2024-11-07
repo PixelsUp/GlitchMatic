@@ -868,6 +868,8 @@ MonoBehaviour:
   sfxSword2: {fileID: 8300000, guid: 92c29ed6d046ca24d801444232b5e63f, type: 3}
   sfxSword3: {fileID: 8300000, guid: 09043a0f0d81fdd4c8b0aaf1b4fd3c56, type: 3}
   sfxImpactCaC: {fileID: 8300000, guid: 26fd79ecd0f279b4b912526c52449927, type: 3}
+  sfxGrunt1: {fileID: 8300000, guid: bcfd18e992da0084db5a01a956b362c3, type: 3}
+  sfxGrunt2: {fileID: 8300000, guid: f043377040d170e498e99418c37793a0, type: 3}
 --- !u!82 &806451008
 AudioSource:
   m_ObjectHideFlags: 0

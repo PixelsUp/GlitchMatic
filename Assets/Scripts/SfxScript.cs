@@ -18,6 +18,8 @@ public class SfxScript : MonoBehaviour
     public AudioClip sfxSword2;
     public AudioClip sfxSword3;
     public AudioClip sfxImpactCaC;
+    public AudioClip sfxGrunt1;
+    public AudioClip sfxGrunt2;
 
     // Evento para reproducir efectos de sonido
     public static event Action<string> OnPlaySfx;
@@ -102,6 +104,12 @@ public class SfxScript : MonoBehaviour
                 break;
             case "SfxEnemy":
                 clipToPlay = sfxEnemy;
+                break;
+            case "SfxGrunt1":
+                clipToPlay = sfxGrunt1;
+                break;
+            case "SfxGrunt2":
+                clipToPlay = sfxGrunt2;
                 break;
             default:
                 Debug.LogWarning("Efecto de sonido no encontrado");
