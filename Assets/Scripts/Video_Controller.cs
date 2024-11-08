@@ -27,6 +27,6 @@ public class Video_Controller : MonoBehaviour
     // Método que se llama cuando el video termina
     void EndReached(VideoPlayer vp)
     {
-        SceneManager.LoadScene("MenuInicial"); // Reemplaza "NombreDeLaEscena" con el nombre de tu escena objetivo
+        SceneManager.LoadScene("MainMenu");
     }
 }
