@@ -7,7 +7,6 @@ public class Enemigo_Melee_Behavior : Enemy
 {
     // Enlace al protagonista
     private _CharacterManager protagonista;
-    private Animator animator;
 
     // Definimos los posibles estados del enemigo
     private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO }
