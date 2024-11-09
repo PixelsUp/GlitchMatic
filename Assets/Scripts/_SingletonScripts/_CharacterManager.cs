@@ -102,11 +102,11 @@ public class _CharacterManager : MonoBehaviour
 
         if (isMoving)
         {
-            animator.SetBool("isRunning", true);
+            animator.SetBool("IsRunning", true);
         }
         else
         {
-            animator.SetBool("isRunning", false);
+            animator.SetBool("IsRunning", false);
         }
 
         // Ejemplo de daño para probar

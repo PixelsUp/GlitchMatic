@@ -16,6 +16,7 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Debug.Log(health);
         if (health <= 0)
         {
             // Notifica al EnemyManager si ha sido encontrado

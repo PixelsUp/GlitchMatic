@@ -7,6 +7,7 @@ public class Enemigo_Melee_Behavior : Enemy
 {
     // Enlace al protagonista
     private _CharacterManager protagonista;
+    private Animator animator;
 
     // Definimos los posibles estados del enemigo
     private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO }
@@ -30,8 +31,10 @@ public class Enemigo_Melee_Behavior : Enemy
 
     // Método Start: Inicialización del script
     void Start()
-{
-    protagonista = FindObjectOfType<_CharacterManager>();
+    {
+        animator = GetComponent<Animator>(); // Inicialización del animator
+
+        protagonista = FindObjectOfType<_CharacterManager>();
 
     if (protagonista == null)
     {
@@ -42,6 +45,7 @@ public class Enemigo_Melee_Behavior : Enemy
     // Método Update: Llamamos a la máquina de estados cada frame
     void Update()
     {
+        
         FSMMeleeEnemy(); // Lógica de la máquina de estados
     }
 
@@ -69,10 +73,15 @@ public class Enemigo_Melee_Behavior : Enemy
                     distanciaDeteccion = distanciaDeteccionAmpliada; // Ampliar rango de detección
 
                 }
+                else
+                {
+                    animator.SetBool("IsRunning", false);
+                }
                 break;
 
             case TEstado.AVANZANDO:
                 // El enemigo continúa avanzando hacia el protagonista
+                animator.SetBool("IsRunning", true); // Activar animación de correr
 
                 if (distanciaAlProtagonista <= distanciaAtaque)
                 {
@@ -94,6 +103,8 @@ public class Enemigo_Melee_Behavior : Enemy
 
 
             case TEstado.ATACANDO:
+                animator.SetBool("IsRunning", false); // Detener animación de correr al atacar
+
                 // Verificar la distancia actual entre el enemigo y el protagonista
                 if ((distanciaAlProtagonista <= distanciaAtaque) && puedeAtacar)
                 {
@@ -114,6 +125,7 @@ public class Enemigo_Melee_Behavior : Enemy
     public void Avanzar(Vector3 objetivo)
     {
         // Calculamos la dirección hacia el protagonista (objetivo)
+        animator.SetBool("IsRunning", true);
         Vector3 direccion = (objetivo - transform.position).normalized;
 
         GirarHaciaObjetivo(objetivo);
