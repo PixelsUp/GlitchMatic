@@ -5,14 +5,33 @@ public abstract class Enemy : MonoBehaviour
 {
     public float health = 100;
     private bool mirandoDerecha = true;
+    private EnemyManager enemyManager;
+
+    private void Start()
+    {
+        // Busca el EnemyManager en la escena al inicio
+        enemyManager = FindEnemyManager();
+    }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0)
         {
+            // Notifica al EnemyManager si ha sido encontrado
+            if (enemyManager != null)
+            {
+                enemyManager.OnEnemyDefeated();
+            }
+
             Destroy(gameObject, 2f);
         }
+    }
+
+    private EnemyManager FindEnemyManager()
+    {
+        // Encuentra el primer EnemyManager en la escena
+        return FindObjectOfType<EnemyManager>();
     }
 
     // Método que invierte la escala en X para simular un giro

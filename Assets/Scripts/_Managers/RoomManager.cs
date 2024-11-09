@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
     public static RoomManager Instance { get; private set; }
 
-    public int currentRoom = 0;  // Tracks the current room number.
+    public int currentRoom = 1;  // Tracks the current room number.
     public int roomsPerTheme = 3; // 2 normal rooms + 1 boss room per theme.
     public int roomsBeforeShop = 7; // After x rooms, shop.
     public string[] themes; // List of available themes (folder names).
@@ -26,17 +27,29 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    // metodo para iniciar el punto de cambio de escenas
+    // pilla el componente con el script metido, solo es un collider con isTrigger
+    public void EnableTransitionPoint()
+    {
+        GameObject transitionPoint = GameObject.Find("TransitionPoint");
+        if (transitionPoint != null)
+        {
+            transitionPoint.GetComponent<TransitionPoint>().ActivateTransition();
+        }
+    }
+
     public void LoadNextRoom()
     {
+        Debug.Log(currentRoom);
         currentRoom++;
 
         // Check if it’s time to go to a shop.
-        if (currentRoom % roomsBeforeShop == 0)
-        {
+        //if (currentRoom % roomsBeforeShop == 0)
+        //{
             // Load shop scene
-            LoadShop();
-        }
-        else if (currentRoom % roomsPerTheme == 0)
+        //    LoadShop();
+        //}
+        if (currentRoom % roomsPerTheme == 0)
         {
             // Load boss room
             LoadBossRoom();
@@ -53,7 +66,10 @@ public class RoomManager : MonoBehaviour
         string theme = themes[currentThemeIndex];
         int roomIndex = Random.Range(1, 11); // Assuming 10 rooms per theme.
         string sceneName = $"Gameplay/Themes/{theme}/Normal_Rooms/Room_{roomIndex}";
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+
+        SceneManager.LoadScene(sceneName);
+        SceneManager.sceneLoaded += (scene, mode) => PlacePlayerAtSpawn();
     }
 
     private void LoadBossRoom()
@@ -70,6 +86,15 @@ public class RoomManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
+    // Llama a esta función al cargar una nueva escena, esta para poner el personaje en el spawnpoint
+    private void PlacePlayerAtSpawn()
+    {
+        GameObject spawnPoint = GameObject.Find("PlayerSpawn");
+        if (spawnPoint != null && _CharacterManager.Instance != null)
+        {
+            _CharacterManager.Instance.transform.position = spawnPoint.transform.position;
+        }
+    }
     public void EndGame()
     {
         // Logic to reward coins based on rooms cleared.
