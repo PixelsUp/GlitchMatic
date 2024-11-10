@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
     private EnemyManager enemyManager;
     protected Animator animator;
     private bool isInvincible = false;
+    private bool isDead = false;
 
 
     private void Start()
@@ -37,9 +38,10 @@ public abstract class Enemy : MonoBehaviour
         if (health <= 0)
         {
             // Activar la animación de muerte antes de destruir el objeto
-            if (animator != null)
+            if (animator != null && isDead == false)
             {
                 animator.SetTrigger("IsDead");
+                isDead = true;
             }
 
             // Notifica al EnemyManager si ha sido encontrado

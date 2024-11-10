@@ -33,6 +33,9 @@ public class Enemigo_Range_Behavior : Enemy
 
     void Start()
     {
+
+        animator = GetComponent<Animator>(); // Inicialización del animator
+
         protagonista = FindObjectOfType<_CharacterManager>();
 
         if (protagonista == null)
@@ -72,6 +75,8 @@ public class Enemigo_Range_Behavior : Enemy
 
             case TEstado.AVANZANDO:
                 // El enemigo continúa avanzando hacia el protagonista
+                animator.SetBool("IsRunning", true); // Activar animación de correr
+
                 if (distanciaAlProtagonista <= distanciaAtaque)
                 {
                     estado = TEstado.ATACANDO;
@@ -90,6 +95,8 @@ public class Enemigo_Range_Behavior : Enemy
 
             case TEstado.ATACANDO:
                 // Verificar si el enemigo está dentro del rango de ataque
+                animator.SetBool("IsRunning", false); // Detener animación de correr al atacar
+
                 if ((distanciaAlProtagonista <= distanciaAtaque) && puedeDisparar)
                 {
                     
