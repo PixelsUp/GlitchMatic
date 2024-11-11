@@ -27,12 +27,39 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Credits_Scene.unity
     guid: 0aeb3aab554b12448aecdba9b0ff80a1
   - enabled: 1
-    path: Assets/Scenes/Gameplay/Intro_Scene.unity
-    guid: b720245e4aeda1b46aa32bf2d7749eee
-  - enabled: 1
     path: Assets/Scenes/Menus/Options_Scene.unity
     guid: 2bfae91888322954baa387937372cc9b
   - enabled: 1
     path: Assets/Scenes/Menus/Pop_Up_Anuncios.unity
     guid: 93f0128bf8cc6204c813eb5f4a1b64c1
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Intro_Scene.unity
+    guid: b720245e4aeda1b46aa32bf2d7749eee
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme1/Normal_Rooms/Room_1.unity
+    guid: 74d9b073dca7fc74aa9a94b984d0ea48
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme1/Normal_Rooms/Room_2.unity
+    guid: cd90459dd925e1545acb3464e559ad76
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme1/Normal_Rooms/Room_3.unity
+    guid: b240496c34c0eb84baca752d10583627
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme2/Normal_Rooms/Room_1.unity
+    guid: 1a8db5dadde9a0747ad1db5de5700e75
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme2/Normal_Rooms/Room_2.unity
+    guid: 16c0bae6b8ed45449a4a6a51c4c00b5f
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme2/Normal_Rooms/Room_3.unity
+    guid: e415f232be4b039438fc15771decf877
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme3/Normal_Rooms/Room_1.unity
+    guid: 19d1ddc1463056b42952721a12e51134
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme3/Normal_Rooms/Room_2.unity
+    guid: aa2a509f359f5db4a9b673ce78bc1c80
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme3/Normal_Rooms/Room_3.unity
+    guid: 628af56d6bedc51449cb669c8627ea27
   m_configObjects: {}

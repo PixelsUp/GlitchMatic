@@ -9,7 +9,13 @@ public class MenuInicial : MonoBehaviour
     public void Play()
     {
         SfxScript.TriggerSfx("SfxButton1");
-        SceneManager.LoadScene("Intro_Scene");
+        //SceneManager.LoadScene("Intro_Scene");
+
+        //Llamar a la referencia de la funcion del room manager
+        if(RoomManager.Instance != null)
+        {
+            RoomManager.Instance.LoadNextRoom();
+        }
     }
 
     public void Character()

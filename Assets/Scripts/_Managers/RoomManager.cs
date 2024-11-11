@@ -5,12 +5,12 @@ public class RoomManager : MonoBehaviour
 {
     public static RoomManager Instance { get; private set; }
 
-    public int currentRoom = 1;  // Tracks the current room number.
+    public int currentRoom = 0;  // Tracks the current room number.
     public int roomsPerTheme = 3; // 2 normal rooms + 1 boss room per theme.
     public int roomsBeforeShop = 7; // After x rooms, shop.
-    public string[] themes; // List of available themes (folder names).
+    public string[] Theme; // List of available themes (folder names).
     public int coinsPerRoom = 10; // Coins awarded per room cleared.
-    public int currentThemeIndex = 0; // Current theme index.
+    public int currentThemeIndex = 1; // Current theme index.
 
     private int coins = 0; // Coins earned in the run.
 
@@ -63,9 +63,9 @@ public class RoomManager : MonoBehaviour
 
     private void LoadNormalRoom()
     {
-        string theme = themes[currentThemeIndex];
-        int roomIndex = Random.Range(1, 11); // Assuming 10 rooms per theme.
-        string sceneName = $"Gameplay/Themes/{theme}/Normal_Rooms/Room_{roomIndex}";
+        string theme = Theme[currentThemeIndex];
+        int roomIndex = Random.Range(1, 4); // Assuming 10 rooms per theme.
+        string sceneName = $"Scenes/Gameplay/Themes/{theme}/Normal_Rooms/Room_{roomIndex}";
         //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
 
         SceneManager.LoadScene(sceneName);
@@ -74,10 +74,10 @@ public class RoomManager : MonoBehaviour
 
     private void LoadBossRoom()
     {
-        string theme = themes[currentThemeIndex];
-        string sceneName = $"Gameplay/Themes/{theme}/Boss_Rooms/BossRoom";
+        string theme = Theme[currentThemeIndex];
+        string sceneName = $"Scenes/Gameplay/Themes/{theme}/Boss_Rooms/BossRoom";
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
-        currentThemeIndex = (currentThemeIndex + 1) % themes.Length; // Rotate to the next theme.
+        currentThemeIndex = (currentThemeIndex + 1) % Theme.Length; // Rotate to the next theme.
     }
 
     private void LoadShop()

@@ -287,7 +287,10 @@ MonoBehaviour:
   currentRoom: 0
   roomsPerTheme: 3
   roomsBeforeShop: 7
-  themes: []
+  Theme:
+  - Theme1
+  - Theme2
+  - Theme3
   coinsPerRoom: 10
   currentThemeIndex: 0
 --- !u!4 &207731340
