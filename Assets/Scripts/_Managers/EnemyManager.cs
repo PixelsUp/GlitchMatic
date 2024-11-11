@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject[] tier3Enemies;
     public GameObject[] bosses;
 
-    private int remainingEnemies = 0;
+    private int remainingEnemies;
 
     public int currentRoom = 1; // Track room progression (linked with RoomManager)
     public float scalingFactor = 1.1f; // Health scaling factor per room
