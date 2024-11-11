@@ -13,6 +13,14 @@ public class TransitionPoint : MonoBehaviour
         }
     }
 
+    void OnCollideEnter2D(Collider2D other)
+    {
+        if (isActive && other.CompareTag("Player"))
+        {
+            Debug.Log("Punto de Transicion");
+            RoomManager.Instance.LoadNextRoom();
+        }
+    }
     public void ActivateTransition()
     {
         isActive = true;
