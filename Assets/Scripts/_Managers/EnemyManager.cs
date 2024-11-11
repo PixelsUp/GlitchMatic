@@ -9,6 +9,8 @@ public class EnemyManager : MonoBehaviour
     public GameObject[] tier3Enemies;
     public GameObject[] bosses;
 
+    private EnemyManager enemyManager;
+
     private int remainingEnemies;
 
     public int currentRoom = 1; // Track room progression (linked with RoomManager)
@@ -19,6 +21,7 @@ public class EnemyManager : MonoBehaviour
         Debug.Log("Total spawn points: " + spawnPoints.Length); // Verifica el número de spawn points
         SpawnEnemies();
         CountEnemiesInScene();
+        Debug.Log("Enemies remaining: " + remainingEnemies);
     }
 
     // el metodo esta para ver si han muerto todos los enemigos, necesito aun alguna manera de ver cuantos se spawnean en cada escena
@@ -74,9 +77,12 @@ public class EnemyManager : MonoBehaviour
 
         if (enemy != null)
         {
+            enemy.SetEnemyManager(this);
             enemy.health *= Mathf.Pow(scalingFactor, currentRoom);
         }
     }
+
+    
 
     public void CountEnemiesInScene()
     {
@@ -88,6 +94,7 @@ public class EnemyManager : MonoBehaviour
     public void OnEnemyDefeated()
     {
         remainingEnemies--;
+        Debug.Log("Enemies remaining: " + remainingEnemies);
 
         if (remainingEnemies <= 0)
         {

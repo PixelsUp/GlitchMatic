@@ -24,6 +24,7 @@ public class TransitionPoint : MonoBehaviour
     public void ActivateTransition()
     {
         isActive = true;
+        Debug.Log("TransitionPoint activated.");
         // igual podemos hacer una animacion para habilitar el transition point
     }
 }

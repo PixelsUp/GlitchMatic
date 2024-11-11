@@ -89,7 +89,7 @@ public class RoomManager : MonoBehaviour
     // Llama a esta función al cargar una nueva escena, esta para poner el personaje en el spawnpoint
     private void PlacePlayerAtSpawn()
     {
-        GameObject spawnPoint = GameObject.Find("PlayerSpawn");
+        GameObject spawnPoint = GameObject.Find("SpawnPoint");
         if (spawnPoint != null && _CharacterManager.Instance != null)
         {
             _CharacterManager.Instance.transform.position = spawnPoint.transform.position;

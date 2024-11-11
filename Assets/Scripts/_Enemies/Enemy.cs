@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour
 {
     public float health = 100;
     private bool mirandoDerecha = true;
-    private EnemyManager enemyManager;
+    private EnemyManager EnemyManager;
     protected Animator animator;
     private bool isInvincible = false;
     private bool isDead = false;
@@ -17,7 +17,12 @@ public abstract class Enemy : MonoBehaviour
     {
         // Busca el EnemyManager en la escena al inicio
         animator = GetComponent<Animator>();
-        enemyManager = FindEnemyManager();
+        EnemyManager = FindEnemyManager();
+    }
+
+    public void SetEnemyManager(EnemyManager manager)
+    {
+        EnemyManager = manager;
     }
 
     public void TakeDamage(int damage)
@@ -42,12 +47,16 @@ public abstract class Enemy : MonoBehaviour
             {
                 animator.SetTrigger("IsDead");
                 isDead = true;
+
+                EnemyManager.OnEnemyDefeated();
+                Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
             }
 
             // Notifica al EnemyManager si ha sido encontrado
-            if (enemyManager != null)
+            if (EnemyManager != null)
             {
-                enemyManager.OnEnemyDefeated();
+                //enemyManager.OnEnemyDefeated();
+                Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
             }
 
             Destroy(gameObject, 0.65f); // Destruir el objeto después de 0.65 segundos
