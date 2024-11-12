@@ -51,7 +51,7 @@ public class _CharacterManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject.transform.parent.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
     }
 
