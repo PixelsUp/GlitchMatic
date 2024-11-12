@@ -51,7 +51,7 @@ public class _CharacterManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject.transform.parent.gameObject);
         }
     }
 
@@ -121,7 +121,7 @@ public class _CharacterManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Click");
+            //Debug.Log("Click");
             StartCoroutine(DispararProyectilCoroutine());
         }
 

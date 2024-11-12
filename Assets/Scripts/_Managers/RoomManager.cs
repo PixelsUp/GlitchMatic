@@ -70,6 +70,7 @@ public class RoomManager : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
         SceneManager.sceneLoaded += (scene, mode) => PlacePlayerAtSpawn();
+        Debug.Log("Nuemro de escena: " + currentRoom);
     }
 
     private void LoadBossRoom()

@@ -9,6 +9,13 @@ public class TransitionPoint : MonoBehaviour
         if (isActive && other.CompareTag("Player"))
         {
             Debug.Log("Punto de Transicion");
+
+            // Destruir instancia del CameraManager si existe
+            //if (_CameraManager.Instance != null)
+            //{
+            //    Destroy(_CameraManager.Instance.gameObject);
+            //}
+
             RoomManager.Instance.LoadNextRoom();
         }
     }

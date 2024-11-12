@@ -87,7 +87,8 @@ public class EnemyManager : MonoBehaviour
     public void CountEnemiesInScene()
     {
         // Cuenta todos los objetos con el componente Enemy en la escena
-        remainingEnemies = FindObjectsOfType<Enemy>().Length;
+        //remainingEnemies = FindObjectsOfType<Enemy>().Length;
+        remainingEnemies = spawnPoints.Length;
     }
 
     // Llamado cada vez que un enemigo es eliminado
@@ -99,7 +100,8 @@ public class EnemyManager : MonoBehaviour
         if (remainingEnemies <= 0)
         {
             Debug.Log("Todos los enemigos derrotados. El jugador puede avanzar.");
-            RoomManager.Instance.LoadNextRoom();
+            //RoomManager.Instance.LoadNextRoom();
+            RoomManager.Instance.EnableTransitionPoint();
         }
     }
 }
