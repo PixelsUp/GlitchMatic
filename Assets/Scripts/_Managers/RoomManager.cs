@@ -12,8 +12,6 @@ public class RoomManager : MonoBehaviour
     public int coinsPerRoom = 10; // Coins awarded per room cleared.
     public int currentThemeIndex = 1; // Current theme index.
 
-    private int coins = 0; // Coins earned in the run.
-
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -98,13 +96,24 @@ public class RoomManager : MonoBehaviour
     }
     public void EndGame()
     {
-        // Logic to reward coins based on rooms cleared.
-        int totalCoins = coins + (currentRoom * coinsPerRoom);
-        // Store this for access in main menu or shop scene.
-        PlayerPrefs.SetInt("CoinsEarned", totalCoins);
+        // Calcula las monedas totales ganadas en la partida actual.
+        int earnedCoins = currentRoom * coinsPerRoom;
+        Debug.Log("Total de monedas ganadas: " + earnedCoins);
 
-        // Reset for next run
+        // Acumula el total de monedas almacenado en PlayerPrefs.
+        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 0); // Obtiene el valor actual o 0 si no existe.
+        totalCoins += earnedCoins; // Suma las monedas ganadas en esta partida.
+        PlayerPrefs.SetInt("TotalCoins", totalCoins); // Guarda el nuevo total en PlayerPrefs.
+
+        Debug.Log("Total de monedas guardadas: " + totalCoins);
+
+        // Reinicia las variables para la próxima partida.
         currentRoom = 0;
-        coins = 0;
+    }
+    // Método para resetear el número de sala, llamable desde otros scripts.
+    public void ResetRoom()
+    {
+        currentRoom = 0;
+        Debug.Log("Número de sala reseteado a 0.");
     }
 }

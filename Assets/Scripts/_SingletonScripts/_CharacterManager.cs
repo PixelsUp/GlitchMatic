@@ -72,6 +72,10 @@ public class _CharacterManager : MonoBehaviour
     void Update()
     {
 
+        if (pauseScript == null)
+        {
+            pauseScript.GetComponentInChildren<PauseScript>();
+        }
         // Flip del personaje basado en la posición del mouse
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -304,6 +308,10 @@ public class _CharacterManager : MonoBehaviour
         yield return new WaitForSeconds(0.65f); // Duración de la invencibilidad (2 segundo)
         Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);
+        if (GameOverManager == null)
+        {
+            GameOverManager.GetComponentInChildren<GameOverManagerScript>();
+        }
         GameOverManager.gameOver(); // Llama a gameOver() directamente
 
         //DestroySingletonsOnDeath();

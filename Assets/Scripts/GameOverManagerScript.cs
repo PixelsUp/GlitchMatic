@@ -9,7 +9,6 @@ public class GameOverManagerScript : MonoBehaviour
     public GameObject gameOverUI; // Panel de Game Over
 
     private bool dead = false;
-
     void Start()
     {
         if (gameOverUI == null)
@@ -30,7 +29,10 @@ public class GameOverManagerScript : MonoBehaviour
             dead = true;
         }
         gameOverUI.SetActive(true);
-
+        if (RoomManager.Instance != null)
+        {
+            RoomManager.Instance.EndGame();
+        }
 
     }
 

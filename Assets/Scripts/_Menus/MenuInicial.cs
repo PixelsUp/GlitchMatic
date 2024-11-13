@@ -14,6 +14,7 @@ public class MenuInicial : MonoBehaviour
         //Llamar a la referencia de la funcion del room manager
         if(RoomManager.Instance != null)
         {
+            RoomManager.Instance.ResetRoom();
             RoomManager.Instance.LoadNextRoom();
         }
     }
