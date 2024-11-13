@@ -512,7 +512,7 @@ MonoBehaviour:
   weapon1Button: {fileID: 1679033384}
   weapon2Button: {fileID: 771442303}
   weapon3Button: {fileID: 108154190}
-  weapon1Cost: 5
+  weapon1Cost: 100
   weapon2Cost: 300
   weapon3Cost: 250
 --- !u!1 &704537198
