@@ -12,12 +12,47 @@ public abstract class Enemy : MonoBehaviour
     private bool isInvincible = false;
     private bool isDead = false;
 
+    // Variables para el sistema de gruñidos
+    private float gruntTimer;       // Temporizador de gruñido
+    private float gruntInterval;    // Intervalo aleatorio entre gruñidos
 
     private void Start()
     {
         // Busca el EnemyManager en la escena al inicio
         animator = GetComponent<Animator>();
         EnemyManager = FindEnemyManager();
+
+        // Configura un primer intervalo aleatorio para los gruñidos
+        ResetGruntTimer();
+    }
+
+    private void Update()
+    {
+        // Actualizar el temporizador de gruñido
+        if (!isDead)
+        {
+            gruntTimer -= Time.deltaTime;
+            if (gruntTimer <= 0f)
+            {
+                PlayGruntSound();
+                ResetGruntTimer();
+            }
+        }
+    }
+
+    private void PlayGruntSound()
+    {
+        // Selecciona aleatoriamente uno de los sonidos de gruñido
+        string gruntSound = Random.value > 0.5f ? "SfxGrunt1" : "SfxGrunt2";
+        Debug.Log("Playing grunt sound: " + gruntSound);
+        SfxScript.TriggerSfx(gruntSound);
+    }
+
+    private void ResetGruntTimer()
+    {
+        // Configura un intervalo aleatorio entre 3 y 8 segundos
+        gruntInterval = Random.Range(3f, 8f);
+        gruntTimer = gruntInterval;
     }
 
     public void SetEnemyManager(EnemyManager manager)
@@ -30,6 +65,10 @@ public abstract class Enemy : MonoBehaviour
         if (isInvincible)
         {
             return; // Si es invencible, no recibe daño
+        }
+        else
+        {
+            SfxScript.TriggerSfx("SfxImpactGun");
         }
 
         health -= damage;
@@ -107,6 +146,22 @@ public abstract class Enemy : MonoBehaviour
         {
             // Cambiar de dirección
             this.Girar();
+        }
+    }
+
+    private IEnumerator GruntSoundCoroutine()
+    {
+        while (!isDead)
+        {
+            // Espera un tiempo aleatorio entre 3 y 8 segundos (ajustado para pruebas)
+            float waitTime = Random.Range(3f, 8f);
+            Debug.Log("Waiting for " + waitTime + " seconds for grunt sound.");
+            yield return new WaitForSeconds(waitTime);
+
+            // Selecciona aleatoriamente uno de los sonidos de gruñido
+            string gruntSound = Random.value > 0.5f ? "SfxGrunt1" : "SfxGrunt2";
+            Debug.Log("Playing grunt sound: " + gruntSound);
+            SfxScript.TriggerSfx(gruntSound);
         }
     }
 }
