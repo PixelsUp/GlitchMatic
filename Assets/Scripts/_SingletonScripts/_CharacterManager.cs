@@ -26,7 +26,6 @@ public class _CharacterManager : MonoBehaviour
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
     private Animator animator;
-    public Animator handAnimator;
     public bool puedeDisparar = true;
     private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
     private Transform aimTransform;
@@ -64,7 +63,6 @@ public class _CharacterManager : MonoBehaviour
         currentRollCharges = maxRollCharges; // Initialize roll charges
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
         animator = GetComponent<Animator>();
-        handAnimator = GameObject.Find("hand").GetComponent<Animator>();
 
         //  Obtain characters spriterenderer
         characterSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -260,7 +258,6 @@ public class _CharacterManager : MonoBehaviour
             hp -= finalDamage;
             healthBar.value = hp / 100f; // Actualiza el slider. Se asume que la vida máxima es 100
             animator.SetTrigger("IsHurt"); // Usar un trigger en lugar de un bool
-            handAnimator.SetTrigger("IsHurt"); // Usar un trigger en lugar de un bool
             StartCoroutine(ActivateInvincibility()); // Iniciar la corutina de invencibilidad
 
             // Activar screenshake
@@ -306,12 +303,8 @@ public class _CharacterManager : MonoBehaviour
     private IEnumerator waitForDeath()
     {
         animator.SetTrigger("IsDead");
-        handAnimator.SetTrigger("IsDead"); 
-
         yield return new WaitForSeconds(1.35f);
         GetComponent<SpriteRenderer>().enabled = false;
-        GameObject.Find("hand").GetComponent<SpriteRenderer>().enabled = false;
-        GameObject.Find("Weapon").GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(0.65f); // Duración de la invencibilidad (2 segundo)
         Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);
