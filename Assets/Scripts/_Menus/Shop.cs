@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI coinDisplay; // TextMeshPro for displaying coins
     public Button weapon1Button, weapon2Button, weapon3Button;
     public int weapon1Cost = 100, weapon2Cost = 300, weapon3Cost = 250;
+    public Sprite boughtSprite;
 
     void Start()
     {
@@ -26,13 +27,13 @@ public class Shop : MonoBehaviour
 
     private void UpdateCoinDisplay()
     {
-        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);
+        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 100);
         coinDisplay.text = "Coins: " + totalCoins.ToString();
     }
 
     private void BuyWeapon(int weaponID, int cost)
     {
-        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);
+        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 100);
 
         if (totalCoins >= cost)
         {
@@ -57,16 +58,19 @@ public class Shop : MonoBehaviour
         {
             weapon1Button.interactable = false;
             weapon1Button.GetComponentInChildren<TextMeshProUGUI>().text = "Bought";
+            weapon1Button.GetComponent<Image>().sprite = boughtSprite;
         }
         if (PlayerPrefs.GetInt("Weapon2Purchased", 0) == 1)
         {
             weapon2Button.interactable = false;
             weapon2Button.GetComponentInChildren<TextMeshProUGUI>().text = "Bought";
+            weapon2Button.GetComponent<Image>().sprite = boughtSprite;
         }
         if (PlayerPrefs.GetInt("Weapon3Purchased", 0) == 1)
         {
             weapon3Button.interactable = false;
             weapon3Button.GetComponentInChildren<TextMeshProUGUI>().text = "Bought";
+            weapon3Button.GetComponent<Image>().sprite = boughtSprite;
         }
     }
 
