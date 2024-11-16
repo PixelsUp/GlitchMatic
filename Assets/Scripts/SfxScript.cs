@@ -12,12 +12,12 @@ public class SfxScript : MonoBehaviour
     public AudioClip sfxAttack;
     public AudioClip sfxHurt;
     public AudioClip sfxDead;
-    public AudioClip sfxEnemy;
     public AudioClip sfxBowShot;
     public AudioClip sfxSword1;
     public AudioClip sfxSword2;
     public AudioClip sfxSword3;
     public AudioClip sfxImpactCaC;
+    public AudioClip sfxImpactGun;
     public AudioClip sfxGrunt1;
     public AudioClip sfxGrunt2;
 
@@ -102,8 +102,8 @@ public class SfxScript : MonoBehaviour
             case "SfxImpactCaC":
                 clipToPlay = sfxImpactCaC;
                 break;
-            case "SfxEnemy":
-                clipToPlay = sfxEnemy;
+            case "SfxImpactGun":
+                clipToPlay = sfxImpactGun;
                 break;
             case "SfxGrunt1":
                 clipToPlay = sfxGrunt1;
