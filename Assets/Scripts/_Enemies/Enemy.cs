@@ -46,6 +46,7 @@ public abstract class Enemy : MonoBehaviour
         string gruntSound = Random.value > 0.5f ? "SfxGrunt1" : "SfxGrunt2";
         Debug.Log("Playing grunt sound: " + gruntSound);
         SfxScript.TriggerSfx(gruntSound);
+        SfxScript.TriggerSfx("SfxGrunt1");
     }
 
     private void ResetGruntTimer()

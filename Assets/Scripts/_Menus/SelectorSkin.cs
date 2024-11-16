@@ -28,7 +28,6 @@ public class SelectorSkin : MonoBehaviour
     // Método para cambiar a la skin anterior
     public void CambiarASkinAnterior()
     {
-        SfxScript.TriggerSfx("SfxButton1");
         currentSkinIndex--;
         if (currentSkinIndex < 0)
         {
@@ -40,7 +39,6 @@ public class SelectorSkin : MonoBehaviour
     // Método para cambiar a la skin siguiente
     public void CambiarASkinSiguiente()
     {
-        SfxScript.TriggerSfx("SfxButton1");
         currentSkinIndex++;
         if (currentSkinIndex >= skins.Length)
         {
