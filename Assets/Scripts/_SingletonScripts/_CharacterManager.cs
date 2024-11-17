@@ -322,11 +322,11 @@ public class _CharacterManager : MonoBehaviour
     {
         handAnimator.SetTrigger("IsDead");
         animator.SetTrigger("IsDead");
-        yield return new WaitForSeconds(1.35f);
+        yield return new WaitForSeconds(1.55f);
         GetComponent<SpriteRenderer>().enabled = false;
         GameObject.Find("hand").GetComponent<SpriteRenderer>().enabled = false;
         GameObject.Find("Weapon").GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(0.65f); // Duración de la invencibilidad (2 segundo)
+        yield return new WaitForSeconds(0.45f); // Duración de la invencibilidad (2 segundo)
         Time.timeScale = 0f;
         MusicScript.TriggerMusic(DeadMusic);
         if (GameOverManager == null)

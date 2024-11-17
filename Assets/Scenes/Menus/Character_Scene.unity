@@ -428,7 +428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Base Skin
+  m_text: 'CiberPunk
 
 '
   m_isRightToLeft: 0
@@ -643,15 +643,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - {fileID: 21300000, guid: 98288647e1127794ebe162a3aeea8cbc, type: 3}
-  - {fileID: 21300000, guid: b2aaebeb3d68bb2468b983b884f3dd18, type: 3}
+  - {fileID: -1712861921, guid: 37af24163c8be894e94f61a0836b257f, type: 3}
   - {fileID: 21300000, guid: b2aaebeb3d68bb2468b983b884f3dd18, type: 3}
   skinNames:
-  - BaseSkin
-  - Coming Soon
+  - CiberPunk
+  - Medieval
   - Coming Soon
   animControllers:
   - {fileID: 9100000, guid: d7853f95f96fbd545a501f4d887be04e, type: 2}
-  - {fileID: 9100000, guid: d7853f95f96fbd545a501f4d887be04e, type: 2}
+  - {fileID: 9100000, guid: b35604b49682a0d4e86149f426ef4cda, type: 2}
   - {fileID: 9100000, guid: 5095251f4a0e47844baa2c744379e0d6, type: 2}
   skinImage: {fileID: 1350754067}
   nameText: {fileID: 154675478}
