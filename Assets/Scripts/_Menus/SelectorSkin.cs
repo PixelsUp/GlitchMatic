@@ -7,9 +7,16 @@ using UnityEngine.UI;
 
 public class SelectorSkin : MonoBehaviour
 {
+
+    public static Sprite SelectedSkin { get; private set; }
+    public static RuntimeAnimatorController SelectedAnim { get; private set; }
+
     // Array de sprites para las diferentes skins del personaje
     [SerializeField] private Sprite[] skins;
     [SerializeField] private List<string> skinNames; // Lista de nombres de las skins
+    [SerializeField] private RuntimeAnimatorController[] animControllers; // Array de controladores de animación
+
+
 
     // Referencia a la imagen central que mostrará las skins
     [SerializeField] private Image skinImage;
@@ -53,6 +60,9 @@ public class SelectorSkin : MonoBehaviour
         SfxScript.TriggerSfx("SfxButton1");
         skinImage.sprite = skins[currentSkinIndex];
         nameText.text = skinNames[currentSkinIndex];
+        SelectedSkin = skins[currentSkinIndex];
+        SelectedAnim = animControllers[currentSkinIndex];
+
     }
 
 }
