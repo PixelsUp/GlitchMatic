@@ -61,6 +61,7 @@ public class RoomManager : MonoBehaviour
 
     private void LoadNormalRoom()
     {
+        int earnedCoins = currentRoom * coinsPerRoom;
         string theme = Theme[currentThemeIndex];
         int roomIndex = Random.Range(1, 4); // Assuming 10 rooms per theme.
         string sceneName = $"Scenes/Gameplay/Themes/{theme}/Normal_Rooms/Room_{roomIndex}";

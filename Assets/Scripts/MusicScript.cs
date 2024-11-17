@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class MusicScript : MonoBehaviour
 {
+
     private static MusicScript instance = null; // Variable para mantener una única instancia
     private AudioSource Source;
     public float fadeInDuration = 2f; // Duración del fade in en segundos
@@ -63,7 +65,7 @@ public class MusicScript : MonoBehaviour
         // Desubscribirse del evento de cambio de escena
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    
+
     // Método que se llama cuando una nueva escena es cargada
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -76,7 +78,7 @@ public class MusicScript : MonoBehaviour
     {
         AudioClip clipToPlay = null;
 
-        // Usamos un switch para asignar la música dependiendo de la escena
+        // Usamos un switch para manejar las escenas específicas como el menú
         switch (sceneName)
         {
             case "StartMenu":
@@ -85,47 +87,55 @@ public class MusicScript : MonoBehaviour
             case "MainMenu":
                 clipToPlay = menuMusic;
                 break;
-            case "Intro_Scene":
-                // Crear un arreglo con las pistas de música para la escena Intro_Scene
-                AudioClip[] gameMusic = { gameMusic1, gameMusic2, gameMusic3, gameMusic4, gameMusic5, gameMusic6 };
-
-                // Seleccionar un índice aleatorio del arreglo
-                int randNum = Random.Range(0, gameMusic.Length); // Esto generará un número entre 0 y 5
-                clipToPlay = gameMusic[randNum]; // Asignar la pista aleatoria
-                break;
-            case "GameScene2":
-                clipToPlay = gameMusic2;
-                break;
-            case "GameScene3":
-                clipToPlay = gameMusic3;
-                break;
-            case "GameScene4":
-                clipToPlay = gameMusic4;
-                break;
-            case "GameScene5":
-                clipToPlay = gameMusic5;
-                break;
-            case "GameScene6":
-                clipToPlay = gameMusic6;
+            case "Pop_Up_Anuncios":
+                clipToPlay = startMusic;
                 break;
             default:
-                Debug.LogWarning("Escena desconocida, sin música asignada");
-                return;
+                if (RoomManager.Instance != null)
+                {
+                    int roomtheme = RoomManager.Instance.currentThemeIndex;
+
+                    switch (roomtheme)
+                    {
+                        case 0:
+                            clipToPlay = gameMusic1;
+                            break;
+                        case 1:
+                            clipToPlay = gameMusic2;
+                            break;
+                        case 2:
+                            clipToPlay = gameMusic3;
+                            break;
+                        case 3:
+                            clipToPlay = gameMusic4;
+                            break;
+                        case 4:
+                            clipToPlay = gameMusic5;
+                            break;
+                        case 5:
+                            clipToPlay = gameMusic6;
+                            break;
+                    }
+                }
+                break;
         }
 
         // Verifica si el clip a reproducir es el mismo que ya está en el AudioSource
-        if (Source.clip == clipToPlay)
+        if (clipToPlay != null && Source.clip != clipToPlay)
         {
-            return; // No hacer nada si la música ya está sonando y es la misma
+            // Asignar y reproducir la música
+            Source.clip = clipToPlay;
+            Source.Play();
+
+            // Siempre hacemos el fade in cuando se cambia la música
+            StartCoroutine(FadeIn(Source, fadeInDuration));
         }
-
-        // Si tenemos una nueva pista, la asignamos y reproducimos
-        Source.clip = clipToPlay;
-        Source.Play();
-
-        // Siempre hacemos el fade in cuando se cambia la música
-        StartCoroutine(FadeIn(Source, fadeInDuration));
+        else if (clipToPlay == null)
+        {
+            Debug.LogWarning($"No se encontró música para la escena {sceneName}");
+        }
     }
+
 
     public void PlaySpecificMusic(AudioClip clip)
     {
