@@ -63,6 +63,7 @@ public class RoomManager : MonoBehaviour
     {
         string theme = Theme[currentThemeIndex];
         int roomIndex = Random.Range(1, 4); // Assuming 10 rooms per theme.
+        //roomIndex = 1; // Assuming 10 rooms per theme.
         string sceneName = $"Scenes/Gameplay/Themes/{theme}/Normal_Rooms/Room_{roomIndex}";
         //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
 
