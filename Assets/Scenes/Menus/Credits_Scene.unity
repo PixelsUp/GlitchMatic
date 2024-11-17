@@ -1573,8 +1573,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498167628}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+      - m_Target: {fileID: 1498167629}
+        m_TargetAssemblyTypeName: CreditsScene, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -1770,6 +1770,7 @@ GameObject:
   - component: {fileID: 1498167625}
   - component: {fileID: 1498167624}
   - component: {fileID: 1498167628}
+  - component: {fileID: 1498167629}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1867,9 +1868,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498167622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9739b4e7171d4674da2fb7eb8e8afbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinDisplay: {fileID: 0}
+  weapon1Button: {fileID: 0}
+  weapon2Button: {fileID: 0}
+  weapon3Button: {fileID: 0}
+  weapon1Cost: 100
+  weapon2Cost: 300
+  weapon3Cost: 250
+  boughtSprite: {fileID: 0}
+--- !u!114 &1498167629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498167622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae7dd4dd690ac84a9bbe514b7c2de02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1741467051
