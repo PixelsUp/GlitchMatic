@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ApuntarConArma : MonoBehaviour
 {
     private Transform aimTransform;
     private SpriteRenderer aimSpriteRenderer; // Para cambiar la escala del sprite
+    public _CharacterManager characterManager;
 
 
     private void Awake()
     {
+        characterManager = FindObjectOfType<_CharacterManager>();
         // Encontrar el objeto "Aim"
         aimTransform = transform.Find("Aim");
 
@@ -24,6 +27,8 @@ public class ApuntarConArma : MonoBehaviour
 
     private void Update()
     {
+        if (!characterManager.isPaused)
+        {
         // Obtener la posición del ratón en el plano Z=0
         Vector3 mousePosition = GetMouseWorldPositionWithZ(0f);
 
@@ -31,25 +36,24 @@ public class ApuntarConArma : MonoBehaviour
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
-        // Voltear el arma en el eje X cuando el ratón está a la izquierda del personaje
-        if (mousePosition.x < transform.position.x)
-        {
-            // Voltear horizontalmente
-            aimTransform.localScale = new Vector3(-1, 1, 1);
+            // Voltear el arma en el eje X cuando el ratón está a la izquierda del personaje
+            if (mousePosition.x < transform.position.x)
+            {
+                // Voltear horizontalmente
+                aimTransform.localScale = new Vector3(-1, 1, 1);
 
-            // Ajustar el ángulo para que no quede al revés
-            aimTransform.eulerAngles = new Vector3(0, 0, angle + 180); // Rotamos 180 grados para corregir
+                // Ajustar el ángulo para que no quede al revés
+                aimTransform.eulerAngles = new Vector3(0, 0, angle + 180); // Rotamos 180 grados para corregir
+            }
+            else
+            {
+                // Mantener la escala normal
+                aimTransform.localScale = new Vector3(1, 1, 1);
+
+                // Rotación normal
+                aimTransform.eulerAngles = new Vector3(0, 0, angle);
+            }
         }
-        else
-        {
-            // Mantener la escala normal
-            aimTransform.localScale = new Vector3(1, 1, 1);
-
-            // Rotación normal
-            aimTransform.eulerAngles = new Vector3(0, 0, angle);
-        }
-
-
     }
 
     // Método para obtener la posición del ratón en el mundo, en un plano con Z fijo

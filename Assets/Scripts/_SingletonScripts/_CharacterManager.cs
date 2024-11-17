@@ -40,7 +40,7 @@ public class _CharacterManager : MonoBehaviour
     [SerializeField] private GameObject proyectilPrefab;
     [SerializeField] private Transform puntoDisparo;
 
-    private bool isPaused = false; // Estado de pausa
+    public bool isPaused = false; // Estado de pausa
     public AudioClip DeadMusic;
 
     void Awake()
@@ -95,7 +95,7 @@ public class _CharacterManager : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Si el ratón está a la izquierda del personaje, voltear el personaje
-        if (mousePosition.x < transform.position.x)
+        if (mousePosition.x < transform.position.x && !isPaused)
         {
             characterSpriteRenderer.flipX = true; // Hacer flip al personaje
         }
