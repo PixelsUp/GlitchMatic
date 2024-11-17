@@ -862,7 +862,6 @@ MonoBehaviour:
   sfxAttack: {fileID: 8300000, guid: 83e0f5fefa7d16b4f8df01410815425d, type: 3}
   sfxHurt: {fileID: 8300000, guid: 11e43d8ca6ffb294eb5e644241b149bb, type: 3}
   sfxDead: {fileID: 8300000, guid: 0a1efda207ef93746ae8be4b70b21c26, type: 3}
-  sfxEnemy: {fileID: 0}
   sfxBowShot: {fileID: 8300000, guid: 0320aef3eb7d75749b4b1560cbfd389d, type: 3}
   sfxSword1: {fileID: 8300000, guid: e2bf62052cd3a3249bb1630315469412, type: 3}
   sfxSword2: {fileID: 8300000, guid: 92c29ed6d046ca24d801444232b5e63f, type: 3}

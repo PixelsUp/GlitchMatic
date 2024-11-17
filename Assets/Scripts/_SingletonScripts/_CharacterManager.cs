@@ -165,6 +165,7 @@ public class _CharacterManager : MonoBehaviour
     // Main rolling coroutine
     IEnumerator Roll()
     {
+        animator.SetTrigger("IsRolling");
         isRolling = true;
         isInvincible = true;
         currentRollCharges--; // Use a roll charge
