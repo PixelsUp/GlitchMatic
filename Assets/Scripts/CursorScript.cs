@@ -7,12 +7,13 @@ public class CursorScript : MonoBehaviour
     public Texture2D defaultCursorTexture; // Cursor normal
     public Texture2D enemyCursorTexture;  // Cursor cuando está sobre un enemigo
     public Vector2 hotSpot = Vector2.zero; // Punto de anclaje del cursor
+    public Vector2 enemyHotSpot = new Vector2(540, 540); // Punto de anclaje para el cursor enemigo
     public CursorMode cursorMode = CursorMode.Auto; // Modo del cursor
 
     private void Start()
     {
         // Configurar el cursor inicial como el predeterminado
-        SetCustomCursor(defaultCursorTexture);
+        SetCustomCursor(defaultCursorTexture, hotSpot);
     }
 
     private void Update()
@@ -21,7 +22,7 @@ public class CursorScript : MonoBehaviour
         DetectHover();
     }
 
-    private void SetCustomCursor(Texture2D cursorTexture)
+    private void SetCustomCursor(Texture2D cursorTexture, Vector2 hotspot)
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
@@ -40,25 +41,14 @@ public class CursorScript : MonoBehaviour
             // Verificar si el objeto tiene el tag "Enemy"
             if (hit.collider.CompareTag("Enemy"))
             {
-                SetCustomCursor(enemyCursorTexture);
+                SetCustomCursor(enemyCursorTexture, hotSpot);
                 return; // Salir para evitar cambios innecesarios
             }
         }
-
-        // Si no está sobre un enemigo, restaurar el cursor predeterminado
-        SetCustomCursor(defaultCursorTexture);
-    }
-
-    // Métodos que manejan los eventos individuales (OnMouseEnter y OnMouseExit)
-    private void OnMouseEnter()
-    {
-        // Cambiar al cursor de enemigo al entrar en el área de este objeto
-        SetCustomCursor(enemyCursorTexture);
-    }
-
-    private void OnMouseExit()
-    {
-        // Restaurar el cursor normal al salir del área de este objeto
-        SetCustomCursor(defaultCursorTexture);
+        else
+        {
+            // Si no está sobre un enemigo, restaurar el cursor predeterminado
+            SetCustomCursor(defaultCursorTexture, hotSpot);
+        }
     }
 }

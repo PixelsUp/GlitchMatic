@@ -1,7 +1,8 @@
 using System;
+using UnityEngine;
+using UnityEngine.Video;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Enemigo_Range_Behavior : Enemy
 {
@@ -26,6 +27,10 @@ public class Enemigo_Range_Behavior : Enemy
     private bool puedeDisparar = true;
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
 
+    // Variables para el sistema de gruñidos
+    private float gruntTimer;       // Temporizador de gruñido
+    private float gruntInterval;    // Intervalo aleatorio entre gruñidos
+    private bool firstGrunt = true;
 
     // Distancias relevantes
     [SerializeField] private float distanciaDeteccion = 50f; // Distancia para detectar al protagonista
@@ -42,15 +47,39 @@ public class Enemigo_Range_Behavior : Enemy
         {
             Debug.LogError("No se encontró al protagonista en la escena.");
         }
+        ResetGruntTimer();
     }
 
     void Update()
     {
-        if (protagonistaDetectado == true)
+        if (protagonistaDetectado)
         {
+            if (firstGrunt)
+            {
+                SfxScript.TriggerSfx("SfxGrunt1");
+                firstGrunt = false;
+            }
             GirarHaciaObjetivo(posicionProtagonista);
+
+            // Manejo del temporizador de gruñidos
+            gruntTimer -= Time.deltaTime;
+            if (gruntTimer <= 0f)
+            {
+                // Ejecuta un gruñido y reinicia el temporizador
+                Debug.Log("GRUNT1");
+                SfxScript.TriggerSfx("SfxGrunt1");
+                ResetGruntTimer();
+            }
         }
+
         FSMRangedEnemy(); // Lógica de la máquina de estados
+    }
+
+    private void ResetGruntTimer()
+    {
+        // Configura un intervalo aleatorio entre 3 y 8 segundos
+        gruntInterval = UnityEngine.Random.Range(3f, 10f);
+        gruntTimer = gruntInterval;
     }
 
     // Máquina de estados finita (FSM) para el enemigo a distancia

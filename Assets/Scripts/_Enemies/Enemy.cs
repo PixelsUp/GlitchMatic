@@ -13,8 +13,8 @@ public abstract class Enemy : MonoBehaviour
     private bool isDead = false;
 
     // Variables para el sistema de gruñidos
-    private float gruntTimer;       // Temporizador de gruñido
-    private float gruntInterval;    // Intervalo aleatorio entre gruñidos
+    //private float gruntTimer;       // Temporizador de gruñido
+    //private float gruntInterval;    // Intervalo aleatorio entre gruñidos
 
     private void Start()
     {
@@ -23,23 +23,28 @@ public abstract class Enemy : MonoBehaviour
         EnemyManager = FindEnemyManager();
 
         // Configura un primer intervalo aleatorio para los gruñidos
-        ResetGruntTimer();
+        //ResetGruntTimer();
     }
-
+    /*
     private void Update()
     {
+        
         // Actualizar el temporizador de gruñido
+        Debug.Log("si");
         if (!isDead)
         {
+            Debug.Log("Timer");
             gruntTimer -= Time.deltaTime;
             if (gruntTimer <= 0f)
             {
+                Debug.Log("GRUNT");
                 PlayGruntSound();
                 ResetGruntTimer();
             }
         }
     }
-
+*/
+    /*
     private void PlayGruntSound()
     {
         // Selecciona aleatoriamente uno de los sonidos de gruñido
@@ -55,6 +60,7 @@ public abstract class Enemy : MonoBehaviour
         gruntInterval = Random.Range(3f, 8f);
         gruntTimer = gruntInterval;
     }
+    */
 
     public void SetEnemyManager(EnemyManager manager)
     {

@@ -22,13 +22,13 @@ public class _CharacterManager : MonoBehaviour
     private Rigidbody2D rb; // Character Rigidbody2D component
     private bool isRolling = false; // Whether the character is currently rolling
     private bool isInvincible = false; // Whether the character has invincibility frames
-    private int currentRollCharges; // Current roll charges
+    public int currentRollCharges; // Current roll charges
     private bool canRoll = true; // Whether the character can roll
     private bool rollOnCooldown = false; // Flag to manage cooldown between rolls
     private Animator animator;
     public Animator handAnimator;
     public bool puedeDisparar = true;
-    private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
+    private float tiempoEntreDisparos = 0.18f; // Tiempo de espera entre disparos
     private Transform aimTransform;
     private bool isDead = false; // Variable para controlar si el personaje está muerto
 
@@ -138,9 +138,8 @@ public class _CharacterManager : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && puedeDisparar)
         {
-            //Debug.Log("Click");
             StartCoroutine(DispararProyectilCoroutine());
         }
 

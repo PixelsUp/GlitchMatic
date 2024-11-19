@@ -28,6 +28,11 @@ public class Enemigo_Melee_Behavior : Enemy
 
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
 
+    // Variables para el sistema de gruñidos
+    private float gruntTimer;       // Temporizador de gruñido
+    private float gruntInterval;    // Intervalo aleatorio entre gruñidos
+    private bool firstGrunt = true;
+
     // Método Start: Inicialización del script
     void Start()
     {
@@ -44,10 +49,30 @@ public class Enemigo_Melee_Behavior : Enemy
     // Método Update: Llamamos a la máquina de estados cada frame
     void Update()
     {
-        
+        if (protagonistaDetectado == true)
+        {
+            if (firstGrunt)
+            {
+                SfxScript.TriggerSfx("SfxGrunt2");
+                firstGrunt = false;
+            }
+            gruntTimer -= Time.deltaTime;
+            if (gruntTimer <= 0f)
+            {
+                Debug.Log("GRUNT2");
+                SfxScript.TriggerSfx("SfxGrunt2");
+                ResetGruntTimer();
+            }
+        }
         FSMMeleeEnemy(); // Lógica de la máquina de estados
     }
 
+    private void ResetGruntTimer()
+    {
+        // Configura un intervalo aleatorio entre 3 y 8 segundos
+        gruntInterval = UnityEngine.Random.Range(3f, 10f);
+        gruntTimer = gruntInterval;
+    }
     // Máquina de estados finita (FSM) para el enemigo
     void FSMMeleeEnemy()
     {
