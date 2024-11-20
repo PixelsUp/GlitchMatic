@@ -112,7 +112,7 @@ The main character is a **Glitch Hunter** who enters the tower with a mission to
 
 Additionally, players can purchase in-game currency with real money to unlock cosmetic items like character skins and weapon skins, which do not affect gameplay balance, ensuring a fair experience for both paying and non-paying users.
 
-- **Empathy map**
+### Empathy map
 
 <p align= "center"><strong> Empathy Map </strong> </p>
 <p align="center">
@@ -120,7 +120,7 @@ Additionally, players can purchase in-game currency with real money to unlock co
 </p>
 <p align=center>Image 2.1 Empathy Map</p>
   
-- **Canvas**
+### Canvas
 <p align= "center"><strong> Canvas </strong> </p>
 <p align="center">
   <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '800' height='500'/>
@@ -128,7 +128,21 @@ Additionally, players can purchase in-game currency with real money to unlock co
 <p align=center>Image 2.2 Canvas</p>
 
   
-- **Toolbox**
+### Toolbox
+
+Represents a business ecosystem. Pixels Up functions as a central platform connecting various stakeholders and facilitating exchanges of goods, services, and money.
+
+- **Suppliers**: Exchanges exposure in the form of ads for their respective monetary value to PixelsUp.
+
+- **Consumers**: End users of the platform, paying for services or products such as in-game ads, cosmetics, or other digital content.
+
+- **Google**: Represents an advertising platform or infrastructure provider. Google allows for an ad hosting service while they receive their monetary compensation.
+
+- **Unity**: Provides a development environment for game creation. Unity is paid for its services.
+
+- **Launch Platform**: Distributes the content produced by PixelsUp to the market or audiences. They receive the product and, depending on their policies, financial compensation. In exchange, they offer exposure for PixelsUp's offerings. GlitchMatic will launch in itch.io as soon as possible.
+
+
 <p align= "center"><strong> ToolBox </strong> </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9a797a2c-1c07-485c-8f45-d506eeab7520" width= '600' height='500'/>
