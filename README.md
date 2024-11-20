@@ -121,6 +121,11 @@ Additionally, players can purchase in-game currency with real money to unlock co
 <p align=center>Image 2.1 Empathy Map</p>
   
 ### Canvas
+
+- This business canvas outlines the core structure of PixelsUp’s gaming business model centered around free-to-play games with in-game purchases and ad-based monetization. Key Partners include ad networks (e.g., Unity Ads, Google AdMob) for revenue through ads, distribution platforms (e.g., Steam, Epic Games) for game hosting, and payment processors (e.g., Stripe, PayPal) to manage transactions. Key Activities revolve around game development, ad integration, and offering cosmetic items. The business provides a Value Proposition emphasizing fair, skill-based gameplay without "pay-to-win" mechanics, with optional cosmetic upgrades for customization that do not impact performance. Key Resources include developers, designers, and server infrastructure to support ads and in-game transactions.
+
+- The business targets diverse Customer Segments, including free-to-play users who watch ads, premium players who pay to remove ads, cosmetic buyers seeking visual upgrades, and community members like streamers and influencers. It builds Customer Relationships via in-game notifications, social media marketing, and sales promotions, leveraging Channels such as PC distribution platforms and social media. Revenue Streams include ad revenue, in-app purchases (ad removal or cosmetic items), and limited-time bundles. The Cost Structure primarily includes development, marketing, platform fees, and content updates, ensuring ongoing engagement and monetization. The ecosystem balances free access with optional purchases, supported by strategic partnerships and efficient cost management.
+
 <p align= "center"><strong> Canvas </strong> </p>
 <p align="center">
   <img src="https://github.com/PixelsUp/GlitchMatic/blob/main/Assets/Images/Canvas.jpg" width= '800' height='500'/>
