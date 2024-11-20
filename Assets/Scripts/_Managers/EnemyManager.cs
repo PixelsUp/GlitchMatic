@@ -82,7 +82,10 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    
+    public int GetRemainingEnemies()
+    {
+        return remainingEnemies;
+    }
 
     public void CountEnemiesInScene()
     {
