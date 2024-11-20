@@ -420,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -330, y: -95}
+  m_AnchoredPosition: {x: -330, y: -100}
   m_SizeDelta: {x: 956.902, y: 183.65}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &580495788
@@ -556,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -329.99997, y: -287.664}
+  m_AnchoredPosition: {x: -329.99997, y: -200}
   m_SizeDelta: {x: 530.64, y: 92.672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650874620
@@ -1085,7 +1085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -330, y: 67}
+  m_AnchoredPosition: {x: -330, y: 50}
   m_SizeDelta: {x: 368.094, y: 92.672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877168497
@@ -1306,6 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInDuration: 2
+  partida: 0
   startMusic: {fileID: 8300000, guid: 1db041fef910a284096bd0bbb2a9d095, type: 3}
   menuMusic: {fileID: 8300000, guid: 967f545ea73ec7a4baecbdf78870914d, type: 3}
   gameMusic1: {fileID: 8300000, guid: 75acf086cd618004db5fff07ba78165c, type: 3}
@@ -1443,6 +1444,7 @@ MonoBehaviour:
   defaultCursorTexture: {fileID: 2800000, guid: 42120729c65ff3144ad3daa2e1788273, type: 3}
   enemyCursorTexture: {fileID: 2800000, guid: 403452f30934af444bd4f81761426917, type: 3}
   hotSpot: {x: 0, y: 0}
+  enemyHotSpot: {x: 540, y: 540}
   cursorMode: 0
 --- !u!1 &1267856327
 GameObject:
