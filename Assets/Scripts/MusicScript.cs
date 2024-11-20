@@ -11,6 +11,7 @@ public class MusicScript : MonoBehaviour
     private AudioSource Source;
     public float fadeInDuration = 2f; // Duración del fade in en segundos
     private float vol_aux = 0.5f;
+    public bool partida = false;
 
     // Clips de audio para cada escena
     public AudioClip startMusic;
@@ -70,6 +71,15 @@ public class MusicScript : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Llama al método para cambiar la música cuando la escena cambia
+        if (scene.name.Contains("Room"))
+        {
+            partida = true;
+        }
+        else
+        {
+            partida = false;
+        }
+
         PlayMusicForScene(scene.name);
     }
 
@@ -91,7 +101,7 @@ public class MusicScript : MonoBehaviour
                 clipToPlay = startMusic;
                 break;
             default:
-                if (RoomManager.Instance != null)
+                if (RoomManager.Instance != null && partida)
                 {
                     int roomtheme = RoomManager.Instance.currentThemeIndex;
 
