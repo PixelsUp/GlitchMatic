@@ -10,6 +10,8 @@ public class PauseScript : MonoBehaviour
 {
     public GameObject PauseUI; // Panel de Game Over
 
+    public _CharacterManager characterManager;
+
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
@@ -32,6 +34,7 @@ public class PauseScript : MonoBehaviour
     public void Resume()
     {
         Debug.Log("Activando pantalla de Pause");
+        characterManager.isPaused = false;
         PauseUI.SetActive(false);
     }
     public void Pause()

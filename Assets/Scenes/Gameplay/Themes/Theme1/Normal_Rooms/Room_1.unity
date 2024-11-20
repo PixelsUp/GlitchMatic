@@ -4791,6 +4791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 1616579205}
+  characterManager: {fileID: 988175506}
   myMixer: {fileID: 24100000, guid: ee3379f90bd5ada4892b56074b6cacb8, type: 2}
   masterSlider: {fileID: 1477516606}
   musicSlider: {fileID: 432408084}
