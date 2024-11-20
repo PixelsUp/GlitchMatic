@@ -12,6 +12,9 @@ public abstract class Enemy : MonoBehaviour
     private bool isInvincible = false;
     private bool isDead = false;
 
+    [SerializeField]
+    private float detectionRadius = 5f;
+
     // Variables para el sistema de gruñidos
     //private float gruntTimer;       // Temporizador de gruñido
     //private float gruntInterval;    // Intervalo aleatorio entre gruñidos
@@ -61,6 +64,17 @@ public abstract class Enemy : MonoBehaviour
         gruntTimer = gruntInterval;
     }
     */
+
+    public void SetDetectionRadiusMultiplier(float multiplier)
+    {
+        detectionRadius *= multiplier;
+        Debug.Log($"{name}'s detection radius set to {detectionRadius}.");
+    }
+
+    public float GetDetectionRadius()
+    {
+        return detectionRadius;
+    }
 
     public void SetEnemyManager(EnemyManager manager)
     {
