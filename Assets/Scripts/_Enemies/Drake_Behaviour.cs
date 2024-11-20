@@ -6,9 +6,9 @@ using UnityEngine;
 public class Drake_Behaviour : MonoBehaviour
 {
     // Variables del dragón
-    public float health = 100f;
+    public float health = 1000f;
     public float playerDistance;
-    public float attackCooldown = 5f;
+    public float attackCooldown = 3f;
     private float attackTimer = 0f;
 
     // Referencia al jugador
@@ -17,8 +17,8 @@ public class Drake_Behaviour : MonoBehaviour
 
     // Parámetros que influyen en las utilidades
     public float criticalHealthThreshold = 20f;
-    public float fireBreathRange = 5f;
-    public float meleeAttackRange = 2f;
+    public float fireBreathRange = 25f;
+    public float meleeAttackRange = 25f;
 
     // Método Start: Inicialización del script
     void Start()
@@ -93,8 +93,17 @@ public class Drake_Behaviour : MonoBehaviour
         if (attackTimer < attackCooldown || playerDistance > meleeAttackRange)
             return 0f;
 
-        // Utilidad máxima si el jugador está en rango de ataque cuerpo a cuerpo
-        return playerDistance <= meleeAttackRange ? 1f : 0f;
+        // Calcular cuán a la derecha está el jugador en relación al dragón
+        float horizontalOffset = posicionProtagonista.x - transform.position.x;
+
+        // Queremos que la utilidad sea mayor cuanto más a la derecha esté el jugador
+        float rightBias = Mathf.Clamp01(horizontalOffset / meleeAttackRange);
+
+        // Calcular utilidad basada en distancia y posición a la derecha
+        float distanceUtility = Mathf.Clamp01((meleeAttackRange - playerDistance) / meleeAttackRange);
+
+        // Multiplicar la utilidad de la distancia por el sesgo hacia la derecha
+        return rightBias * distanceUtility;
     }
 
     private float CalculateHealUtility()
