@@ -15,10 +15,11 @@ public class LeaderboardScript : MonoBehaviour
 
     private void Start()
     {
-        getScores();
+        //addScore("prueba", "1");
+        //getScores();
     }
 
-    public void addScore()
+    public void addScore(string username, string score)
     {
         StartCoroutine(httpCor("addScore/" + username + "/" + score + "/"));
     }
