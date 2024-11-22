@@ -32,6 +32,9 @@ public class EnemyManager : MonoBehaviour
         {
             RoomManager.Instance.EnableTransitionPoint(); // Habilita el punto de transición
         }
+        else
+        {
+        }
     }
 
     void SpawnEnemies()

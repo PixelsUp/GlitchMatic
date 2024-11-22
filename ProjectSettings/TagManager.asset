@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Transition
+  - Pointer
   layers:
   - Default
   - TransparentFX

@@ -428,7 +428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CiberPunk
+  m_text: 'CyberPunk
 
 '
   m_isRightToLeft: 0
