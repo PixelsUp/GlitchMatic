@@ -61,6 +61,7 @@ public class _CharacterManager : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = true;
         isDead = false;
+        puedeDisparar = true;
         rb = GetComponent<Rigidbody2D>();
         currentRollCharges = maxRollCharges; // Initialize roll charges
         StartCoroutine(RegenerateRollCharge()); // Start roll regeneration coroutine
@@ -373,6 +374,7 @@ public class _CharacterManager : MonoBehaviour
         pauseScript.Resume();
         Time.timeScale = 1f;
         isPaused = false;
+        puedeDisparar = true;
     }
 
     void Pause()
@@ -380,6 +382,7 @@ public class _CharacterManager : MonoBehaviour
         pauseScript.Pause();
         Time.timeScale = 0f;
         isPaused = true;
+        puedeDisparar = false;
     }
 
     public void ResetLife() //Intento de hacer para que la segunda partida empiece con hp correctas
