@@ -8,6 +8,7 @@ public class PointToDoor : MonoBehaviour
     public GameObject Flecha;
     public Transform puerta; // Asigna la puerta de salida en el inspector
     private Transform flechaTransform;
+    private bool activado = false;
 
     void OnEnable()
     {
@@ -26,6 +27,7 @@ public class PointToDoor : MonoBehaviour
     {
         // Encontrar el GameObject con la etiqueta "Transition"
         Flecha.SetActive(false);
+        activado = false;
         GameObject puertaObjeto = GameObject.Find("TransitionPoint");
         if (puertaObjeto != null)
         {
@@ -39,7 +41,7 @@ public class PointToDoor : MonoBehaviour
 
     private void Update()
     {
-        if (puerta != null)
+        if (activado)
         {
             // Calcular la dirección hacia la puerta
             Vector3 direccionHaciaPuerta = (puerta.position - flechaTransform.position).normalized;
@@ -53,6 +55,7 @@ public class PointToDoor : MonoBehaviour
     }
     public void Activate()
     {
+        activado = true;
         Flecha.SetActive(true);
         flechaTransform = Flecha.transform;
     }
