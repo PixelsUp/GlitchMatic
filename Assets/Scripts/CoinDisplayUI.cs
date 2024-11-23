@@ -6,6 +6,7 @@ public class CoinDisplayUI : MonoBehaviour
 {
     public TextMeshProUGUI coinDisplay;
     private int totalCoins;
+    public TextMeshProUGUI finalDisplay;
     void Start()
     {
         totalCoins = 0;
@@ -15,6 +16,7 @@ public class CoinDisplayUI : MonoBehaviour
     void UpdateCoinDisplay()
     {
         totalCoins = totalCoins + 10;
+        finalDisplay.text = "You get " + totalCoins.ToString() + " Coins!";
         coinDisplay.text = "Coins: " + totalCoins.ToString();
     }
 
