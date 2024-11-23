@@ -35,11 +35,13 @@ public class PauseScript : MonoBehaviour
     {
         Debug.Log("Activando pantalla de Pause");
         characterManager.isPaused = false;
+        characterManager.puedeDisparar = true;
         PauseUI.SetActive(false);
     }
     public void Pause()
     {
         Debug.Log("Activando pantalla de Pause");
+        characterManager.isPaused = true;
         PauseUI.SetActive(true);
     }
 
