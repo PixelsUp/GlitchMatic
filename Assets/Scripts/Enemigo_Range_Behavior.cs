@@ -16,7 +16,7 @@ public class Enemigo_Range_Behavior : Enemy
     [SerializeField] private Transform puntoDisparo;
 
     // Definimos los posibles estados del enemigo
-    private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO }
+    private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO, RETROCEDIENDO }
     private TEstado estado = TEstado.BUSCANDO;
 
     // Variables relacionadas con el comportamiento del enemigo
@@ -35,6 +35,7 @@ public class Enemigo_Range_Behavior : Enemy
     // Distancias relevantes
     [SerializeField] private float distanciaDeteccion = 50f; // Distancia para detectar al protagonista
     [SerializeField] private float distanciaAtaque = 20f; // Distancia para disparar
+    [SerializeField] private float distanciaMinima = 30f; // Distancia mínima de seguridad
 
     void Start()
     {
@@ -103,10 +104,13 @@ public class Enemigo_Range_Behavior : Enemy
                 break;
 
             case TEstado.AVANZANDO:
-                // El enemigo continúa avanzando hacia el protagonista
-                animator.SetBool("IsRunning", true); // Activar animación de correr
+                animator.SetBool("IsRunning", true);
 
-                if (distanciaAlProtagonista <= distanciaAtaque)
+                if (distanciaAlProtagonista <= distanciaMinima)
+                {
+                    estado = TEstado.RETROCEDIENDO;
+                }
+                else if (distanciaAlProtagonista <= distanciaAtaque)
                 {
                     estado = TEstado.ATACANDO;
                     StartCoroutine(DispararProyectilCoroutine());
@@ -114,7 +118,7 @@ public class Enemigo_Range_Behavior : Enemy
                 else if (distanciaAlProtagonista > distanciaDeteccion)
                 {
                     estado = TEstado.BUSCANDO;
-                    protagonistaDetectado=false;
+                    protagonistaDetectado = false;
                 }
                 else
                 {
@@ -123,26 +127,51 @@ public class Enemigo_Range_Behavior : Enemy
                 break;
 
             case TEstado.ATACANDO:
-                // Verificar si el enemigo está dentro del rango de ataque
-                animator.SetBool("IsRunning", false); // Detener animación de correr al atacar
+                animator.SetBool("IsRunning", false);
 
-                if ((distanciaAlProtagonista <= distanciaAtaque) && puedeDisparar)
+                if (distanciaAlProtagonista <= distanciaMinima)
                 {
-                    
-                    StartCoroutine(DispararProyectilCoroutine());
-                    SfxScript.TriggerSfx("SfxBowShot");
-                    
+                    estado = TEstado.RETROCEDIENDO;
                 }
                 else if (distanciaAlProtagonista > distanciaAtaque)
                 {
                     estado = TEstado.AVANZANDO;
-                    Avanzar(posicionProtagonista);
-                    
+                }
+                else if (puedeDisparar)
+                {
+                    StartCoroutine(DispararProyectilCoroutine());
+                    SfxScript.TriggerSfx("SfxBowShot");
+                }
+                break;
+
+            case TEstado.RETROCEDIENDO:
+                // El enemigo se aleja del protagonista
+                animator.SetBool("IsRunning", true);
+
+                if (distanciaAlProtagonista > distanciaMinima)
+                {
+                    estado = TEstado.ATACANDO;
+                }
+                else
+                {
+                    Retroceder(posicionProtagonista);
                 }
                 break;
         }
     }
 
+    // Método para retroceder
+    void Retroceder(Vector3 objetivo)
+    {
+        // Calculamos la dirección opuesta al objetivo (protagonista)
+        Vector3 direccionEscape = (transform.position - objetivo).normalized;
+
+        // Movemos al enemigo en la dirección opuesta al protagonista
+        transform.position += direccionEscape * velocidadMovimiento * Time.deltaTime;
+
+        // Girar hacia el objetivo para mantener el enfrentamiento visual
+        GirarHaciaObjetivo(objetivo);
+    }
     // Método para avanzar hacia el protagonista
     public void Avanzar(Vector3 objetivo)
     {

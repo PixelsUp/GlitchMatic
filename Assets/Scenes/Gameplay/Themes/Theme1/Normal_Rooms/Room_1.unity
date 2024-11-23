@@ -4879,6 +4879,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: distanciaMinima
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
