@@ -145,8 +145,7 @@ public class MusicScript : MonoBehaviour
             Debug.LogWarning($"No se encontró música para la escena {sceneName}");
         }
     }
-
-
+    
     public void PlaySpecificMusic(AudioClip clip)
     {
         if (Source.clip == clip) return;

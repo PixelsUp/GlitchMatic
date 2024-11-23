@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI; // Panel de Game Over
+    public GameObject canvas;
 
     private bool dead = false;
     void Start()
@@ -23,6 +24,7 @@ public class GameOverManagerScript : MonoBehaviour
 
     public void gameOver()
     {
+        canvas.SetActive(false);
         Debug.Log("Activando pantalla de Game Over");
         if (!dead)
         {
@@ -32,8 +34,21 @@ public class GameOverManagerScript : MonoBehaviour
         if (RoomManager.Instance != null)
         {
             RoomManager.Instance.EndGame();
+            string user;
+            if (PlayerPrefs.HasKey("username"))
+            {
+                user = PlayerPrefs.GetString("username");
+            }
+            else
+            {
+                user = "Player";
+            }
+            string room = RoomManager.Instance.currentRoom.ToString();
+            if (LeaderboardManager.Instance != null)
+            {
+                LeaderboardManager.Instance.addScore(user, room);
+            }
         }
-
     }
 
     void DestroySingletonsOnDeath()
