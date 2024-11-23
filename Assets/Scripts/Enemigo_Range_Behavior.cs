@@ -26,6 +26,7 @@ public class Enemigo_Range_Behavior : Enemy
     [SerializeField] private int vida = 50;
     private bool puedeDisparar = true;
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
+    private bool disparando = false; // Bandera para evitar múltiples disparos
 
     // Variables para el sistema de gruñidos
     private float gruntTimer;       // Temporizador de gruñido
@@ -94,7 +95,6 @@ public class Enemigo_Range_Behavior : Enemy
         switch (estado)
         {
             case TEstado.BUSCANDO:
-                // El enemigo mira y avanza hacia el protagonista si está dentro del rango de detección
                 if (distanciaAlProtagonista <= distanciaDeteccion)
                 {
                     Avanzar(posicionProtagonista);
@@ -113,7 +113,6 @@ public class Enemigo_Range_Behavior : Enemy
                 else if (distanciaAlProtagonista <= distanciaAtaque)
                 {
                     estado = TEstado.ATACANDO;
-                    StartCoroutine(DispararProyectilCoroutine());
                 }
                 else if (distanciaAlProtagonista > distanciaDeteccion)
                 {
@@ -137,15 +136,15 @@ public class Enemigo_Range_Behavior : Enemy
                 {
                     estado = TEstado.AVANZANDO;
                 }
-                else if (puedeDisparar)
+                else if (!disparando && puedeDisparar)
                 {
+                    disparando = true; // Activar la bandera antes de disparar
                     StartCoroutine(DispararProyectilCoroutine());
                     SfxScript.TriggerSfx("SfxBowShot");
                 }
                 break;
 
             case TEstado.RETROCEDIENDO:
-                // El enemigo se aleja del protagonista
                 animator.SetBool("IsRunning", true);
 
                 if (distanciaAlProtagonista > distanciaMinima)
@@ -206,6 +205,7 @@ public class Enemigo_Range_Behavior : Enemy
         // Esperar el tiempo entre disparos
         yield return new WaitForSeconds(tiempoEntreDisparos);
 
-        puedeDisparar = true; // Activar disparo nuevamente después del cooldown
+        puedeDisparar = true;  // Activar disparo nuevamente después del cooldown
+        disparando = false;    // Liberar la bandera para permitir nuevos disparos
     }
 }

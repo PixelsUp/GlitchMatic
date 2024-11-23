@@ -1780,8 +1780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac93c194feb48254eb73821a63f71410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinDisplay: {fileID: 0}
-  finalDisplay: {fileID: 0}
+  coinDisplay: {fileID: 544828423}
+  finalDisplay: {fileID: 583729900}
 --- !u!114 &583729900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5890,7 +5890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1997471963}
-  leaderboard: {fileID: 0}
   canvas: {fileID: 11075542}
 --- !u!1 &2011262710
 GameObject:

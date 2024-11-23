@@ -25,9 +25,9 @@ public class PointToDoor : MonoBehaviour
     // Método que se llama cuando una nueva escena es cargada
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        activado = false;
         // Encontrar el GameObject con la etiqueta "Transition"
         Flecha.SetActive(false);
-        activado = false;
         GameObject puertaObjeto = GameObject.Find("TransitionPoint");
         if (puertaObjeto != null)
         {
