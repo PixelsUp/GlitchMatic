@@ -24,13 +24,13 @@ public class GameOverManagerScript : MonoBehaviour
 
     public void gameOver()
     {
+        gameOverUI.SetActive(true);
         canvas.SetActive(false);
         Debug.Log("Activando pantalla de Game Over");
         if (!dead)
         {
             dead = true;
         }
-        gameOverUI.SetActive(true);
         if (RoomManager.Instance != null)
         {
             RoomManager.Instance.EndGame();
