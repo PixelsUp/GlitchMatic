@@ -13,6 +13,7 @@ public class Drake_Behaviour : MonoBehaviour
     public float attackCooldown = 3f;
     private float attackTimer = 0f;
     private int countFB = 4;
+    public Vector2 startFireBreath;
 
     // Referencia al jugador
     private _CharacterManager protagonista;
@@ -281,8 +282,8 @@ public class Drake_Behaviour : MonoBehaviour
         Vector2 startPosition = (Vector2)transform.position;
 
         // Usar un Raycast o instanciar un efecto visual
-        RaycastHit2D hit = Physics2D.Raycast(startPosition, direction, fireBreathRange);
-        Debug.DrawRay(startPosition, direction * fireBreathRange, Color.red, 0.1f);
+        RaycastHit2D hit = Physics2D.Raycast(startFireBreath, direction, fireBreathRange);
+        Debug.DrawRay(startFireBreath, direction * fireBreathRange, Color.red, 0.1f);
 
         // Si golpea algo, aplicar daño
         if (hit.collider != null)
@@ -301,7 +302,7 @@ public class Drake_Behaviour : MonoBehaviour
             CreateTailEffect(startPosition, direction);
         }else if(type == 1)
         {
-            CreateFireEffect(startPosition, direction);
+            CreateFireEffect(startFireBreath, direction);
         }
     }
 
