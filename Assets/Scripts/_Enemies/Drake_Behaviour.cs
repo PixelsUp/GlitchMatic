@@ -27,6 +27,13 @@ public class Drake_Behaviour : MonoBehaviour
     private bool reached40 = false; // Bandera para el 40%
     private bool reached20 = false; // Bandera para el 20%
 
+    public GameObject firePrefab;
+    public GameObject fireballPrefab;
+    public GameObject tailPrefab;
+
+    public float fireballSpeed = 10f; // Velocidad de las bolas de fuego
+
+
 
     // Método Start: Inicialización del script
     void Start()
@@ -131,6 +138,8 @@ public class Drake_Behaviour : MonoBehaviour
         {
             Debug.Log("El dragón lanza un aliento de fuego en abanico!");
 
+            // GetComponent<Animator>().SetTrigger("FireBreath");
+
             // Iniciar el barrido en abanico
             StartCoroutine(FireBreathFan());
 
@@ -144,6 +153,8 @@ public class Drake_Behaviour : MonoBehaviour
         if (attackTimer >= attackCooldown)
         {
             Debug.Log("El dragón realiza un barrido de cola!");
+
+            // GetComponent<Animator>().SetTrigger("TailSwipe");
 
             // Iniciar el barrido de cola
             StartCoroutine(TailSwipeFan());
@@ -322,7 +333,6 @@ public class Drake_Behaviour : MonoBehaviour
     // Método para crear un efecto visual en la dirección
     private void CreateFireEffect(Vector2 position, Vector2 direction)
     {
-        /*
         // Suponiendo que tienes un prefab de fuego asignado
         GameObject fireEffect = Instantiate(firePrefab, position, Quaternion.identity); // Descomentar cuando tengamos el prefab de fuego
 
@@ -332,7 +342,6 @@ public class Drake_Behaviour : MonoBehaviour
 
         // Configurar la duración del efecto (opcional)
         Destroy(fireEffect, 1f); // Destruir el efecto después de 1 segundo
-        */
     }
 
     // Método para crear un efecto visual en la dirección
@@ -388,4 +397,15 @@ public class Drake_Behaviour : MonoBehaviour
             reached20 = true;
         }
     }
+
+    // dibuja los gizmos para ver los rangos
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, fireBreathRange);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, meleeAttackRange);
+    }
+
 }
