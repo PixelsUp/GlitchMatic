@@ -111,19 +111,20 @@ public class LeaderboardManager : MonoBehaviour
             }
         }
 
-        // Ordenar las entradas por puntajes de mayor a menor
-        leaderboardEntries.Sort((a, b) => b.Value.CompareTo(a.Value));
+        // Ordenar los puntajes de mayor a menor
+        leaderboardEntries.Sort((x, y) => y.Value.CompareTo(x.Value));
+
+        // Limitar a los 8 mejores puntajes
+        leaderboardEntries = leaderboardEntries.GetRange(0, Mathf.Min(8, leaderboardEntries.Count));
 
         // Actualizar el texto del leaderboard
         leaderboardText.text = ""; // Limpia el texto existente
+
         for (int i = 0; i < leaderboardEntries.Count; i++)
         {
             var entry = leaderboardEntries[i];
-            leaderboardText.text += $"{i + 1}. {entry.Key}: {entry.Value}\n";
+            leaderboardText.text += (i + 1) + ". " + entry.Key + ": " + entry.Value + "\n"; // Añade cada entrada
         }
-
-        // Debug adicional para ver el resultado procesado
-        Debug.Log($"Leaderboard actualizado: \n{leaderboardText.text}");
     }
 
     public void Back()
