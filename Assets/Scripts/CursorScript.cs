@@ -24,7 +24,18 @@ public class CursorScript : MonoBehaviour
 
     private void SetCustomCursor(Texture2D cursorTexture, Vector2 hotspot)
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        // Ajustar escala si es WebGL
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Vector2 scaledHotspot = hotspot * (32f / cursorTexture.width); // Escalar el punto de anclaje
+            Texture2D resizedTexture = ResizeCursorTexture(cursorTexture, 32, 32); // Ajustar el tamaño
+            Cursor.SetCursor(resizedTexture, scaledHotspot, cursorMode);
+        }
+        else
+        {
+            // Mantener comportamiento normal en otras plataformas
+            Cursor.SetCursor(cursorTexture, hotspot, cursorMode);
+        }
     }
 
     private void DetectHover()
@@ -50,5 +61,28 @@ public class CursorScript : MonoBehaviour
             // Si no está sobre un enemigo, restaurar el cursor predeterminado
             SetCustomCursor(defaultCursorTexture, hotSpot);
         }
+    }
+
+    private Texture2D ResizeCursorTexture(Texture2D originalTexture, int width, int height)
+    {
+        // Crear una nueva textura con las dimensiones especificadas
+        Texture2D resizedTexture = new Texture2D(width, height);
+        Color[] resizedPixels = resizedTexture.GetPixels();
+
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                // Calcular la proporción para tomar el color del píxel correspondiente
+                float u = (float)x / width;
+                float v = (float)y / height;
+                resizedPixels[y * width + x] = originalTexture.GetPixelBilinear(u, v);
+            }
+        }
+
+        resizedTexture.SetPixels(resizedPixels);
+        resizedTexture.Apply();
+
+        return resizedTexture;
     }
 }

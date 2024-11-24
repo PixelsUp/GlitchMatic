@@ -16,6 +16,7 @@ public class MenuInicial : MonoBehaviour
         {
             RoomManager.Instance.ResetRoom();
             RoomManager.Instance.LoadNextRoom();
+            RoomManager.Instance.earnedCoins = 0;
         }
     }
 

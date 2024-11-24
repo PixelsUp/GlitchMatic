@@ -84,14 +84,46 @@ public class LeaderboardManager : MonoBehaviour
     // Método para actualizar el texto del leaderboard
     void UpdateLeaderboard(string rawData)
     {
-        // Supongamos que `rawData` tiene el formato "Jugador1:100,Jugador2:90,Jugador3:80..."
-        string[] entries = rawData.Split(',');
-        leaderboardText.text = ""; // Limpia el texto existente
+        // Dividir el rawData por líneas
+        string[] entries = rawData.Split(new[] { '\n', ',' }, System.StringSplitOptions.RemoveEmptyEntries);
+        List<KeyValuePair<string, int>> leaderboardEntries = new List<KeyValuePair<string, int>>();
 
-        for (int i = 0; i < entries.Length; i++)
+        foreach (string entry in entries)
         {
-            leaderboardText.text += (i + 1) + ". " + entries[i] + "\n"; // Añade cada entrada
+            if (!string.IsNullOrWhiteSpace(entry) && entry.Contains(":"))
+            {
+                // Limpiar espacios extra alrededor de cada entrada
+                string[] parts = entry.Split(':');
+                if (parts.Length == 2)
+                {
+                    string playerName = parts[0].Trim(); // Eliminar espacios del nombre
+                    string scoreString = parts[1].Trim(); // Eliminar espacios del puntaje
+
+                    if (int.TryParse(scoreString, out int playerScore))
+                    {
+                        leaderboardEntries.Add(new KeyValuePair<string, int>(playerName, playerScore));
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Error al procesar puntaje: {entry}");
+                    }
+                }
+            }
         }
+
+        // Ordenar las entradas por puntajes de mayor a menor
+        leaderboardEntries.Sort((a, b) => b.Value.CompareTo(a.Value));
+
+        // Actualizar el texto del leaderboard
+        leaderboardText.text = ""; // Limpia el texto existente
+        for (int i = 0; i < leaderboardEntries.Count; i++)
+        {
+            var entry = leaderboardEntries[i];
+            leaderboardText.text += $"{i + 1}. {entry.Key}: {entry.Value}\n";
+        }
+
+        // Debug adicional para ver el resultado procesado
+        Debug.Log($"Leaderboard actualizado: \n{leaderboardText.text}");
     }
 
     public void Back()

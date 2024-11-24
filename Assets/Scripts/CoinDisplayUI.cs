@@ -15,7 +15,7 @@ public class CoinDisplayUI : MonoBehaviour
 
     void UpdateCoinDisplay()
     {
-        totalCoins = totalCoins + 10;
+        totalCoins = RoomManager.Instance.earnedCoins;
         finalDisplay.text = "You get " + totalCoins.ToString() + " Coins!";
         coinDisplay.text = "Coins: " + totalCoins.ToString();
     }

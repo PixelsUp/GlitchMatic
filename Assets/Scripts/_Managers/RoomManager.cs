@@ -11,6 +11,7 @@ public class RoomManager : MonoBehaviour
     public string[] Theme; // List of available themes (folder names).
     public int coinsPerRoom = 10; // Coins awarded per room cleared.
     public int currentThemeIndex = 1; // Current theme index.
+    public int earnedCoins = 0;
 
     void Awake()
     {
@@ -61,7 +62,7 @@ public class RoomManager : MonoBehaviour
 
     private void LoadNormalRoom()
     {
-        int earnedCoins = currentRoom * coinsPerRoom;
+        earnedCoins = currentRoom * coinsPerRoom;
         string theme = Theme[currentThemeIndex];
         int roomIndex = Random.Range(1, 4); // Assuming 10 rooms per theme.
         string sceneName = $"Scenes/Gameplay/Themes/{theme}/Normal_Rooms/Room_{roomIndex}";
@@ -98,7 +99,7 @@ public class RoomManager : MonoBehaviour
     public void EndGame()
     {
         // Calcula las monedas totales ganadas en la partida actual.
-        int earnedCoins = currentRoom * coinsPerRoom;
+        earnedCoins = currentRoom * coinsPerRoom;
         Debug.Log("Total de monedas ganadas: " + earnedCoins);
 
         // Acumula el total de monedas almacenado en PlayerPrefs.
@@ -107,13 +108,12 @@ public class RoomManager : MonoBehaviour
         PlayerPrefs.SetInt("TotalCoins", totalCoins); // Guarda el nuevo total en PlayerPrefs.
 
         Debug.Log("Total de monedas guardadas: " + totalCoins);
-
-        // Reinicia las variables para la próxima partida.
-        currentRoom = 0;
     }
+
     // Método para resetear el número de sala, llamable desde otros scripts.
     public void ResetRoom()
     {
+        // Reinicia las variables para la próxima partida.
         currentRoom = 0;
         Debug.Log("Número de sala reseteado a 0.");
     }
