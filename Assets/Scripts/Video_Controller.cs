@@ -1,32 +1,48 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Video_Controller : MonoBehaviour
 {
-    private VideoPlayer videoPlayer;
+    // Lista de imágenes para mostrar
+    public Sprite[] imageBank; // Banco de imágenes
+    public Image displayImage; // Referencia al componente UI Image
+    public string nextSceneName = "MainMenu"; // Nombre de la próxima escena
+    public float delay = 10f; // Tiempo en segundos antes de cambiar de escena
 
     void Start()
     {
-        // Obtiene el componente VideoPlayer adjunto al mismo objeto
-        videoPlayer = GetComponent<VideoPlayer>();
-
-        if (videoPlayer == null)
+        // Verifica que se hayan asignado las imágenes y el componente UI Image
+        if (imageBank == null || imageBank.Length == 0)
         {
-            Debug.LogError("No se encontró un componente VideoPlayer en el GameObject.");
+            Debug.LogError("El banco de imágenes está vacío. Agrega sprites al array 'imageBank'.");
             return;
         }
 
-        // Reproduce el video al empezar la escena
-        videoPlayer.Play();
+        if (displayImage == null)
+        {
+            Debug.LogError("No se asignó un componente Image. Arrastra un objeto UI Image al campo 'displayImage'.");
+            return;
+        }
 
-        // Agrega el método EndReached al evento loopPointReached
-        videoPlayer.loopPointReached += EndReached;
+        // Asigna una imagen aleatoria del banco al componente Image
+        displayImage.sprite = GetRandomImage();
+
+        // Inicia el temporizador para cambiar de escena
+        Invoke("ChangeScene", delay);
     }
 
-    // Método que se llama cuando el video termina
-    void EndReached(VideoPlayer vp)
+    // Método para obtener una imagen aleatoria
+    Sprite GetRandomImage()
     {
-        SceneManager.LoadScene("MainMenu");
+        int randomIndex = Random.Range(0, imageBank.Length);
+        return imageBank[randomIndex];
+    }
+
+    // Cambiar de escena después del delay
+    void ChangeScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
     }
 }
