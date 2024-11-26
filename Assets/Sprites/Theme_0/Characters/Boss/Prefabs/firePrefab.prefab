@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 834284435693654189}
   - component: {fileID: 6871449629331388813}
-  - component: {fileID: 2055022468112608782}
+  - component: {fileID: -5877657539513171172}
+  - component: {fileID: 3560060619767836986}
   m_Layer: 0
   m_Name: firePrefab
   m_TagString: Untagged
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &2055022468112608782
-PolygonCollider2D:
+--- !u!61 &-5877657539513171172
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -114,54 +115,32 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.054092973, y: -0.8113948}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5607786, y: 0.95841515}
     oldSize: {x: 0.89, y: 1.77}
     newSize: {x: 0.89, y: 1.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.445, y: -0.405}
-      - {x: 0.445, y: -0.235}
-      - {x: 0.435, y: -0.225}
-      - {x: 0.405, y: -0.235}
-      - {x: 0.445, y: -0.225}
-      - {x: 0.445, y: -0.114999995}
-      - {x: 0.305, y: 0.16499999}
-      - {x: 0.145, y: 0.645}
-      - {x: 0.155, y: 0.865}
-      - {x: -0.024999999, y: 0.865}
-      - {x: -0.024999999, y: 0.78499997}
-      - {x: -0.095, y: 0.405}
-      - {x: -0.155, y: 0.255}
-      - {x: -0.24499999, y: 0.185}
-      - {x: -0.33499998, y: 0.044999998}
-      - {x: -0.33750108, y: 0.01498061}
-      - {x: -0.345, y: -0.074999996}
-      - {x: -0.3501837, y: -0.08555122}
-      - {x: -0.36301515, y: -0.106842294}
-      - {x: -0.35699785, y: -0.107784115}
-      - {x: -0.3579521, y: -0.1177584}
-      - {x: -0.36465985, y: -0.124143295}
-      - {x: -0.375, y: -0.13499999}
-      - {x: -0.405, y: -0.13499999}
-      - {x: -0.445, y: -0.16499999}
-      - {x: -0.445, y: -0.21499999}
-      - {x: -0.405, y: -0.305}
-      - {x: -0.42499998, y: -0.45499998}
-      - {x: -0.405, y: -0.585}
-      - {x: -0.305, y: -0.72499996}
-      - {x: -0.105, y: -0.875}
-      - {x: 0.105, y: -0.875}
-      - {x: 0.175, y: -0.865}
-      - {x: 0.415, y: -0.645}
-      - {x: 0.435, y: -0.545}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.89, y: 1.77}
+  m_EdgeRadius: 0
+--- !u!114 &3560060619767836986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500737185656787733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2328187225b45e458e769be84fc3373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20

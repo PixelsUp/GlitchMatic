@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ public class Drake_Behaviour : MonoBehaviour
     public float attackCooldown = 3f;
     private float attackTimer = 0f;
     private int countFB = 4;
-    public Vector2 startFireBreath;
+    public Transform startFireBreath;
 
     // Referencia al jugador
     private _CharacterManager protagonista;
@@ -158,7 +159,7 @@ public class Drake_Behaviour : MonoBehaviour
             // GetComponent<Animator>().SetTrigger("TailSwipe");
 
             // Iniciar el barrido de cola
-            StartCoroutine(TailSwipeFan());
+            //StartCoroutine(TailSwipeFan());
 
             // Reiniciar el temporizador de ataque
             attackTimer = 0f;
@@ -199,25 +200,38 @@ public class Drake_Behaviour : MonoBehaviour
     // Corrutina para realizar el ataque en abanico
     private IEnumerator FireBreathFan()
     {
-        float sweepDuration = 2f; // Duración del ataque
-        int numberOfSteps = 20; // Cantidad de rayos en el abanico
-        float startAngle = 180f; // Ángulo inicial 
-        float endAngle = 90f; // Ángulo final
+        Debug.Log("Entra aqui");
+        // Crear una sola llama
+        GameObject flame = Instantiate(firePrefab, startFireBreath.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
 
-        float stepDelay = sweepDuration / numberOfSteps; // Tiempo entre cada paso
+        // Configurar el rango del barrido
+        float startAngle = -90f; // Comienza hacia abajo
+        float endAngle = 0f;  // Termina hacia la derecha
+        int steps = 10;         // Número de pasos en el barrido
+        float totalTime = 2f;   // Tiempo total para completar el barrido
+        float stepTime = totalTime / steps; // Tiempo por cada paso
 
-        for (int i = 0; i <= numberOfSteps; i++)
+        for (int i = 0; i <= steps; i++)
         {
-            // Interpolar el ángulo entre inicio y fin
-            float t = (float)i / numberOfSteps; // Proporción del abanico (0 a 1)
+            // Calcular el ángulo actual basado en el progreso del bucle
+            float t = (float)i / steps; // Progreso normalizado (de 0 a 1)
             float currentAngle = Mathf.Lerp(startAngle, endAngle, t);
 
-            // Disparar un rayo o crear un efecto en la dirección actual
-            FireRayAtAngle(currentAngle, 1);
+            // Convertir el ángulo a una posición relativa
+            float angleInRadians = currentAngle * Mathf.Deg2Rad;
+            Vector2 direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
 
-            // Esperar antes del siguiente paso del abanico
-            yield return new WaitForSeconds(stepDelay);
+            // Mover la llama a la nueva posición
+            flame.transform.position = (Vector2)startFireBreath.position + direction * 2f; // Distancia de 2 unidades desde el dragón
+            flame.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+
+            // Esperar antes de mover al siguiente paso
+            yield return new WaitForSeconds(stepTime);
         }
+
+        // Destruir la llama al finalizar el barrido
+        Destroy(flame);
+
     }
 
     // Corrutina para realizar el ataque de cola en abanico
@@ -282,8 +296,8 @@ public class Drake_Behaviour : MonoBehaviour
         Vector2 startPosition = (Vector2)transform.position;
 
         // Usar un Raycast o instanciar un efecto visual
-        RaycastHit2D hit = Physics2D.Raycast(startFireBreath, direction, fireBreathRange);
-        Debug.DrawRay(startFireBreath, direction * fireBreathRange, Color.red, 0.1f);
+        RaycastHit2D hit = Physics2D.Raycast(startPosition, direction, fireBreathRange);
+        Debug.DrawRay(startPosition, direction * fireBreathRange, Color.red, 0.1f);
 
         // Si golpea algo, aplicar daño
         if (hit.collider != null)
@@ -302,7 +316,7 @@ public class Drake_Behaviour : MonoBehaviour
             CreateTailEffect(startPosition, direction);
         }else if(type == 1)
         {
-            CreateFireEffect(startFireBreath, direction);
+            CreateFireEffect(startPosition, direction);
         }
     }
 
