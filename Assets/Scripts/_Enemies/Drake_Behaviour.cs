@@ -15,6 +15,8 @@ public class Drake_Behaviour : MonoBehaviour
     private float attackTimer = 0f;
     private int countFB = 4;
     public Transform startFireBreath;
+    public Transform startTail;
+    private bool isBreathingFire = false;
 
     // Referencia al jugador
     private _CharacterManager protagonista;
@@ -159,7 +161,7 @@ public class Drake_Behaviour : MonoBehaviour
             // GetComponent<Animator>().SetTrigger("TailSwipe");
 
             // Iniciar el barrido de cola
-            //StartCoroutine(TailSwipeFan());
+            StartCoroutine(TailSwipeFan());
 
             // Reiniciar el temporizador de ataque
             attackTimer = 0f;
@@ -200,7 +202,10 @@ public class Drake_Behaviour : MonoBehaviour
     // Corrutina para realizar el ataque en abanico
     private IEnumerator FireBreathFan()
     {
-        Debug.Log("Entra aqui");
+        if (isBreathingFire) yield break;
+        isBreathingFire = true;
+
+        Debug.Log("Ataque de Aliento");
         // Crear una sola llama
         GameObject flame = Instantiate(firePrefab, startFireBreath.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
 
@@ -232,92 +237,43 @@ public class Drake_Behaviour : MonoBehaviour
         // Destruir la llama al finalizar el barrido
         Destroy(flame);
 
+        isBreathingFire = false; // Marca el final del ataque
     }
 
     // Corrutina para realizar el ataque de cola en abanico
     private IEnumerator TailSwipeFan()
     {
-        float sweepDuration = 2f; // Duración del ataque
-        int numberOfSteps = 20; // Cantidad de rayos en el abanico
-        float startAngle = 0f; // Ángulo inicial (completamente a la derecha)
-        float endAngle = 90f; // Ángulo final (frontal del dragón)
+        Debug.Log("Ataque de cola");
+        // Crear una sola llama
+        GameObject tail = Instantiate(tailPrefab, startTail.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
 
-        float stepDelay = sweepDuration / numberOfSteps; // Tiempo entre cada paso
+        // Configurar el rango del barrido
+        float startAngle = 90f; // Comienza hacia abajo
+        float endAngle = 0f;  // Termina hacia la derecha
+        int steps = 10;         // Número de pasos en el barrido
+        float totalTime = 2f;   // Tiempo total para completar el barrido
+        float stepTime = totalTime / steps; // Tiempo por cada paso
 
-        for (int i = 0; i <= numberOfSteps; i++)
+        for (int i = 0; i <= steps; i++)
         {
-            // Interpolar el ángulo entre inicio y fin
-            float t = (float)i / numberOfSteps; // Proporción del abanico (0 a 1)
+            // Calcular el ángulo actual basado en el progreso del bucle
+            float t = (float)i / steps; // Progreso normalizado (de 0 a 1)
             float currentAngle = Mathf.Lerp(startAngle, endAngle, t);
 
-            // Disparar un rayo o crear un efecto en la dirección actual
-            FireRayAtAngle(currentAngle, 0);
+            // Convertir el ángulo a una posición relativa
+            float angleInRadians = currentAngle * Mathf.Deg2Rad;
+            Vector2 direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
 
-            // Esperar antes del siguiente paso del abanico
-            yield return new WaitForSeconds(stepDelay);
-        }
-    }
+            // Mover la llama a la nueva posición
+            tail.transform.position = (Vector2)startTail.position + direction * 2f; // Distancia de 2 unidades desde el dragón
+            tail.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
 
-    // Método para lanzar una bola de fuego en una dirección basada en un ángulo
-    //private void LaunchFireball(float angle)
-    //{
-    //    // Convertir el ángulo a una dirección en el espacio
-    //    float angleInRadians = angle * Mathf.Deg2Rad;
-    //    Vector2 direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
-
-    //    // Crear la bola de fuego en la posición del dragón
-    //    GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
-
-    //    // Configurar la dirección y velocidad de la bola de fuego
-    //    Rigidbody2D rb = fireball.GetComponent<Rigidbody2D>();
-    //    if (rb != null)
-    //    {
-    //        rb.velocity = direction.normalized * fireballSpeed;
-    //    }
-
-    //    // Configurar la rotación de la bola de fuego para que apunte hacia la dirección
-    //    fireball.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-    //    // Destruir la bola de fuego después de un tiempo
-    //    Destroy(fireball, 5f); // Destruir después de 5 segundos
-    //}
-
-
-    // Método para disparar un rayo o crear un efecto en una dirección específica
-    private void FireRayAtAngle(float angle, int type)
-    {
-        // Convertir el ángulo a radianes
-        float angleInRadians = angle * Mathf.Deg2Rad;
-
-        // Calcular la dirección del rayo
-        Vector2 direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
-
-        // Posición inicial del rayo (la boca del dragón)
-        Vector2 startPosition = (Vector2)transform.position;
-
-        // Usar un Raycast o instanciar un efecto visual
-        RaycastHit2D hit = Physics2D.Raycast(startPosition, direction, fireBreathRange);
-        Debug.DrawRay(startPosition, direction * fireBreathRange, Color.red, 0.1f);
-
-        // Si golpea algo, aplicar daño
-        if (hit.collider != null)
-        {
-            // Asumimos que el objeto tiene un script de salud
-            var targetHealth = protagonista.hp;
-            if (targetHealth != null)
-            {
-                protagonista.TakeDamage(20);
-            }
+            // Esperar antes de mover al siguiente paso
+            yield return new WaitForSeconds(stepTime);
         }
 
-        // Crear un efecto visual en la dirección
-        if(type == 0)
-        {
-            CreateTailEffect(startPosition, direction);
-        }else if(type == 1)
-        {
-            CreateFireEffect(startPosition, direction);
-        }
+        // Destruir la llama al finalizar el barrido
+        Destroy(tail);
     }
 
     // Método para obtener N ángulos aleatorios entre las 9 posibles
@@ -343,36 +299,6 @@ public class Drake_Behaviour : MonoBehaviour
         float[] selectedAngles = possibleAngles.OrderBy(x => random.Next()).Take(count).ToArray();
 
         return selectedAngles;
-    }
-
-    // Método para crear un efecto visual en la dirección
-    private void CreateFireEffect(Vector2 position, Vector2 direction)
-    {
-        // Suponiendo que tienes un prefab de fuego asignado
-        GameObject fireEffect = Instantiate(firePrefab, position, Quaternion.identity); // Descomentar cuando tengamos el prefab de fuego
-
-        // Rotar el efecto hacia la dirección del rayo
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        fireEffect.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Configurar la duración del efecto (opcional)
-        Destroy(fireEffect, 1f); // Destruir el efecto después de 1 segundo
-    }
-
-    // Método para crear un efecto visual en la dirección
-    private void CreateTailEffect(Vector2 position, Vector2 direction)
-    {
-        /*
-        // Suponiendo que tienes un prefab de efecto de cola asignado
-        GameObject tailEffect = Instantiate(tailPrefab, position, Quaternion.identity);
-
-        // Rotar el efecto hacia la dirección del rayo
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        tailEffect.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Configurar la duración del efecto (opcional)
-        Destroy(tailEffect, 1f); // Destruir el efecto después de 1 segundo
-        */
     }
 
     // Corrutina para curar al dragón
@@ -422,5 +348,4 @@ public class Drake_Behaviour : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, meleeAttackRange);
     }
-
 }
