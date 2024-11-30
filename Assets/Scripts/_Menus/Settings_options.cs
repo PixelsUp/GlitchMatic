@@ -22,6 +22,13 @@ public class Settings_options : MonoBehaviour
         setSfxVolume();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Back();
+        }
+    }
     public void LoadVolume()
     {
         masterSlider.value = PlayerPrefs.GetFloat("masterVolumen");

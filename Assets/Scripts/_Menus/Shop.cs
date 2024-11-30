@@ -24,6 +24,13 @@ public class Shop : MonoBehaviour
         weapon2Button.onClick.AddListener(() => BuyWeapon(2, weapon2Cost));
         weapon3Button.onClick.AddListener(() => BuyWeapon(3, weapon3Cost));
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Back();
+        }
+    }
 
     private void UpdateCoinDisplay()
     {

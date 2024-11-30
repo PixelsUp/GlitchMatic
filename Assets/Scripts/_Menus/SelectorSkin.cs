@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class SelectorSkin : MonoBehaviour
 {
-
     public static Sprite SelectedSkin { get; private set; }
     public static RuntimeAnimatorController SelectedAnim { get; private set; }
 
@@ -24,7 +23,13 @@ public class SelectorSkin : MonoBehaviour
 
     // Índice actual en el array de skins
     private int currentSkinIndex = 0;
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Back();
+        }
+    }
 
     public void Back()
     {

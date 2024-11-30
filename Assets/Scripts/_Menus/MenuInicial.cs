@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Back();
+        }
+    }
+
     public void Play()
     {
         SfxScript.TriggerSfx("SfxButton1");
@@ -56,4 +65,10 @@ public class MenuInicial : MonoBehaviour
         Debug.Log("Salir...");
         Application.Quit();
     }
+    public void Back()
+    {
+        SfxScript.TriggerSfx("SfxButton1");
+        SceneManager.LoadScene("StartMenu");
+    }
+
 }
