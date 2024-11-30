@@ -245,7 +245,7 @@ public class Drake_Behaviour : MonoBehaviour
     {
         Debug.Log("Ataque de cola");
         // Crear una sola llama
-        GameObject tail = Instantiate(tailPrefab, startTail.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
+        GameObject tail = Instantiate(tailPrefab, startTail.position, Quaternion.Euler(0, 0, 270f)); // Orientada hacia abajo
 
         // Configurar el rango del barrido
         float startAngle = 90f; // Comienza hacia abajo
