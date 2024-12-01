@@ -47,6 +47,21 @@ public class Bullet_Main : MonoBehaviour
             // Destruye el proyectil al impactar
             Destroy(gameObject);
         }
+
+        if (collision.CompareTag("Boss"))
+        {
+            // Obtener el script de enemigo y aplicar daño
+            var boss = collision.GetComponent<Drake_Behaviour>();
+            //var enemigo = collision.GetComponentInParent<Enemy>();
+            if (boss != null)
+            {
+                Debug.Log("Proyectil impactó al enemigo. Daño aplicado: " + dano);
+                boss.TakeDamage(dano);
+            }
+
+            // Destruye el proyectil al impactar
+            Destroy(gameObject);
+        }
     }
     /*
     void OnCollisionEnter2D(Collision2D collision)

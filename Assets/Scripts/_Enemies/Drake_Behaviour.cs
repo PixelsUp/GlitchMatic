@@ -16,6 +16,7 @@ public class Drake_Behaviour : MonoBehaviour
     private int countFB = 4;
     public Transform startFireBreath;
     public Transform startTail;
+    public Transform startFBAttack;
     private bool isBreathingFire = false;
 
     // Referencia al jugador
@@ -23,7 +24,7 @@ public class Drake_Behaviour : MonoBehaviour
     private Vector3 posicionProtagonista = Vector3.zero;
 
     // Parámetros que influyen en las utilidades
-    public float criticalHealthThreshold = 20f;
+    public float criticalHealthThreshold = 600f;
     public float fireBreathRange = 25f;
     public float meleeAttackRange = 25f;
     private bool isHealing = false;
@@ -59,6 +60,7 @@ public class Drake_Behaviour : MonoBehaviour
         attackTimer += Time.deltaTime;
 
         // Evaluar y realizar la mejor acción
+        Heal();
         UpdateFireballCount();
         EvaluateAndPerformBestAction();
     }
@@ -71,11 +73,11 @@ public class Drake_Behaviour : MonoBehaviour
         // Definir las acciones con sus valores de utilidad
         actions.Add(new DragonAction("Fire Breath", CalculateFireBreathUtility(), FireBreath));
         actions.Add(new DragonAction("Melee Attack", CalculateMeleeAttackUtility(), MeleeAttack));
-        actions.Add(new DragonAction("Fire Balls", CalculateHealUtility(), Heal));
+        actions.Add(new DragonAction("Fire Balls", CalculateFBUtility(), FireBalls));
 
         //Debug.Log("Utilidad Aliento: "+CalculateFireBreathUtility());
         //Debug.Log("Utilidad Melee: " + CalculateMeleeAttackUtility());
-        //Debug.Log("Utilidad FireBalls: " + CalculateHealUtility());
+        //Debug.Log("Utilidad FireBalls: " + CalculateFBUtility());
 
         // Elegir la acción con el valor de utilidad más alto
         DragonAction bestAction = null;
@@ -100,21 +102,14 @@ public class Drake_Behaviour : MonoBehaviour
         float horizontalOffset = Mathf.Clamp(transform.position.x - posicionProtagonista.x, -fireBreathRange, fireBreathRange);
         float leftBias = Mathf.Clamp01((horizontalOffset + fireBreathRange) / (2 * fireBreathRange));
         float distanceUtility = Mathf.Clamp01((fireBreathRange - playerDistance) / fireBreathRange);
-        Debug.Log("FireBreathRange: " +fireBreathRange);
-        Debug.Log("playerDistance: " + playerDistance);
 
         float result = leftBias * distanceUtility;
-
-        //Debug.Log($"FireBreathUtility: leftBias={leftBias}, distanceUtility={distanceUtility}, result={result}");
 
         return result;
     }
 
     private float CalculateMeleeAttackUtility()
     {
-        if (attackTimer < attackCooldown || playerDistance > meleeAttackRange)
-            return 0f;
-
         // Calcular cuán a la derecha está el jugador en relación al dragón
         float horizontalOffset = Mathf.Clamp(posicionProtagonista.x - transform.position.x, -meleeAttackRange, meleeAttackRange);
 
@@ -128,13 +123,20 @@ public class Drake_Behaviour : MonoBehaviour
         return rightBias * distanceUtility;
     }
 
-    private float CalculateHealUtility()
+    private float CalculateFBUtility()
     {
+        // Si el dragón está sano, las bolas de fuego no tienen prioridad
         if (health > criticalHealthThreshold)
             return 0f;
 
-        // Mayor utilidad cuando la salud es baja
-        return 1f - (health / criticalHealthThreshold);
+        // Calcular utilidad basada en la distancia al jugador
+        float distanceUtility = Mathf.Clamp01(playerDistance / fireBreathRange);
+
+        // Combinamos la distancia con la necesidad de atacar basada en la salud
+        float healthUtility = 1f - (health / criticalHealthThreshold);
+
+        // La utilidad total pondera ambos factores
+        return (distanceUtility * 0.6f) * (healthUtility * 0.4f);
     }
 
     // Acciones del dragón
@@ -175,7 +177,6 @@ public class Drake_Behaviour : MonoBehaviour
         // Verificar si la salud está por debajo del 40% del máximo
         if (health < maxHealth * 0.4f && !isHealing)
         {
-            Debug.Log("El dragón ha comenzado a curarse.");
             StartCoroutine(AutoHeal());
         }
     }
@@ -192,14 +193,13 @@ public class Drake_Behaviour : MonoBehaviour
             // Disparar bolas de fuego en las direcciones seleccionadas
             foreach (float angle in angles)
             {
-                //LaunchFireball(angle);
+                LaunchFireBall(angle);
             }
 
             // Reiniciar el temporizador de ataque
             attackTimer = 0f;
         }
     }
-
 
     // Corrutina para realizar el ataque en abanico
     private IEnumerator FireBreathFan()
@@ -244,13 +244,12 @@ public class Drake_Behaviour : MonoBehaviour
     // Corrutina para realizar el ataque de cola en abanico
     private IEnumerator TailSwipeFan()
     {
-        Debug.Log("Ataque de cola");
         // Crear una sola llama
-        GameObject tail = Instantiate(tailPrefab, startTail.position, Quaternion.Euler(0, 0, 270f)); // Orientada hacia abajo
+        GameObject tail = Instantiate(tailPrefab, startTail.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
 
         // Configurar el rango del barrido
-        float startAngle = 90f; // Comienza hacia abajo
-        float endAngle = 0f;  // Termina hacia la derecha
+        float startAngle = 0f; // Comienza hacia abajo
+        float endAngle = -90f;  // Termina hacia la derecha
         int steps = 10;         // Número de pasos en el barrido
         float totalTime = 2f;   // Tiempo total para completar el barrido
         float stepTime = totalTime / steps; // Tiempo por cada paso
@@ -276,6 +275,31 @@ public class Drake_Behaviour : MonoBehaviour
         // Destruir la llama al finalizar el barrido
         Destroy(tail);
     }
+
+    private void LaunchFireBall(float angle)
+    {
+        // Crear una instancia del prefab de la bola de fuego
+        GameObject fireball = Instantiate(fireballPrefab, startFBAttack.position, Quaternion.identity);
+
+        // Convertir el ángulo a radianes
+        float angleInRadians = angle * Mathf.Deg2Rad;
+
+        // Calcular la dirección basada en el ángulo
+        Vector2 direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians)).normalized;
+
+        // Obtener el componente Rigidbody2D de la bola de fuego
+        Rigidbody2D rb = fireball.GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            // Aplicar una velocidad en la dirección especificada
+            rb.velocity = direction * fireballSpeed;
+        }
+
+        // Rotar la bola de fuego para que apunte en la dirección de movimiento
+        fireball.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
 
     // Método para obtener N ángulos aleatorios entre las 9 posibles
     private float[] GetRandomFireballAngles(int count)
@@ -312,8 +336,6 @@ public class Drake_Behaviour : MonoBehaviour
             health += 4f; // Curar 4 puntos de vida por segundo
             health = Mathf.Min(health, maxHealth); // Limitar la salud al máximo
 
-            Debug.Log($"El dragón se cura. Salud actual: {health}");
-
             yield return new WaitForSeconds(1f); // Esperar 1 segundo entre curaciones
         }
         isHealing = false;
@@ -348,5 +370,11 @@ public class Drake_Behaviour : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, meleeAttackRange);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Vida actual: " + health);
     }
 }
