@@ -573,6 +573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f52aff4d77c3f447b86eb5aef4f11c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  movementMultiplier: 0.1
+  mainCamera: {fileID: 0}
 --- !u!114 &511382090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: ee3379f90bd5ada4892b56074b6cacb8, type: 2}
+  background: {fileID: 1279846503}
+  movementMultiplier: 5
+  mainCamera: {fileID: 998050606}
 --- !u!1 &580495786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1578,7 @@ Transform:
   m_GameObject: {fileID: 998050604}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.01, y: -0.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1821,8 +1827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_SizeDelta: {x: 168.98193, y: 96.13794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279846504
 MonoBehaviour:

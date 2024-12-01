@@ -7,10 +7,74 @@ using UnityEngine.SceneManagement;
 public class StartMenuScene : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer; // Referencia al AudioMixer
+    [SerializeField] private Transform background; // Referencia al fondo
+    [SerializeField] private float movementMultiplier = 0.1f; // Controla el movimiento del fondo
+    [SerializeField] private Camera mainCamera; // Cámara principal
+
+    private Vector3 initialBackgroundPosition; // Guarda la posición inicial del fondo
+
+    private void Awake()
+    {
+        // Configura la posición inicial del fondo
+        if (background != null)
+        {
+            initialBackgroundPosition = background.position;
+        }
+
+        // Configura la cámara principal si no está asignada
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+    }
 
     private void Start()
     {
-        ApplySavedVolumeSettings(); // Aplicar los valores guardados al iniciar la escena
+        // Aplica la configuración de volumen guardada
+        ApplySavedVolumeSettings();
+
+        // Restablece la posición inicial del fondo
+        ResetBackgroundPosition();
+    }
+
+    private void Update()
+    {
+        // Maneja el movimiento del fondo con el cursor
+        HandleCursorBackgroundMovement();
+    }
+
+    private void HandleCursorBackgroundMovement()
+    {
+        if (background == null || mainCamera == null) return;
+
+        // Obtén la posición del cursor en pantalla
+        Vector3 cursorViewportPosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
+
+        // Si el cursor no está en los límites visibles, vuelve a la posición inicial
+        if (cursorViewportPosition.x < 0f || cursorViewportPosition.x > 1f ||
+            cursorViewportPosition.y < 0f || cursorViewportPosition.y > 1f)
+        {
+            background.position = initialBackgroundPosition;
+            return;
+        }
+
+        // Calcula el desplazamiento del fondo basado en la posición del cursor
+        Vector3 offset = new Vector3(
+            (cursorViewportPosition.x - 0.5f) * movementMultiplier,
+            (cursorViewportPosition.y - 0.5f) * movementMultiplier,
+            0
+        );
+
+        // Actualiza la posición del fondo
+        background.position = initialBackgroundPosition + offset;
+    }
+
+    public void ResetBackgroundPosition()
+    {
+        if (background != null)
+        {
+            background.position = initialBackgroundPosition;
+        }
     }
 
     public void Account()
@@ -25,10 +89,9 @@ public class StartMenuScene : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    // Método para cargar y aplicar los valores de volumen guardados
     private void ApplySavedVolumeSettings()
     {
-        // Verifica si hay valores guardados y los aplica
+        // Aplica el volumen guardado para cada canal
         if (PlayerPrefs.HasKey("masterVolumen"))
         {
             float mast = PlayerPrefs.GetFloat("masterVolumen");
@@ -47,5 +110,4 @@ public class StartMenuScene : MonoBehaviour
             myMixer.SetFloat("sfx", Mathf.Log10(sfx) * 20);
         }
     }
-
 }

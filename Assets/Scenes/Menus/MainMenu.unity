@@ -502,6 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f52aff4d77c3f447b86eb5aef4f11c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 1279846503}
+  movementMultiplier: 1
+  mainCamera: {fileID: 998050606}
 --- !u!1 &619748076
 GameObject:
   m_ObjectHideFlags: 0
