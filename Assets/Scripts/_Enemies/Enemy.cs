@@ -68,7 +68,7 @@ public abstract class Enemy : MonoBehaviour
     public void SetDetectionRadiusMultiplier(float multiplier)
     {
         detectionRadius *= multiplier;
-        Debug.Log($"{name}'s detection radius set to {detectionRadius}.");
+        //Debug.Log($"{name}'s detection radius set to {detectionRadius}.");
     }
 
     public float GetDetectionRadius()
