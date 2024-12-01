@@ -168,6 +168,7 @@ public class _CharacterManager : MonoBehaviour
         animator.SetTrigger("IsRolling");
         isRolling = true;
         isInvincible = true;
+        SfxScript.TriggerSfx("SfxDash");
         currentRollCharges--; // Use a roll charge
 
         // Roll in the current movement direction

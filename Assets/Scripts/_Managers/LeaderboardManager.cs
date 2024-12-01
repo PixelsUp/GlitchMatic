@@ -8,6 +8,7 @@ using TMPro;
 public class LeaderboardManager : MonoBehaviour
 {
     public static LeaderboardManager Instance { get; private set; }
+    public bool ads = true;
 
     [SerializeField] string username;
     [SerializeField] int score;

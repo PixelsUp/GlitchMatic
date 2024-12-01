@@ -1076,6 +1076,7 @@ MonoBehaviour:
   sfxImpactGun: {fileID: 8300000, guid: f1c2a2cbae3c91941933ec71afa28f46, type: 3}
   sfxGrunt1: {fileID: 8300000, guid: bcfd18e992da0084db5a01a956b362c3, type: 3}
   sfxGrunt2: {fileID: 8300000, guid: f043377040d170e498e99418c37793a0, type: 3}
+  sfxDash: {fileID: 8300000, guid: bd2c84baa76009f4aacaec78f7a027f9, type: 3}
 --- !u!82 &806451008
 AudioSource:
   m_ObjectHideFlags: 0

@@ -88,11 +88,17 @@ public class GameOverManagerScript : MonoBehaviour
     {
         SfxScript.TriggerSfx("SfxButton1");
         DestroySingletonsOnDeath();
-        SceneManager.LoadScene("Pop_Up_Anuncios");
+        if (LeaderboardManager.Instance != null && LeaderboardManager.Instance.ads)
+        {
+            SceneManager.LoadScene("Pop_Up_Anuncios");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         //_CharacterManager.ResetLife();
 
         dead = false;
         Time.timeScale = 1f;
-        
     }
 }

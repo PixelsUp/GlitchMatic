@@ -11,6 +11,7 @@ public class Shop : MonoBehaviour
     public Button weapon1Button, weapon2Button, weapon3Button;
     public int weapon1Cost = 100, weapon2Cost = 300, weapon3Cost = 250;
     public Sprite boughtSprite;
+    public GameObject noAdsButton;
 
     void Start()
     {
@@ -80,7 +81,15 @@ public class Shop : MonoBehaviour
             weapon3Button.GetComponent<Image>().sprite = boughtSprite;
         }
     }
-
+    
+    public void noAds()
+    {
+        noAdsButton.SetActive(false);
+        if (LeaderboardManager.Instance != null)
+        {
+            LeaderboardManager.Instance.ads = false;
+        }
+    }
     public void Back()
     {
         SfxScript.TriggerSfx("SfxButton1");
