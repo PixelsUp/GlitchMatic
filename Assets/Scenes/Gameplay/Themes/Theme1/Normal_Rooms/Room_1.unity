@@ -4730,8 +4730,8 @@ MonoBehaviour:
   - {fileID: 93832250}
   - {fileID: 1197978474}
   tier2Enemies:
-  - {fileID: 7361473524778984129, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
-  - {fileID: 9177580498326070033, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+  - {fileID: 93832250}
+  - {fileID: 1197978474}
   tier3Enemies:
   - {fileID: 93832250}
   - {fileID: 1197978474}
