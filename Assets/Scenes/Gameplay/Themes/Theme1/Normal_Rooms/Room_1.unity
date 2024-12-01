@@ -1124,7 +1124,7 @@ Transform:
   m_GameObject: {fileID: 326224772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.2, y: -28.8, z: 2.49}
+  m_LocalPosition: {x: -42.9, y: -28.3, z: 2.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2253,7 +2253,7 @@ Transform:
   m_GameObject: {fileID: 771158924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.2, y: -20.5, z: 1.04}
+  m_LocalPosition: {x: -29.4, y: -15.4, z: 1.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4471,7 +4471,7 @@ Transform:
   m_GameObject: {fileID: 1277675750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.1, y: -29.6, z: 1.18}
+  m_LocalPosition: {x: -13.5, y: -30.3, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4730,11 +4730,11 @@ MonoBehaviour:
   - {fileID: 93832250}
   - {fileID: 1197978474}
   tier2Enemies:
-  - {fileID: 93832250}
-  - {fileID: 1197978474}
+  - {fileID: 9177580498326070033, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+  - {fileID: 1219175397114604702, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
   tier3Enemies:
-  - {fileID: 93832250}
-  - {fileID: 1197978474}
+  - {fileID: 9177580498326070033, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+  - {fileID: 1219175397114604702, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
   bosses: []
   currentRoom: 1
   scalingFactor: 1.1

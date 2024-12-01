@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Whistlers : Enemy
@@ -5,17 +6,14 @@ public class Whistlers : Enemy
     private enum WhistlersState { Searching, Alerting, KeepingDistance, Escaping }
     private WhistlersState currentState = WhistlersState.Searching;
 
-    [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private float escapeSpeed = 5f;
     [SerializeField] private LayerMask playerLayer;
     private Vector3 playerPosition;
     private bool isPlayerDetected = false;
 
-    // Cone detection parameters
     [SerializeField] private float coneAngle = 45f;
     [SerializeField] private Transform detectionOrigin;
 
-    // EnemyManager reference for remaining enemies
     private EnemyManager enemyManager;
 
     void Start()
@@ -32,8 +30,9 @@ public class Whistlers : Enemy
 
     void UpdatePlayerDetection()
     {
-        // Perform a cone-like detection check
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
+        float currentDetectionRadius = GetDetectionRadius();
+
+        Collider[] hits = Physics.OverlapSphere(transform.position, currentDetectionRadius, playerLayer);
         foreach (var hit in hits)
         {
             Vector3 directionToPlayer = (hit.transform.position - detectionOrigin.position).normalized;
@@ -44,7 +43,7 @@ public class Whistlers : Enemy
                 isPlayerDetected = true;
                 playerPosition = hit.transform.position;
                 AlertOtherEnemies();
-                break;
+                return;  // Exit early if detected
             }
         }
         isPlayerDetected = false;
@@ -57,26 +56,24 @@ public class Whistlers : Enemy
         {
             if (enemy != this)
             {
-                enemy.SetDetectionRadiusMultiplier(2.0f);
+                StartCoroutine(TemporarilyIncreaseDetection(enemy, 2.0f, 10f));
             }
         }
     }
 
     void ExecuteBehaviorTree()
     {
-        int remainingEnemies = enemyManager.GetRemainingEnemies();
         switch (currentState)
         {
             case WhistlersState.Searching:
                 if (isPlayerDetected)
                 {
-                    if (remainingEnemies >= 6)
-                        currentState = WhistlersState.Alerting;
-                    else if (remainingEnemies <= 3)
-                        currentState = WhistlersState.Escaping;
-                    else
-                        currentState = WhistlersState.KeepingDistance;
+                    int remainingEnemies = enemyManager.GetRemainingEnemies();
+                    currentState = (remainingEnemies >= 6) ? WhistlersState.Alerting :
+                                   (remainingEnemies <= 3) ? WhistlersState.Escaping :
+                                                             WhistlersState.KeepingDistance;
                 }
+                Patrol();  // Add patrol behavior
                 break;
 
             case WhistlersState.Alerting:
@@ -93,27 +90,28 @@ public class Whistlers : Enemy
         }
     }
 
+    void Patrol()
+    {
+        // Simple patrol or idle behavior
+        animator.SetBool("IsWalking", true);
+        // Implement basic movement logic or leave idle
+    }
+
     void MoveTowardsPlayer()
     {
         animator.SetBool("IsRunning", true);
         Vector3 direction = (playerPosition - transform.position).normalized;
         transform.position += direction * escapeSpeed * Time.deltaTime;
-
-        if (enemyManager.GetRemainingEnemies() < 6)
-            currentState = WhistlersState.Searching;
     }
 
     void KeepPrudentDistance()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, playerPosition);
-        if (distanceToPlayer < detectionRadius / 2)
+        if (distanceToPlayer < GetDetectionRadius() / 2)
         {
             Vector3 awayFromPlayer = (transform.position - playerPosition).normalized;
             transform.position += awayFromPlayer * escapeSpeed * Time.deltaTime;
         }
-
-        if (enemyManager.GetRemainingEnemies() <= 3)
-            currentState = WhistlersState.Escaping;
     }
 
     void EscapeFromPlayer()
@@ -123,22 +121,13 @@ public class Whistlers : Enemy
         transform.position += direction * escapeSpeed * Time.deltaTime;
     }
 
-
-    /*
-    
-    // Metodo ejemplo que podriamos usar para ver el cono
-    void OnDrawGizmos()
+    private IEnumerator TemporarilyIncreaseDetection(Enemy enemy, float multiplier, float duration)
     {
-        if (detectionOrigin == null) return;
+        float originalRadius = enemy.GetDetectionRadius();
+        enemy.SetDetectionRadiusMultiplier(multiplier);
 
-        Vector3 leftBoundary = Quaternion.Euler(0, -coneAngle / 2, 0) * detectionOrigin.forward;
-        Vector3 rightBoundary = Quaternion.Euler(0, coneAngle / 2, 0) * detectionOrigin.forward;
+        yield return new WaitForSeconds(duration);
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(detectionOrigin.position, detectionOrigin.position + leftBoundary * detectionRadius);
-        Gizmos.DrawLine(detectionOrigin.position, detectionOrigin.position + rightBoundary * detectionRadius);
-        Gizmos.color = new Color(1, 1, 0, 0.2f);
-        Gizmos.DrawMesh(MeshGenerator.CreateCone(coneAngle, detectionRadius), detectionOrigin.position, detectionOrigin.rotation);
+        enemy.SetDetectionRadiusMultiplier(originalRadius / enemy.GetDetectionRadius());
     }
-    */
 }
