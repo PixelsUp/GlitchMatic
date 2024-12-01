@@ -5855,6 +5855,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: startTail
+      value: 
+      objectReference: {fileID: 713530525}
+    - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: tailPrefab
       value: 
       objectReference: {fileID: 6425964565818583581, guid: 21e973f32c37cb644bf7a9ba7aa4ec87, type: 3}

@@ -54,6 +54,7 @@ public class Drake_Behaviour : MonoBehaviour
     void Update()
     {
         // Actualizar distancia al jugador
+        posicionProtagonista = protagonista.transform.position;
         playerDistance = Vector2.Distance(transform.position, posicionProtagonista);
         attackTimer += Time.deltaTime;
 
@@ -71,6 +72,10 @@ public class Drake_Behaviour : MonoBehaviour
         actions.Add(new DragonAction("Fire Breath", CalculateFireBreathUtility(), FireBreath));
         actions.Add(new DragonAction("Melee Attack", CalculateMeleeAttackUtility(), MeleeAttack));
         actions.Add(new DragonAction("Fire Balls", CalculateHealUtility(), Heal));
+
+        //Debug.Log("Utilidad Aliento: "+CalculateFireBreathUtility());
+        //Debug.Log("Utilidad Melee: " + CalculateMeleeAttackUtility());
+        //Debug.Log("Utilidad FireBalls: " + CalculateHealUtility());
 
         // Elegir la acción con el valor de utilidad más alto
         DragonAction bestAction = null;
@@ -92,20 +97,17 @@ public class Drake_Behaviour : MonoBehaviour
     // Cálculos de utilidad para cada acción
     private float CalculateFireBreathUtility()
     {
-        if (attackTimer < attackCooldown || playerDistance > fireBreathRange)
-            return 0f;
-
-        // Calcular cuán a la izquierda está el jugador en relación al dragón
-        float horizontalOffset = transform.position.x - posicionProtagonista.x;
-
-        // Queremos que la utilidad sea mayor cuanto más a la izquierda esté el jugador
-        float leftBias = Mathf.Clamp01(horizontalOffset / fireBreathRange);
-
-        // Calcular utilidad basada en distancia y posición a la izquierda
+        float horizontalOffset = Mathf.Clamp(transform.position.x - posicionProtagonista.x, -fireBreathRange, fireBreathRange);
+        float leftBias = Mathf.Clamp01((horizontalOffset + fireBreathRange) / (2 * fireBreathRange));
         float distanceUtility = Mathf.Clamp01((fireBreathRange - playerDistance) / fireBreathRange);
+        Debug.Log("FireBreathRange: " +fireBreathRange);
+        Debug.Log("playerDistance: " + playerDistance);
 
-        // Multiplicar la utilidad de la distancia por el sesgo hacia la izquierda
-        return leftBias * distanceUtility;
+        float result = leftBias * distanceUtility;
+
+        //Debug.Log($"FireBreathUtility: leftBias={leftBias}, distanceUtility={distanceUtility}, result={result}");
+
+        return result;
     }
 
     private float CalculateMeleeAttackUtility()
@@ -114,10 +116,10 @@ public class Drake_Behaviour : MonoBehaviour
             return 0f;
 
         // Calcular cuán a la derecha está el jugador en relación al dragón
-        float horizontalOffset = posicionProtagonista.x - transform.position.x;
+        float horizontalOffset = Mathf.Clamp(posicionProtagonista.x - transform.position.x, -meleeAttackRange, meleeAttackRange);
 
         // Queremos que la utilidad sea mayor cuanto más a la derecha esté el jugador
-        float rightBias = Mathf.Clamp01(horizontalOffset / meleeAttackRange);
+        float rightBias = Mathf.Clamp01((horizontalOffset + meleeAttackRange) / (2 * meleeAttackRange));
 
         // Calcular utilidad basada en distancia y posición a la derecha
         float distanceUtility = Mathf.Clamp01((meleeAttackRange - playerDistance) / meleeAttackRange);
@@ -205,7 +207,6 @@ public class Drake_Behaviour : MonoBehaviour
         if (isBreathingFire) yield break;
         isBreathingFire = true;
 
-        Debug.Log("Ataque de Aliento");
         // Crear una sola llama
         GameObject flame = Instantiate(firePrefab, startFireBreath.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
 
