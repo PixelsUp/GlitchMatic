@@ -50,7 +50,19 @@ public class PointToDoor : MonoBehaviour
             float angulo = Mathf.Atan2(direccionHaciaPuerta.y, direccionHaciaPuerta.x) * Mathf.Rad2Deg;
 
             // Aplicar la rotación a la flecha
-            flechaTransform.eulerAngles = new Vector3(0, 0, angulo);
+            flechaTransform.eulerAngles = new Vector3(0, 0, Mathf.Clamp(angulo, -90, 90));
+
+            if (angulo > 90 || angulo < -90)
+            {
+                Flecha.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            else
+            {
+                Flecha.GetComponent<SpriteRenderer>().enabled = true;
+            }
+
+            //Debug.Log(angulo + " angulo");
+
         }
     }
     public void Activate()

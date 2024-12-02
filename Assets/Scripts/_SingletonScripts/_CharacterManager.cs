@@ -145,7 +145,7 @@ public class _CharacterManager : MonoBehaviour
         }
 
         // Check for roll input (space bar set default, should use maybe two keys to do so)
-        if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown)
+        if (Input.GetKeyDown(KeyCode.Space) && canRoll && currentRollCharges > 0 && !rollOnCooldown && !isRolling)
         {
             StartCoroutine(Roll());
         }
@@ -244,7 +244,10 @@ public class _CharacterManager : MonoBehaviour
         //Vector3 mousePosition = GetMouseWorldPositionWithZ(0f);
 
         // Calcular la dirección y el ángulo hacia el ratón
-        Vector3 direccion = (posicionMouse - puntoDisparo.position).normalized;
+        //Vector3 direccion = (posicionMouse - puntoDisparo.position).normalized;
+
+        Vector3 direccion = (puntoDisparo.position - this.transform.position).normalized;
+
         float angle = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
         // Voltear el arma en el eje X cuando el ratón está a la izquierda del personaje
