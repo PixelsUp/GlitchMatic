@@ -75,9 +75,9 @@ public class Drake_Behaviour : MonoBehaviour
         actions.Add(new DragonAction("Melee Attack", CalculateMeleeAttackUtility(), MeleeAttack));
         actions.Add(new DragonAction("Fire Balls", CalculateFBUtility(), FireBalls));
 
-        //Debug.Log("Utilidad Aliento: "+CalculateFireBreathUtility());
-        //Debug.Log("Utilidad Melee: " + CalculateMeleeAttackUtility());
-        //Debug.Log("Utilidad FireBalls: " + CalculateFBUtility());
+        Debug.Log("Utilidad Aliento: " + CalculateFireBreathUtility());
+        Debug.Log("Utilidad Melee: " + CalculateMeleeAttackUtility());
+        Debug.Log("Utilidad FireBalls: " + CalculateFBUtility());
 
         // Elegir la acción con el valor de utilidad más alto
         DragonAction bestAction = null;
@@ -125,18 +125,16 @@ public class Drake_Behaviour : MonoBehaviour
 
     private float CalculateFBUtility()
     {
-        // Si el dragón está sano, las bolas de fuego no tienen prioridad
-        if (health > criticalHealthThreshold)
-            return 0f;
-
         // Calcular utilidad basada en la distancia al jugador
         float distanceUtility = Mathf.Clamp01(playerDistance / fireBreathRange);
 
         // Combinamos la distancia con la necesidad de atacar basada en la salud
         float healthUtility = 1f - (health / criticalHealthThreshold);
 
+        float result = (distanceUtility * healthUtility);
+
         // La utilidad total pondera ambos factores
-        return (distanceUtility * 0.6f) * (healthUtility * 0.4f);
+        return result;
     }
 
     // Acciones del dragón
@@ -144,8 +142,6 @@ public class Drake_Behaviour : MonoBehaviour
     {
         if (attackTimer >= attackCooldown)
         {
-            Debug.Log("El dragón lanza un aliento de fuego en abanico!");
-
             // GetComponent<Animator>().SetTrigger("FireBreath");
 
             // Iniciar el barrido en abanico
@@ -160,8 +156,6 @@ public class Drake_Behaviour : MonoBehaviour
     {
         if (attackTimer >= attackCooldown)
         {
-            Debug.Log("El dragón realiza un barrido de cola!");
-
             // GetComponent<Animator>().SetTrigger("TailSwipe");
 
             // Iniciar el barrido de cola
@@ -185,8 +179,6 @@ public class Drake_Behaviour : MonoBehaviour
     {
         if (attackTimer >= attackCooldown)
         {
-            Debug.Log("El dragón lanza un ataque de bolas de fuego!");
-
             // Seleccionar 3 ángulos de 9 posibles
             float[] angles = GetRandomFireballAngles(countFB);
 
@@ -300,7 +292,6 @@ public class Drake_Behaviour : MonoBehaviour
         fireball.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-
     // Método para obtener N ángulos aleatorios entre las 9 posibles
     private float[] GetRandomFireballAngles(int count)
     {
@@ -375,6 +366,6 @@ public class Drake_Behaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("Vida actual: " + health);
+        //Debug.Log("Vida actual: " + health);
     }
 }

@@ -3588,7 +3588,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27, y: 0.27}
+  m_Size: {x: 1.17, y: 0.91}
   m_EdgeRadius: 0
 --- !u!50 &1275908807
 Rigidbody2D:
@@ -5928,8 +5928,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: health
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: maxHealth
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: startTail
@@ -5943,6 +5951,10 @@ PrefabInstance:
       propertyPath: startFBAttack
       value: 
       objectReference: {fileID: 536091737}
+    - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: attackCooldown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: fireSpawnPoint
       value: 
@@ -5965,7 +5977,7 @@ PrefabInstance:
       objectReference: {fileID: 1930137714}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: meleeAttackRange
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: startFireBreath.x
@@ -5978,6 +5990,10 @@ PrefabInstance:
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: startFireBreath.z
       value: -2.600944
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: criticalHealthThreshold
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4345013196183741410, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: m_Name
