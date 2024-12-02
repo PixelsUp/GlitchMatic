@@ -50,14 +50,14 @@ public class Bullet_Main : MonoBehaviour
             // Destruye el proyectil al impactar
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Walls"))
+        else if (collision.CompareTag("Walls"))
         {
             Instantiate(particulas, transform.position, Quaternion.identity);
             // Destruye el proyectil al impactar
             Destroy(gameObject);
         }
 
-        if (collision.CompareTag("Boss"))
+        else if (collision.CompareTag("Boss"))
         {
             // Obtener el script de enemigo y aplicar daño
             var boss = collision.GetComponent<Drake_Behaviour>();
@@ -68,6 +68,7 @@ public class Bullet_Main : MonoBehaviour
                 boss.TakeDamage(dano);
             }
 
+            Instantiate(particulas, transform.position, Quaternion.identity);
             // Destruye el proyectil al impactar
             Destroy(gameObject);
         }
