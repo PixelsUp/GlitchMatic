@@ -8,6 +8,8 @@ public class Bullet_Main : MonoBehaviour
     public int dano = 20;                // Daño que hace el proyectil
     public float tiempoDeVida = 3f;      // Tiempo en segundos antes de destruir el proyectil
 
+    public GameObject particulas;
+
     private Vector3 direccion;
 
     // Método para configurar la dirección del proyectil
@@ -44,6 +46,13 @@ public class Bullet_Main : MonoBehaviour
                 enemigo.TakeDamage(dano);
             }
 
+            Instantiate(particulas, transform.position, Quaternion.identity);
+            // Destruye el proyectil al impactar
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Walls"))
+        {
+            Instantiate(particulas, transform.position, Quaternion.identity);
             // Destruye el proyectil al impactar
             Destroy(gameObject);
         }

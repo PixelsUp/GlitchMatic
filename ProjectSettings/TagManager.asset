@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - Transition
   - Pointer
-  - Boss
+  - Walls
   layers:
   - Default
   - TransparentFX

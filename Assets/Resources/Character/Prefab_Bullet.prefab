@@ -115,6 +115,7 @@ MonoBehaviour:
   velocidad: 30
   dano: 30
   tiempoDeVida: 3
+  particulas: {fileID: 5860377053777990345, guid: 35db1cb0fcf23af4985f25ff1472729d, type: 3}
 --- !u!61 &823625232488652831
 BoxCollider2D:
   m_ObjectHideFlags: 0
