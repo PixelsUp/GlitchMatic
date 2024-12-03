@@ -12,6 +12,7 @@ public class Settings_options : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     public GameObject sureText;
+    public bool completa;
 
     private void Awake()
     {
@@ -28,6 +29,11 @@ public class Settings_options : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Back();
+        }
+        if (completa)
+        {
+            sureText.SetActive(false);
+            completa = false;
         }
     }
     public void LoadVolume()
@@ -63,6 +69,7 @@ public class Settings_options : MonoBehaviour
         SfxScript.TriggerSfx("SfxButton1");
         sureText.SetActive(true);
         Screen.fullScreen = !Screen.fullScreen;
+        completa = true;
     }
 
     public void quitSureText()
