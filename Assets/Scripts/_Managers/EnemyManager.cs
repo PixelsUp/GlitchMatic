@@ -24,6 +24,7 @@ public class EnemyManager : MonoBehaviour
         Debug.Log("Enemies remaining: " + remainingEnemies);
     }
 
+    /*
     // el metodo esta para ver si han muerto todos los enemigos, necesito aun alguna manera de ver cuantos se spawnean en cada escena
     public void EnemyDefeated()
     {
@@ -35,7 +36,7 @@ public class EnemyManager : MonoBehaviour
         else
         {
         }
-    }
+    }  */
 
     void SpawnEnemies()
     {
@@ -93,8 +94,8 @@ public class EnemyManager : MonoBehaviour
     public void CountEnemiesInScene()
     {
         // Cuenta todos los objetos con el componente Enemy en la escena
-        //remainingEnemies = FindObjectsOfType<Enemy>().Length;
-        remainingEnemies = spawnPoints.Length;
+        remainingEnemies = FindObjectsOfType<Enemy>().Length;
+        //remainingEnemies = spawnPoints.Length;
     }
 
     // Llamado cada vez que un enemigo es eliminado
