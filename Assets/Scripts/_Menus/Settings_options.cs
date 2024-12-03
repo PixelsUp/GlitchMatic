@@ -11,6 +11,7 @@ public class Settings_options : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
+    public GameObject sureText;
 
     private void Awake()
     {
@@ -60,14 +61,13 @@ public class Settings_options : MonoBehaviour
     public void FullScreen()
     {
         SfxScript.TriggerSfx("SfxButton1");
-        if (Screen.fullScreen == true)
-        {
-            Screen.fullScreen = false;
-        }
-        else
-        {
-            Screen.fullScreen = true;
-        }
+        sureText.SetActive(true);
+        Screen.fullScreen = !Screen.fullScreen;
+    }
+
+    public void quitSureText()
+    {
+        sureText.SetActive(false);
     }
 
     public void Back()

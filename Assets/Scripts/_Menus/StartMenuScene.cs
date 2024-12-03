@@ -10,6 +10,7 @@ public class StartMenuScene : MonoBehaviour
     [SerializeField] private Transform background; // Referencia al fondo
     [SerializeField] private float movementMultiplier = 0.1f; // Controla el movimiento del fondo
     [SerializeField] private Camera mainCamera; // Cámara principal
+    public GameObject quitButton;
 
     private Vector3 initialBackgroundPosition; // Guarda la posición inicial del fondo
 
@@ -35,6 +36,12 @@ public class StartMenuScene : MonoBehaviour
 
         // Restablece la posición inicial del fondo
         ResetBackgroundPosition();
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer && quitButton != null)
+        {
+            quitButton.SetActive(false);
+        }
+
     }
 
     private void Update()
@@ -110,4 +117,12 @@ public class StartMenuScene : MonoBehaviour
             myMixer.SetFloat("sfx", Mathf.Log10(sfx) * 20);
         }
     }
+
+    public void Quit()
+    {
+        SfxScript.TriggerSfx("SfxButton1");
+        Debug.Log("Salir...");
+        Application.Quit();
+    }
+
 }

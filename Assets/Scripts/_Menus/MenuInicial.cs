@@ -125,13 +125,6 @@ public class MenuInicial : MonoBehaviour
         SceneManager.LoadScene("Leaderboard_Scene");
     }
 
-    public void Quit()
-    {
-        SfxScript.TriggerSfx("SfxButton1");
-        Debug.Log("Salir...");
-        Application.Quit();
-    }
-
     public void Back()
     {
         SfxScript.TriggerSfx("SfxButton1");
