@@ -166,7 +166,8 @@ public class Enemigo_Range_Behavior : Enemy
         Vector3 direccionEscape = (transform.position - objetivo).normalized;
 
         // Movemos al enemigo en la dirección opuesta al protagonista
-        transform.position += direccionEscape * velocidadMovimiento * Time.deltaTime;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = direccionEscape * velocidadMovimiento;
 
         // Girar hacia el objetivo para mantener el enfrentamiento visual
         GirarHaciaObjetivo(objetivo);
@@ -181,7 +182,8 @@ public class Enemigo_Range_Behavior : Enemy
         GirarHaciaObjetivo(objetivo);
 
         // Movemos al enemigo en la dirección del objetivo a una velocidad constante
-        transform.position += direccion * velocidadMovimiento * Time.deltaTime;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = direccion * velocidadMovimiento;
     }
 
     // Coroutine para manejar el disparo y el tiempo de espera entre disparos
@@ -208,4 +210,33 @@ public class Enemigo_Range_Behavior : Enemy
         puedeDisparar = true;  // Activar disparo nuevamente después del cooldown
         disparando = false;    // Liberar la bandera para permitir nuevos disparos
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+            /*
+            if (rolling) // Si el personaje está deslizándose
+            {
+                // Aplica una fuerza al enemigo para simular el empuje
+                Vector2 direccionEmpuje = (rb.position - (Vector2)collision.transform.position).normalized;
+                rb.AddForce(direccionEmpuje * 200f); // Ajusta la fuerza según el efecto deseado
+            }
+            */
+            // Detiene momentáneamente al enemigo
+            StartCoroutine(DetenerMovimientoTemporal(rb));
+        }
+    }
+    private IEnumerator DetenerMovimientoTemporal(Rigidbody2D rb)
+    {
+        Vector2 velocidadOriginal = rb.velocity;
+        rb.velocity = Vector2.zero; // Detiene al enemigo
+
+        yield return new WaitForSeconds(0.2f); // Tiempo de pausa
+
+        rb.velocity = velocidadOriginal; // Restaura el movimiento
+    }
+
 }

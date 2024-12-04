@@ -68,7 +68,7 @@ public class Enemigo_Melee_Behavior : Enemy
             }
         }
         FSMMeleeEnemy(); // Lógica de la máquina de estados
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !rolling)
         {
             StartCoroutine(rollBool());
         }
@@ -77,6 +77,7 @@ public class Enemigo_Melee_Behavior : Enemy
     IEnumerator rollBool()
     {
         rolling = true;
+        Debug.Log("ROOOOOOOOOOOOOOOOOOOOLLLLLL");
         yield return new WaitForSeconds(2.5f);
         rolling = false;
     }
@@ -163,12 +164,12 @@ public class Enemigo_Melee_Behavior : Enemy
     public void Avanzar(Vector3 objetivo)
     {
         // Calculamos la dirección hacia el protagonista (objetivo)
-        animator.SetBool("IsRunning", true);
         Vector3 direccion = (objetivo - transform.position).normalized;
-
         GirarHaciaObjetivo(objetivo);
-        // Movemos al enemigo en la dirección del objetivo a una velocidad constante
-        transform.position += direccion * velocidadMovimiento * Time.deltaTime;
+
+        // Aplicamos la velocidad directamente al Rigidbody
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = direccion * velocidadMovimiento;
     }
 
     public void Atacar()
@@ -194,21 +195,29 @@ public class Enemigo_Melee_Behavior : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            if (rolling)
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+            if (rolling) // Si el personaje está deslizándose
             {
-                StartCoroutine(stopVelocity());
+                // Aplica una fuerza al enemigo para simular el empuje
+                Vector2 direccionEmpuje = (rb.position - (Vector2)collision.transform.position).normalized;
+                rb.AddForce(direccionEmpuje * 200f); // Ajusta la fuerza según el efecto deseado
             }
             else
             {
-                transform.position = collision.transform.position;
+                // Detiene momentáneamente al enemigo
+                StartCoroutine(DetenerMovimientoTemporal(rb));
             }
         }
     }
-    IEnumerator stopVelocity()
+
+    private IEnumerator DetenerMovimientoTemporal(Rigidbody2D rb)
     {
-        yield return new WaitForSeconds(1f);
-        pos = transform;
-        yield return new WaitForSeconds(0.1f);
-        this.posicionProtagonista = pos.position;
+        Vector2 velocidadOriginal = rb.velocity;
+        rb.velocity = Vector2.zero; // Detiene al enemigo
+
+        yield return new WaitForSeconds(0.2f); // Tiempo de pausa
+
+        rb.velocity = velocidadOriginal; // Restaura el movimiento
     }
 }
