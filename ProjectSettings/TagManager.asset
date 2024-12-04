@@ -8,6 +8,7 @@ TagManager:
   - Transition
   - Pointer
   - Walls
+  - Boss
   layers:
   - Default
   - TransparentFX
