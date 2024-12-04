@@ -102,20 +102,20 @@ public abstract class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            // Activar la animación de muerte antes de destruir el objeto
-            if (animator != null && isDead == false)
-            {
-                animator.SetTrigger("IsDead");
-                isDead = true;
-
-                EnemyManager.OnEnemyDefeated();
-                Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
-            }
-
             // Notifica al EnemyManager si ha sido encontrado
             if (EnemyManager != null)
             {
-                //enemyManager.OnEnemyDefeated();
+                if (isDead == false)
+                {
+                    EnemyManager.OnEnemyDefeated();
+                    isDead = true;
+                }
+                // Activar la animación de muerte antes de destruir el objeto
+                if (animator != null)
+                {
+                    animator.SetTrigger("IsDead");
+                    Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
+                }
                 Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
             }
 

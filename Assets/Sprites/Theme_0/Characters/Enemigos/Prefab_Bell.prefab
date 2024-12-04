@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4989826705357275835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,4 +175,3 @@ MonoBehaviour:
   detectionRadius: 30
   alertDuration: 5
   distanceToMaintain: 30
-  vida: 50

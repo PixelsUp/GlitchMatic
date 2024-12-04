@@ -192,7 +192,7 @@ public class Enemigo_Melee_Behavior : Enemy
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Character"))
+        if (collision.CompareTag("Player"))
         {
             if (rolling)
             {
