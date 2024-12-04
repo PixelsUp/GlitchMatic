@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 1931767033971767107}
   - component: {fileID: -5168745428933874598}
   - component: {fileID: -2236076803659155045}
-  - component: {fileID: 4566025360556341857}
   m_Layer: 0
-  m_Name: prefab_Arrow
+  m_Name: prefab_pared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,31 +146,4 @@ MonoBehaviour:
   velocidad: 30
   dano: 20
   tiempoDeVida: 3
-  proyectil: {fileID: 5818374948066685075, guid: 17768f3ac9d1c514c88912c232672fe3, type: 3}
---- !u!50 &4566025360556341857
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5818374948066685075}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  proyectil: {fileID: 0}
