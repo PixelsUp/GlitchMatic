@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemigo_Melee_Behavior : Enemy
 {
@@ -32,6 +33,8 @@ public class Enemigo_Melee_Behavior : Enemy
     private float gruntTimer;       // Temporizador de gruñido
     private float gruntInterval;    // Intervalo aleatorio entre gruñidos
     private bool firstGrunt = true;
+    public bool rolling = false;
+    private Transform pos;
 
     // Método Start: Inicialización del script
     void Start()
@@ -65,6 +68,17 @@ public class Enemigo_Melee_Behavior : Enemy
             }
         }
         FSMMeleeEnemy(); // Lógica de la máquina de estados
+        if (Input.GetKey(KeyCode.Space))
+        {
+            StartCoroutine(rollBool());
+        }
+    }
+
+    IEnumerator rollBool()
+    {
+        rolling = true;
+        yield return new WaitForSeconds(2.5f);
+        rolling = false;
     }
 
     private void ResetGruntTimer()
@@ -175,5 +189,26 @@ public class Enemigo_Melee_Behavior : Enemy
         yield return new WaitForSeconds(tiempoEntreAtaques); // Esperar un segundo
 
         puedeAtacar = true; // Activar el ataque de nuevo
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Character"))
+        {
+            if (rolling)
+            {
+                StartCoroutine(stopVelocity());
+            }
+            else
+            {
+                transform.position = collision.transform.position;
+            }
+        }
+    }
+    IEnumerator stopVelocity()
+    {
+        yield return new WaitForSeconds(1f);
+        pos = transform;
+        yield return new WaitForSeconds(0.1f);
+        this.posicionProtagonista = pos.position;
     }
 }
