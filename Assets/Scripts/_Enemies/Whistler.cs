@@ -9,7 +9,7 @@ public class Whistler : Enemy
 
     [SerializeField] private float alertDuration = 5f;
     [SerializeField] private float distanceToMaintain = 10f;
-    [SerializeField] private int vida = 50;
+    //[SerializeField] private int vida = 50;
 
     void Start()
     {
