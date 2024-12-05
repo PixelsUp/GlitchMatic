@@ -103,7 +103,7 @@ MonoBehaviour:
   health: 150
   detectionRadius: 5
   velocidadMovimiento: 10
-  distanciaDeteccion: 25
+  distanciaDeteccion: 40
   distanciaDeteccionAmpliada: 50
   distanciaAtaque: 4
   tiempoEntreAtaques: 1

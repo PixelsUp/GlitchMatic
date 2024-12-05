@@ -135,7 +135,7 @@ public class Drake_Behaviour : MonoBehaviour
         // Combinamos la distancia con la necesidad de atacar basada en la salud
         float healthUtility = 1f - (health / criticalHealthThreshold);
 
-        float result = (distanceUtility * healthUtility);
+        float result = (distanceUtility * healthUtility)*1.1f;
 
         // La utilidad total pondera ambos factores
         return result;

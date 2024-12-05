@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,11 +20,16 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         Debug.Log("Total spawn points: " + spawnPoints.Length); // Verifica el número de spawn points
-        SpawnEnemies();
+        StartCoroutine(DelayedSpawn());
         CountEnemiesInScene();
         Debug.Log("Enemies remaining: " + remainingEnemies);
     }
 
+    IEnumerator DelayedSpawn()
+    {
+        yield return new WaitForSeconds(1.5f); // Espera 2 segundos antes de generar los enemigos
+        SpawnEnemies(); // Genera todos los enemigos a la vez
+    }
     /*
     // el metodo esta para ver si han muerto todos los enemigos, necesito aun alguna manera de ver cuantos se spawnean en cada escena
     public void EnemyDefeated()

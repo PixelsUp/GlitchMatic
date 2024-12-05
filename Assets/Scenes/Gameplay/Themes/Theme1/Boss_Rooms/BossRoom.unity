@@ -4242,7 +4242,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.15, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4253,7 +4253,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.17, y: 0.91}
+  m_Size: {x: 1.17, y: 0.94}
   m_EdgeRadius: 0
 --- !u!50 &1275908807
 Rigidbody2D:
@@ -6711,7 +6711,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: health
-      value: 3500
+      value: 4500
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: m_Enabled
@@ -6719,7 +6719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: maxHealth
-      value: 3500
+      value: 4500
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: startTail

@@ -1,15 +1,17 @@
 using UnityEngine;
-using UnityEngine.Video;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Video_Controller : MonoBehaviour
 {
     // Lista de imágenes para mostrar
     public Sprite[] imageBank; // Banco de imágenes
     public Image displayImage; // Referencia al componente UI Image
+    public Slider timerSlider; // Referencia al componente Slider
     public string nextSceneName = "MainMenu"; // Nombre de la próxima escena
     public float delay = 10f; // Tiempo en segundos antes de cambiar de escena
+
+    private float elapsedTime = 0f; // Tiempo transcurrido
 
     void Start()
     {
@@ -26,11 +28,33 @@ public class Video_Controller : MonoBehaviour
             return;
         }
 
+        if (timerSlider == null)
+        {
+            Debug.LogError("No se asignó un Slider. Arrastra un objeto Slider al campo 'timerSlider'.");
+            return;
+        }
+
         // Asigna una imagen aleatoria del banco al componente Image
         displayImage.sprite = GetRandomImage();
 
-        // Inicia el temporizador para cambiar de escena
-        Invoke("ChangeScene", delay);
+        // Configura el Slider
+        timerSlider.maxValue = delay; // Configura el rango del Slider de 0 a delay
+        timerSlider.value = 0f;       // Inicia el Slider en 0
+    }
+
+    void Update()
+    {
+        // Incrementa el tiempo transcurrido
+        elapsedTime += Time.deltaTime;
+
+        // Actualiza el Slider con el tiempo transcurrido
+        timerSlider.value = elapsedTime;
+
+        // Cambia de escena cuando el tiempo transcurrido supera el delay
+        if (elapsedTime >= delay)
+        {
+            ChangeScene();
+        }
     }
 
     // Método para obtener una imagen aleatoria
@@ -46,3 +70,4 @@ public class Video_Controller : MonoBehaviour
         SceneManager.LoadScene(nextSceneName);
     }
 }
+
