@@ -94,8 +94,11 @@ public class EnemyManager : MonoBehaviour
     public void CountEnemiesInScene()
     {
         // Cuenta todos los objetos con el componente Enemy en la escena
-        remainingEnemies = FindObjectsOfType<Enemy>().Length;
-        //remainingEnemies = spawnPoints.Length;
+        int enemyCount = FindObjectsOfType<Enemy>().Length;
+        int bossCount = FindObjectsOfType<Drake_Behaviour>().Length;
+
+        // Sumar ambos conteos
+        remainingEnemies = enemyCount + bossCount;
     }
 
     // Llamado cada vez que un enemigo es eliminado

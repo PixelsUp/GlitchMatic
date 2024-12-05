@@ -31,10 +31,13 @@ public class Drake_Behaviour : MonoBehaviour
     private bool reached60 = false; // Bandera para el 60%
     private bool reached40 = false; // Bandera para el 40%
     private bool reached20 = false; // Bandera para el 20%
+    private bool isDead = false;
 
     public GameObject firePrefab;
     public GameObject fireballPrefab;
     public GameObject tailPrefab;
+    private EnemyManager EnemyManager;
+    protected Animator animator;
 
     public float fireballSpeed = 10f; // Velocidad de las bolas de fuego
 
@@ -45,6 +48,7 @@ public class Drake_Behaviour : MonoBehaviour
     {
         protagonista = FindObjectOfType<_CharacterManager>();
         posicionProtagonista = protagonista.transform.position;
+        EnemyManager = FindEnemyManager();
 
         if (protagonista == null)
         {
@@ -75,9 +79,9 @@ public class Drake_Behaviour : MonoBehaviour
         actions.Add(new DragonAction("Melee Attack", CalculateMeleeAttackUtility(), MeleeAttack));
         actions.Add(new DragonAction("Fire Balls", CalculateFBUtility(), FireBalls));
 
-        Debug.Log("Utilidad Aliento: " + CalculateFireBreathUtility());
-        Debug.Log("Utilidad Melee: " + CalculateMeleeAttackUtility());
-        Debug.Log("Utilidad FireBalls: " + CalculateFBUtility());
+        //Debug.Log("Utilidad Aliento: " + CalculateFireBreathUtility());
+        //Debug.Log("Utilidad Melee: " + CalculateMeleeAttackUtility());
+        //Debug.Log("Utilidad FireBalls: " + CalculateFBUtility());
 
         // Elegir la acción con el valor de utilidad más alto
         DragonAction bestAction = null;
@@ -366,6 +370,26 @@ public class Drake_Behaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        //Debug.Log("Vida actual: " + health);
+        Debug.Log("Health: " + health);
+        if (health <= 0)
+        {
+            // Notifica al EnemyManager si ha sido encontrado
+            if (EnemyManager != null)
+            {
+                if (isDead == false)
+                {
+                    EnemyManager.OnEnemyDefeated();
+                    isDead = true;
+                }
+            }
+
+            Destroy(gameObject, 2f); // Destruir el objeto después de 0.65 segundos
+        }
+    }
+
+    private EnemyManager FindEnemyManager()
+    {
+        // Encuentra el primer EnemyManager en la escena
+        return FindObjectOfType<EnemyManager>();
     }
 }

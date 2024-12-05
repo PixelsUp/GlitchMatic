@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay/Themes/Theme3/Normal_Rooms/Room_3.unity
     guid: 628af56d6bedc51449cb669c8627ea27
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme1/Boss_Rooms/BossRoom.unity
+    guid: 2ab0ad6f10a5e164a89bddadcef9e237
   m_configObjects: {}
