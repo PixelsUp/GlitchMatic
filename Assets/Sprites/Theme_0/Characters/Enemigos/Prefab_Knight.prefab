@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfeb596943bff748b14d357812b7013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   detectionRadius: 5
-  velocidadMovimiento: 5
+  velocidadMovimiento: 10
   distanciaDeteccion: 25
   distanciaDeteccionAmpliada: 50
   distanciaAtaque: 4
   tiempoEntreAtaques: 1
-  vida: 50
+  rolling: 0
 --- !u!50 &-4334851903039421280
 Rigidbody2D:
   serializedVersion: 4

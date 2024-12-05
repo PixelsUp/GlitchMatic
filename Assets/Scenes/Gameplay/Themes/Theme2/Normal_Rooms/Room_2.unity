@@ -3755,10 +3755,10 @@ MonoBehaviour:
   - {fileID: 9177580498326070033, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
   tier2Enemies:
   - {fileID: 7361473524778984129, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
-  - {fileID: 9177580498326070033, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+  - {fileID: 925130425340089546, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
   tier3Enemies:
+  - {fileID: 925130425340089546, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
   - {fileID: 7361473524778984129, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
-  - {fileID: 9177580498326070033, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
   bosses: []
   currentRoom: 1
   scalingFactor: 1.1

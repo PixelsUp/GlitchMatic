@@ -24,7 +24,7 @@ public class Enemigo_Melee_Behavior : Enemy
 
     [SerializeField] private float distanciaAtaque = 2f; // Distancia para atacar
     [SerializeField] private float tiempoEntreAtaques = 1f; // Tiempo de espera entre ataques
-    [SerializeField] private int vida = 50; 
+    //[SerializeField] private int vida = 50; 
     private bool puedeAtacar = true; // Controla si el enemigo puede atacar
 
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango

@@ -23,7 +23,7 @@ public class Enemigo_Range_Behavior : Enemy
     private Vector3 posicionProtagonista = Vector3.zero;
     [SerializeField] private float velocidadMovimiento = 2f; // Velocidad del enemigo
     private float tiempoEntreDisparos = 2f; // Tiempo de espera entre disparos
-    [SerializeField] private int vida = 50;
+    //[SerializeField] private int vida = 50;
     private bool puedeDisparar = true;
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
     private bool disparando = false; // Bandera para evitar múltiples disparos

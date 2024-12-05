@@ -6,15 +6,18 @@ public class Whistler : Enemy
     private _CharacterManager player;
     private float originalDetectionRadius;
     private bool isAlerting = false;
+    private Rigidbody2D rb;  // Referencia al Rigidbody2D
 
     [SerializeField] private float alertDuration = 5f;
     [SerializeField] private float distanceToMaintain = 10f;
-    //[SerializeField] private int vida = 50;
+    [SerializeField] private float moveSpeed = 2f;
 
     void Start()
     {
         player = FindObjectOfType<_CharacterManager>();
         originalDetectionRadius = GetDetectionRadius();
+        rb = GetComponent<Rigidbody2D>();  // Obtener el Rigidbody2D
+        rb.isKinematic = true;
         StartCoroutine(BehaviorTree());
     }
 
@@ -61,19 +64,19 @@ public class Whistler : Enemy
 
     private void MoveAwayFromPlayer()
     {
-        Vector3 direction = (transform.position - player.transform.position).normalized;
-        transform.position += direction * Time.deltaTime * 2f;
+        Vector2 direction = (transform.position - player.transform.position).normalized;
+        rb.velocity = direction * moveSpeed;
     }
 
     private void MoveTowardsPlayer()
     {
-        Vector3 direction = (player.transform.position - transform.position).normalized;
-        transform.position += direction * Time.deltaTime * 2f;
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        rb.velocity = direction * moveSpeed;
     }
 
     private void SearchForPlayer()
     {
-        // podemos hacer que busque al jugador si queremos
+        rb.velocity = Vector2.zero;
     }
 
     private IEnumerator AlertEnemies()
