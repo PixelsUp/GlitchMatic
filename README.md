@@ -36,7 +36,7 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
 4. [Gameplay Mechanics and Game Elements](#gameplay-mechanics-and-game-elements)  
     4.1 [Detailed Concept](#detailed-concept)  
     4.2 [Detailed Mechanics](#detailed-mechanics)  
-    4.3 [](#)  
+    4.3 [Controls](#controls)  
     4.4 [Levels and Missions](#levels-and-missions)  
     4.5 [Objects, Weapons, and Power-ups](#objects-weapons-and-power-ups)  
     4.6 [Software Architecture](#software-architecture)  
