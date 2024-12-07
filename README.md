@@ -36,7 +36,7 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
 4. [Gameplay Mechanics and Game Elements](#gameplay-mechanics-and-game-elements)  
     4.1 [Detailed Concept](#detailed-concept)  
     4.2 [Detailed Mechanics](#detailed-mechanics)  
-    4.3 [Controls](#controls)  
+    4.3 [](#)  
     4.4 [Levels and Missions](#levels-and-missions)  
     4.5 [Objects, Weapons, and Power-ups](#objects-weapons-and-power-ups)  
     4.6 [Software Architecture](#software-architecture)  
@@ -217,7 +217,7 @@ We estimate a development time of two to three months, with clear milestones and
 
 - Movement: Players use WASD keys to move their character around the environment.
 - Rolling: When the Spacebar is pressed the character rolls. This allows for some invincibility frames, essential for surviving difficult encounters and allowing the player to dodge certain attacks.
-- Aiming: The mouse is used to aim the weapon at enemy targets.
+- Aiming: The mouse is used to aim the weapon at enemy targets. When the players' cursor is on top of an enemy, the cursor automatically indicates it as a target.
 - Attacking: To either shoot or perform melee attacks, the left mouse button is pressed.
 
 ### Objects, Weapons, and Power-ups
