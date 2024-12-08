@@ -2039,7 +2039,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1134132642}
         m_TargetAssemblyTypeName: AccountManager, Assembly-CSharp
-        m_MethodName: HandleLogin
+        m_MethodName: SubmitLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

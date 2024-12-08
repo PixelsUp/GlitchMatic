@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -18,6 +19,9 @@ public class PauseScript : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
 
     private bool dead = false;
+
+    public GameObject sureText;
+    public bool completa;
 
     void Start()
     {
@@ -73,6 +77,16 @@ public class PauseScript : MonoBehaviour
         setMusicVolume();
         setSfxVolume();
     }
+
+    private void Update()
+    {
+        if (completa)
+        {
+            sureText.SetActive(false);
+            completa = false;
+        }
+    }
+
 
     public void LoadVolume()
     {
@@ -135,17 +149,16 @@ public class PauseScript : MonoBehaviour
             Destroy(SfxScript.Instance.gameObject);
         }*/
     }
+    public void quitSureText()
+    {
+        sureText.SetActive(false);
+    }
 
     public void FullScreen()
     {
         SfxScript.TriggerSfx("SfxButton1");
-        if (Screen.fullScreen == true)
-        {
-            Screen.fullScreen = false;
-        }
-        else
-        {
-            Screen.fullScreen = true;
-        }
+        sureText.SetActive(true);
+        Screen.fullScreen = !Screen.fullScreen;
+        completa = true;
     }
 }
