@@ -24,7 +24,7 @@ public class Drake_Behaviour : MonoBehaviour
     private Vector3 posicionProtagonista = Vector3.zero;
 
     // Parámetros que influyen en las utilidades
-    public float criticalHealthThreshold = 600f;
+    public float criticalHealthThreshold = 3000f;
     public float fireBreathRange = 25f;
     public float meleeAttackRange = 25f;
     private bool isHealing = false;
