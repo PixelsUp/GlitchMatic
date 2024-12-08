@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,8 @@ public class StartMenuScene : MonoBehaviour
 
     private Vector3 initialBackgroundPosition; // Guarda la posición inicial del fondo
 
+    public GameObject sbObject;
+    public GameObject sbCanvas;
     private void Awake()
     {
         // Configura la posición inicial del fondo
@@ -125,4 +128,14 @@ public class StartMenuScene : MonoBehaviour
         Application.Quit();
     }
 
+    public void playSb()
+    {
+        sbObject.SetActive(true);
+        sbCanvas.SetActive(true);
+    }
+    public void backSb()
+    {
+        sbObject.SetActive(false);
+        sbCanvas.SetActive(false);
+    }
 }
