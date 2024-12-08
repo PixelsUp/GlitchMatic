@@ -78,16 +78,6 @@ public class PauseScript : MonoBehaviour
         setSfxVolume();
     }
 
-    private void Update()
-    {
-        if (completa)
-        {
-            sureText.SetActive(false);
-            completa = false;
-        }
-    }
-
-
     public void LoadVolume()
     {
         masterSlider.value = PlayerPrefs.GetFloat("masterVolumen");
@@ -149,16 +139,20 @@ public class PauseScript : MonoBehaviour
             Destroy(SfxScript.Instance.gameObject);
         }*/
     }
-    public void quitSureText()
-    {
-        sureText.SetActive(false);
-    }
-
     public void FullScreen()
     {
         SfxScript.TriggerSfx("SfxButton1");
-        sureText.SetActive(true);
+        if (!completa)
+        {
+            //sureText.SetActive(true);
+        }
         Screen.fullScreen = !Screen.fullScreen;
         completa = true;
+    }
+
+    public void quitSureText()
+    {
+        sureText.SetActive(false);
+        completa = false;
     }
 }

@@ -30,11 +30,6 @@ public class Settings_options : MonoBehaviour
         {
             Back();
         }
-        if (completa)
-        {
-            sureText.SetActive(false);
-            completa = false;
-        }
     }
     public void LoadVolume()
     {
@@ -67,7 +62,10 @@ public class Settings_options : MonoBehaviour
     public void FullScreen()
     {
         SfxScript.TriggerSfx("SfxButton1");
-        sureText.SetActive(true);
+        if (!completa)
+        {
+            //sureText.SetActive(true);
+        }
         Screen.fullScreen = !Screen.fullScreen;
         completa = true;
     }
@@ -75,6 +73,7 @@ public class Settings_options : MonoBehaviour
     public void quitSureText()
     {
         sureText.SetActive(false);
+        completa = false;
     }
 
     public void Back()
