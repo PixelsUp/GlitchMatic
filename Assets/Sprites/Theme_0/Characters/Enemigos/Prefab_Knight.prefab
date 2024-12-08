@@ -105,7 +105,7 @@ MonoBehaviour:
   velocidadMovimiento: 10
   distanciaDeteccion: 40
   distanciaDeteccionAmpliada: 50
-  distanciaAtaque: 4
+  distanciaAtaque: 10
   tiempoEntreAtaques: 1
   rolling: 0
 --- !u!50 &-4334851903039421280
