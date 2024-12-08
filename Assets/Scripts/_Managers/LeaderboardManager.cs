@@ -55,11 +55,31 @@ public class LeaderboardManager : MonoBehaviour
 
     public void addScore(string username, string score)
     {
-        StartCoroutine(httpCor("addScore/" + username + "/" + score + "/"));
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Application.ExternalCall("addScoreJs", username, score);
+        }
+        else
+        {
+            StartCoroutine(httpCor("addScore/" + username + "/" + score + "/"));
+        }
     }
     public void getScores()
     {
-        StartCoroutine(httpCor("getScores/"));
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Application.ExternalCall("getScoresJs");
+        }
+        else
+        {
+            StartCoroutine(httpCor("getScores/"));
+        }
+    }
+
+    public void OnJsHttpFuncComplete(string result)
+    {
+        Debug.Log("JS RESULT: "+ result);
+        UpdateLeaderboard(result);
     }
 
     IEnumerator httpCor(string header)
