@@ -175,3 +175,9 @@ MonoBehaviour:
   detectionRadius: 30
   alertDuration: 5
   distanceToMaintain: 30
+  moveSpeed: 2
+  viewDistance: 10
+  viewAngle: 45
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
