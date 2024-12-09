@@ -95,6 +95,8 @@ public class Enemigo_Range_Behavior : Enemy
         switch (estado)
         {
             case TEstado.BUSCANDO:
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(0, 0);
                 if (distanciaAlProtagonista <= distanciaDeteccion)
                 {
                     Avanzar(posicionProtagonista);

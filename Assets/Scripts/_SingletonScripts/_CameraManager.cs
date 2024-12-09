@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class _CameraManager : MonoBehaviour
 {
@@ -36,6 +37,36 @@ public class _CameraManager : MonoBehaviour
     void LateUpdate()
     {
         if (player == null) return;
+
+        int index = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("asd" + index);
+        switch (index)
+        {
+            case 10:
+                //minX = 
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16:
+                break;
+            case 17:
+                break;
+            case 18:
+                break;
+            case 19:
+                break;
+            default:
+                break;
+        }
+
 
         // Get the player's current position plus the offset
         Vector3 desiredPosition = player.position + offset;

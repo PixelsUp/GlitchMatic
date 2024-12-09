@@ -100,6 +100,8 @@ public class Enemigo_Melee_Behavior : Enemy
         {
             case TEstado.BUSCANDO:
                 // El enemigo mira y avanza hacia el protagonista si está dentro del rango de detección
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                rb.velocity = Vector2.zero;
                 if (distanciaAlProtagonista <= distanciaDeteccion)
                 {
                     // El enemigo mira hacia el protagonista
