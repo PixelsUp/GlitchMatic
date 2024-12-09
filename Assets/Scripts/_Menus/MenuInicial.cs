@@ -12,14 +12,12 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] private float movementMultiplier = 0.1f; // Controla cuánto se mueve el fondo
     [SerializeField] private Camera mainCamera; // Cámara principal
 
-    private Vector3 initialBackgroundPosition; // Guarda la posición inicial del fondo
-
     private void Awake()
     {
         // Guarda la posición inicial del fondo
         if (background != null)
         {
-            initialBackgroundPosition = background.position;
+            //initialBackgroundPosition = background.position;
         }
 
         // Configura la cámara principal si no está asignada
@@ -33,6 +31,7 @@ public class MenuInicial : MonoBehaviour
     {
         // Establece la posición inicial del fondo
         ResetBackgroundPosition();
+        //Debug.Log("INITIAL: "+ initialBackgroundPosition);
     }
 
     private void Update()
@@ -45,6 +44,7 @@ public class MenuInicial : MonoBehaviour
         {
             Back();
         }
+        //Debug.Log("BG POS: " + background.position);
     }
 
     private void HandleCursorBackgroundMovement()
@@ -58,7 +58,7 @@ public class MenuInicial : MonoBehaviour
         if (cursorViewportPosition.x < 0f || cursorViewportPosition.x > 1f ||
             cursorViewportPosition.y < 0f || cursorViewportPosition.y > 1f)
         {
-            background.position = initialBackgroundPosition;
+            background.position = new Vector3 (Screen.width/2, Screen.height/2, 0);
             return;
         }
 
@@ -70,14 +70,15 @@ public class MenuInicial : MonoBehaviour
         );
 
         // Ajusta la posición del fondo
-        background.position = initialBackgroundPosition + offset;
+        background.position = new Vector3(Screen.width / 2, Screen.height / 2, 0) + offset;
+        //background.position = new Vector2((initialBackgroundPosition.x + offset.x) * );
     }
 
     public void ResetBackgroundPosition()
     {
         if (background != null)
         {
-            background.position = initialBackgroundPosition;
+            background.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         }
     }
 

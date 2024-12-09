@@ -13,8 +13,6 @@ public class StartMenuScene : MonoBehaviour
     [SerializeField] private Camera mainCamera; // Cámara principal
     public GameObject quitButton;
 
-    private Vector3 initialBackgroundPosition; // Guarda la posición inicial del fondo
-
     public GameObject sbObject;
     public GameObject sbCanvas;
     private void Awake()
@@ -22,7 +20,7 @@ public class StartMenuScene : MonoBehaviour
         // Configura la posición inicial del fondo
         if (background != null)
         {
-            initialBackgroundPosition = background.position;
+            //initialBackgroundPosition = background.position;
         }
 
         // Configura la cámara principal si no está asignada
@@ -64,7 +62,7 @@ public class StartMenuScene : MonoBehaviour
         if (cursorViewportPosition.x < 0f || cursorViewportPosition.x > 1f ||
             cursorViewportPosition.y < 0f || cursorViewportPosition.y > 1f)
         {
-            background.position = initialBackgroundPosition;
+            background.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             return;
         }
 
@@ -76,14 +74,14 @@ public class StartMenuScene : MonoBehaviour
         );
 
         // Actualiza la posición del fondo
-        background.position = initialBackgroundPosition + offset;
+        background.position = new Vector3(Screen.width / 2, Screen.height / 2, 0) + offset;
     }
 
     public void ResetBackgroundPosition()
     {
         if (background != null)
         {
-            background.position = initialBackgroundPosition;
+            background.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         }
     }
 
