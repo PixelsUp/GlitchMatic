@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 88e32fa6ee52fa7428cf85a1eee87f74
+guid: debd32da9058c7d4895c7cdcfb705301
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bell-idle-Sheet_0
+      name: Bell-dead-Sheet_0
       rect:
         serializedVersion: 2
         x: 3
@@ -137,19 +137,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58353fe5c7da41343b479a0f86cffe5f
-      internalID: 1784469322
+      spriteID: 0111409b9345c8e45a83a360afc1c5ad
+      internalID: 1676629706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bell-idle-Sheet_1
+      name: Bell-dead-Sheet_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 21
         y: 1
-        width: 12
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b664f76f57829ae44b3da21ccc20d0a4
+      internalID: 1663903458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bell-dead-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1
+        width: 19
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,8 +179,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a57a1f4050b25fe4383d291d984f0a0a
-      internalID: 1790480385
+      spriteID: 1b6e43bef4c197d4a9122c0a6740afdc
+      internalID: -371616602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bell-dead-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9f5330a61aea140b2fff77e3c8f798
+      internalID: 1522771695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bell-dead-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1493165f3d2c3e4ea8b0feb408ccf1e
+      internalID: -367454354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bell-dead-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3c300c0e1719542b97c785630efa8d
+      internalID: -1872962076
       vertices: []
       indices: 
       edges: []
@@ -175,8 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bell-idle-Sheet_0: 1784469322
-      Bell-idle-Sheet_1: 1790480385
+      Bell-dead-Sheet_0: 1676629706
+      Bell-dead-Sheet_1: 1663903458
+      Bell-dead-Sheet_2: -371616602
+      Bell-dead-Sheet_3: 1522771695
+      Bell-dead-Sheet_4: -367454354
+      Bell-dead-Sheet_5: -1872962076
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
