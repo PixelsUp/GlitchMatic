@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6871449629331388813}
   - component: {fileID: -5877657539513171172}
   - component: {fileID: 3560060619767836986}
+  - component: {fileID: 245071220373452782}
+  - component: {fileID: 7235790145237000541}
   m_Layer: 0
   m_Name: firePrefab
   m_TagString: Untagged
@@ -93,7 +95,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5500737185656787733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -144,3 +146,95 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+--- !u!95 &245071220373452782
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500737185656787733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1776f1551a2ddee499dd8c7b878e3d1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &7235790145237000541
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500737185656787733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5607786, y: 0.95841515}
+    oldSize: {x: 0.89, y: 1.77}
+    newSize: {x: 0.89, y: 1.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0}
+    - - {x: -0.06, y: -0.1831361}
+      - {x: 0.063019335, y: -0.082019925}
+      - {x: -0.032855242, y: 0.120854855}
+      - {x: -0.19557247, y: -0.088908315}
+    - - {x: 0.023985505, y: 0.004656598}
+      - {x: -0.5771415, y: -0.5366539}
+      - {x: -1.3522115, y: -0.5128773}
+      - {x: -1.3978254, y: -0.15779245}
+    - - {x: 0.008371711, y: -0.01377687}
+      - {x: -0.3819704, y: -1.2186044}
+      - {x: -0.93064225, y: -1.3877026}
+      - {x: -1.1558136, y: -0.95684564}
+    - - {x: 0.0005648136, y: 0.011330614}
+      - {x: -0.23364013, y: -1.3425957}
+      - {x: -0.7745065, y: -1.4841404}
+      - {x: -0.96064246, y: -0.98439944}
+    - - {x: 0.0070824623, y: 0.023515105}
+      - {x: 0.38310063, y: -1.3288192}
+      - {x: -0.06408346, y: -1.6839033}
+      - {x: -0.46881127, y: -1.3288188}
+    - - {x: 0.39090762, y: -1.3059437}
+      - {x: -0.05408281, y: -1.6732384}
+      - {x: -0.47784573, y: -1.3257072}
+      - {x: 0.038633227, y: -0.18534589}
+    - - {x: 0, y: 0}
+  m_UseDelaunayMesh: 0

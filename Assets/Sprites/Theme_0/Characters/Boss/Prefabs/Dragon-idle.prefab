@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 692621492799338737}
   - component: {fileID: 413061177722995998}
   - component: {fileID: 1514363162514628955}
+  - component: {fileID: 3947524931620093158}
   m_Layer: 0
   m_Name: Dragon-idle
   m_TagString: Untagged
@@ -116,6 +117,9 @@ MonoBehaviour:
   maxHealth: 1000
   playerDistance: 0
   attackCooldown: 3
+  startFireBreath: {fileID: 0}
+  startTail: {fileID: 0}
+  startFBAttack: {fileID: 0}
   criticalHealthThreshold: 20
   fireBreathRange: 25
   meleeAttackRange: 25
@@ -123,3 +127,24 @@ MonoBehaviour:
   fireballPrefab: {fileID: 0}
   tailPrefab: {fileID: 0}
   fireballSpeed: 10
+--- !u!95 &3947524931620093158
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345013196183741410}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 478afcd398505c44485ab4f3e79770c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -19,6 +19,7 @@ public class Drake_Behaviour : MonoBehaviour
     public Transform startFBAttack;
     private bool isBreathingFire = false;
 
+
     // Referencia al jugador
     private _CharacterManager protagonista;
     private Vector3 posicionProtagonista = Vector3.zero;
@@ -49,6 +50,8 @@ public class Drake_Behaviour : MonoBehaviour
         protagonista = FindObjectOfType<_CharacterManager>();
         posicionProtagonista = protagonista.transform.position;
         EnemyManager = FindEnemyManager();
+        animator = GetComponent<Animator>();
+
 
         if (protagonista == null)
         {
@@ -203,13 +206,19 @@ public class Drake_Behaviour : MonoBehaviour
         if (isBreathingFire) yield break;
         isBreathingFire = true;
 
+
+
+
         // Crear una sola llama
         GameObject flame = Instantiate(firePrefab, startFireBreath.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
+        animator.SetTrigger("IsBreathingFire");
+
+
 
         // Configurar el rango del barrido
         float startAngle = -90f; // Comienza hacia abajo
         float endAngle = 0f;  // Termina hacia la derecha
-        int steps = 10;         // Número de pasos en el barrido
+        int steps = 14;         // Número de pasos en el barrido
         float totalTime = 2f;   // Tiempo total para completar el barrido
         float stepTime = totalTime / steps; // Tiempo por cada paso
 
