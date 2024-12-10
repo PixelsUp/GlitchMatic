@@ -217,7 +217,7 @@ public class Drake_Behaviour : MonoBehaviour
 
         // Configurar el rango del barrido
         float startAngle = -90f; // Comienza hacia abajo
-        float endAngle = 0f;  // Termina hacia la derecha
+        float endAngle = 15f;  // Termina hacia la derecha
         int steps = 14;         // Número de pasos en el barrido
         float totalTime = 2f;   // Tiempo total para completar el barrido
         float stepTime = totalTime / steps; // Tiempo por cada paso
