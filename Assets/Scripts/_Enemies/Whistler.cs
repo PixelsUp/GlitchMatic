@@ -19,6 +19,7 @@ public class Whistler : Enemy
         originalDetectionRadius = GetDetectionRadius();
         rb = GetComponent<Rigidbody2D>();  // Obtener el Rigidbody2D
         rb.isKinematic = true;
+        animator = GetComponent<Animator>();
         StartCoroutine(BehaviorTree());
     }
 
