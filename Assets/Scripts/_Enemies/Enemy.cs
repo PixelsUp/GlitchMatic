@@ -12,6 +12,7 @@ public abstract class Enemy : MonoBehaviour
     private bool isInvincible = false;
     private bool isDead = false;
 
+
     [SerializeField]
     private float detectionRadius = 5f;
 
@@ -113,9 +114,11 @@ public abstract class Enemy : MonoBehaviour
                 // Activar la animación de muerte antes de destruir el objeto
                 if (animator != null)
                 {
+                    
                     animator.SetTrigger("IsDead");
                     Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
                 }
+                DisableCollider();
                 Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
             }
 
@@ -125,6 +128,16 @@ public abstract class Enemy : MonoBehaviour
         {
             // Inicia la invencibilidad temporal
             StartCoroutine(InvincibilityCoroutine());
+        }
+    }
+
+    protected virtual void DisableCollider()
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+            Debug.Log("Collider desactivado.");
         }
     }
 
