@@ -43,7 +43,7 @@ public class _CameraManager : MonoBehaviour
         switch (index)
         {
             case 10:
-                minX = 130;
+                minX = 141;
                 maxX = 205;
                 minY = 130;
                 maxY = 175;
