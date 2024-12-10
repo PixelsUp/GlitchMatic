@@ -43,25 +43,74 @@ public class _CameraManager : MonoBehaviour
         switch (index)
         {
             case 10:
-                //minX = 
+                minX = 141;
+                maxX = 205;
+                minY = 130;
+                maxY = 175;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 11:
+                minX = 141;
+                maxX = 205;
+                minY = 122;
+                maxY = 178;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 12:
+                minX = 141;
+                maxX = 206;
+                minY = 135;
+                maxY = 165;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 13:
+                minX = 141;
+                maxX = 205;
+                minY = 126;
+                maxY = 175;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 14:
+                minX = 141;
+                maxX = 205;
+                minY = 136;
+                maxY = 174;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 15:
+                minX = 141;
+                maxX = 205;
+                minY = 118;
+                maxY = 183;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 16:
+                minX = 141;
+                maxX = 205;
+                minY = 127;
+                maxY = 177;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 17:
+                minX = 141;
+                maxX = 205;
+                minY = 139;
+                maxY = 176;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 18:
+                minX = 141;
+                maxX = 205;
+                minY = 120;
+                maxY = 180;
+                GetComponent<Camera>().orthographicSize = 23;
                 break;
             case 19:
+                minX = 171;
+                maxX = 175;
+                minY = 139;
+                maxY = 161;
+                GetComponent<Camera>().orthographicSize = 40;
                 break;
             default:
                 break;

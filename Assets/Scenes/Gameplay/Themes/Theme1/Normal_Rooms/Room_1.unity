@@ -5707,7 +5707,7 @@ MonoBehaviour:
   minX: 141
   maxX: 205
   minY: 130
-  maxY: 170
+  maxY: 175
   shakeDuration: 0.3
   shakeMagnitude: 0.1
 --- !u!1 &1729480080
