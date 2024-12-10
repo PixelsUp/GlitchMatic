@@ -4415,6 +4415,8 @@ MonoBehaviour:
   masterSlider: {fileID: 1888962573}
   musicSlider: {fileID: 537192692}
   sfxSlider: {fileID: 2109763978}
+  sureText: {fileID: 0}
+  completa: 0
 --- !u!114 &1325227942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5489,7 +5491,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.0627451, g: 0.10980393, b: 0.15686275, a: 0}
+  m_BackGroundColor: {r: 0.12941177, g: 0.09411766, b: 0.14901961, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

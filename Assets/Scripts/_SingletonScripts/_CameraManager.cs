@@ -43,11 +43,12 @@ public class _CameraManager : MonoBehaviour
         switch (index)
         {
             case 10:
-                minX = 141;
+                minX = 130;
                 maxX = 205;
                 minY = 130;
                 maxY = 175;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
                 break;
             case 11:
                 minX = 141;
@@ -55,6 +56,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 122;
                 maxY = 178;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
                 break;
             case 12:
                 minX = 141;
@@ -62,6 +64,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 135;
                 maxY = 165;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
                 break;
             case 13:
                 minX = 141;
@@ -69,6 +72,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 126;
                 maxY = 175;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
                 break;
             case 14:
                 minX = 141;
@@ -76,6 +80,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 136;
                 maxY = 174;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
                 break;
             case 15:
                 minX = 141;
@@ -83,6 +88,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 118;
                 maxY = 183;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
                 break;
             case 16:
                 minX = 141;
@@ -90,6 +96,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 127;
                 maxY = 177;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
                 break;
             case 17:
                 minX = 141;
@@ -97,6 +104,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 139;
                 maxY = 176;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
                 break;
             case 18:
                 minX = 141;
@@ -104,6 +112,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 120;
                 maxY = 180;
                 GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
                 break;
             case 19:
                 minX = 171;
@@ -111,6 +120,7 @@ public class _CameraManager : MonoBehaviour
                 minY = 139;
                 maxY = 161;
                 GetComponent<Camera>().orthographicSize = 40;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
                 break;
             default:
                 break;
@@ -136,8 +146,24 @@ public class _CameraManager : MonoBehaviour
 
         // Update the camera's position
         transform.position = smoothedPosition;
+    }
 
-        
+    // Función para convertir un código hexadecimal en un Color
+    Color HexToColor(string hex)
+    {
+        // Asegúrate de que el código tenga exactamente 6 caracteres (RGB)
+        if (hex.Length != 6)
+        {
+            Debug.LogError("Código hexadecimal no válido.");
+            return Color.black;
+        }
+
+        // Convertir las partes RGB
+        byte r = byte.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+        byte g = byte.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+        byte b = byte.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+
+        return new Color32(r, g, b, 255); // RGBA con opacidad completa
     }
 
     // Method to start the screenshake effect
