@@ -8,6 +8,8 @@ public class Enemigo_Melee_Behavior : Enemy
 {
     // Enlace al protagonista
     private _CharacterManager protagonista;
+    private Collider2D bodyCollider;
+
 
     // Definimos los posibles estados del enemigo
     private enum TEstado { BUSCANDO, AVANZANDO, ATACANDO }
@@ -27,6 +29,7 @@ public class Enemigo_Melee_Behavior : Enemy
     //[SerializeField] private int vida = 50; 
     private bool puedeAtacar = true; // Controla si el enemigo puede atacar
 
+
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
 
     // Variables para el sistema de gruñidos
@@ -43,7 +46,10 @@ public class Enemigo_Melee_Behavior : Enemy
 
         protagonista = FindObjectOfType<_CharacterManager>();
 
-    if (protagonista == null)
+        bodyCollider = GetComponentInChildren<Collider2D>();
+
+
+        if (protagonista == null)
     {
         Debug.LogError("No se encontró al protagonista en la escena.");
     }
@@ -221,5 +227,18 @@ public class Enemigo_Melee_Behavior : Enemy
         yield return new WaitForSeconds(0.2f); // Tiempo de pausa
 
         rb.velocity = velocidadOriginal; // Restaura el movimiento
+    }
+
+    protected override void DisableCollider()
+    {
+        if (bodyCollider != null)
+        {
+            bodyCollider.enabled = false;
+            Debug.Log("Collider del cuerpo desactivado.");
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró un Collider en Enemigo_Melee_Behavior.");
+        }
     }
 }
