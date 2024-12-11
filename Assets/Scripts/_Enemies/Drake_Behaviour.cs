@@ -210,7 +210,7 @@ public class Drake_Behaviour : MonoBehaviour
 
 
         // Crear una sola llama
-        GameObject flame = Instantiate(firePrefab, startFireBreath.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
+        GameObject flame = Instantiate(firePrefab, startFireBreath.position, Quaternion.Euler(0, 0, -90f)); // Orientada hacia abajo
         animator.SetTrigger("IsBreathingFire");
 
 
@@ -251,12 +251,13 @@ public class Drake_Behaviour : MonoBehaviour
     {
         // Crear una sola llama
         GameObject tail = Instantiate(tailPrefab, startTail.position, Quaternion.Euler(0, 0, -270f)); // Orientada hacia abajo
+        animator.SetTrigger("IsTailAttacking");
 
         // Configurar el rango del barrido
         float startAngle = 0f; // Comienza hacia abajo
         float endAngle = -90f;  // Termina hacia la derecha
-        int steps = 10;         // Número de pasos en el barrido
-        float totalTime = 2f;   // Tiempo total para completar el barrido
+        int steps = 12;         // Número de pasos en el barrido
+        float totalTime = 1.6f;   // Tiempo total para completar el barrido
         float stepTime = totalTime / steps; // Tiempo por cada paso
 
         for (int i = 0; i <= steps; i++)
@@ -389,10 +390,21 @@ public class Drake_Behaviour : MonoBehaviour
                 {
                     EnemyManager.OnEnemyDefeated();
                     isDead = true;
+                    animator.SetTrigger("IsDead");
+                    DisableCollider();
                 }
             }
 
             Destroy(gameObject, 2f); // Destruir el objeto después de 0.65 segundos
+        }
+    }
+
+    protected virtual void DisableCollider()
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
         }
     }
 

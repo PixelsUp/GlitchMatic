@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac20448e50cf4914ebef36d4f733f3e0
+guid: 26187ade853cbd44986cee0e7e26ed79
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,295 +110,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_0
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 341
-        height: 285
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d77fff6b88419464e8400975716848b4
-      internalID: -344859552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_1
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 0
-        width: 341
-        height: 285
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70648c9f4b42e7642a9d74ce787d11d2
-      internalID: -163880310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_2
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 0
-        width: 341
-        height: 285
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70de35a62f4f2dd4794bd3d7527b55fe
-      internalID: 113987135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_3
-      rect:
-        serializedVersion: 2
-        x: 1023
-        y: 0
-        width: 341
-        height: 285
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87eca92d6c7a7b146b32e8ddffc4e9cf
-      internalID: 1036900559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_4
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 0
-        width: 341
-        height: 285
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4352860584a78b6499e9e4a41b3547b4
-      internalID: -2098559728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_5
-      rect:
-        serializedVersion: 2
-        x: 1705
-        y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.4400599, y: 0.82202}
+      pivot: {x: 0.34800345, y: 0.46813193}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f1bf6e7193a8e54789034d8329d8dee
-      internalID: -1930083081
+      spriteID: fe424090448b3fa4e86aff9124f1cab9
+      internalID: -1783765517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_6
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_1
       rect:
         serializedVersion: 2
-        x: 2046
+        x: 142
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.51750153, y: 0.87523323}
+      pivot: {x: 0.32301664, y: 0.483803}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653dff8055c3d3c408858708c0c16871
-      internalID: 985370319
+      spriteID: 529480f1aa699c0438b2a778e3fe07a1
+      internalID: 1010922978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_7
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_2
       rect:
         serializedVersion: 2
-        x: 2385
+        x: 285
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.53222585, y: 0.86675054}
+      pivot: {x: 0.25370273, y: 0.47291565}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9818388ef9c20a14cad8eecb9dcdd896
-      internalID: -484875729
+      spriteID: f311e28e322cc034c9d8c00a00853615
+      internalID: -890441124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_8
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_3
       rect:
         serializedVersion: 2
-        x: 2729
+        x: 426
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.5090712, y: 0.8674566}
+      pivot: {x: 0.25133568, y: 0.46584386}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0f68986084e5c74a83033e5299d7fd4
-      internalID: 999867649
+      spriteID: 4a559945906f27147ad7aa207fd83fd6
+      internalID: 1960792305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_9
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_4
       rect:
         serializedVersion: 2
-        x: 3069
+        x: 568
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.51059115, y: 0.8076511}
+      pivot: {x: 0.25002408, y: 0.46497184}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffdfe07077c9ce343ba3534ae0fd9df6
-      internalID: 2146794069
+      spriteID: fa956623a249e7b46a42dddad56a1c81
+      internalID: -1726573910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_10
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_5
       rect:
         serializedVersion: 2
-        x: 3410
+        x: 710
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.51291084, y: 0.7161645}
+      pivot: {x: 0.25749442, y: 0.47208762}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64d38f3c4e97b3c4c992ba564e5c3c4c
-      internalID: -690042110
+      spriteID: 1c67ebd36bd6a414bb4ecf3f23bec579
+      internalID: 583741062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_11
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_6
       rect:
         serializedVersion: 2
-        x: 3751
+        x: 852
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.53395486, y: 0.5464296}
+      pivot: {x: 0.3113803, y: 0.469285}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b756b329895c1fb4fbfbaadff2cd102c
-      internalID: 415002843
+      spriteID: 4fface449e6d88e4bb228ed5150240a7
+      internalID: -1794651461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_12
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_7
       rect:
         serializedVersion: 2
-        x: 4092
+        x: 994
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.532742, y: 0.5493314}
+      pivot: {x: 0.31310177, y: 0.474708}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd41cfec0b5c0c3448349c06292d33b1
-      internalID: -1647145431
+      spriteID: b9e42a6aee3e4c84a955bb46b30498b3
+      internalID: 1884320768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-breath-ezgif.com-gif-to-sprite-converter_13
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_8
       rect:
         serializedVersion: 2
-        x: 4433
+        x: 1127
         y: 0
-        width: 341
-        height: 285
+        width: 142
+        height: 175
       alignment: 9
-      pivot: {x: 0.53880477, y: 0.5333712}
+      pivot: {x: 0.33733958, y: 0.4565557}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f64417d4056e1fa41aed85496de52b80
-      internalID: 56057256
+      spriteID: 01261a6bb0e123a47a1db9622ccc6a5f
+      internalID: -1450725350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_9
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 0
+        width: 142
+        height: 175
+      alignment: 9
+      pivot: {x: 0.38541207, y: 0.46423003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404404bef4aa2ba4c835ad209c9ac80f
+      internalID: -1656102434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_10
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 0
+        width: 142
+        height: 175
+      alignment: 9
+      pivot: {x: 0.51241165, y: 0.46279475}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9870ad05129de2f4ca266561c2ecae9a
+      internalID: 184365028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tail-attack-single-ezgif.com-gif-to-sprite-converter_11
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 0
+        width: 167
+        height: 175
+      alignment: 9
+      pivot: {x: 0.43677488, y: 0.46182233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71980d9b3f4933a44a4ce71a2ba4b4e0
+      internalID: -90701922
       vertices: []
       indices: 
       edges: []
@@ -414,20 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire-breath-ezgif.com-gif-to-sprite-converter_0: -344859552
-      fire-breath-ezgif.com-gif-to-sprite-converter_1: -163880310
-      fire-breath-ezgif.com-gif-to-sprite-converter_10: -690042110
-      fire-breath-ezgif.com-gif-to-sprite-converter_11: 415002843
-      fire-breath-ezgif.com-gif-to-sprite-converter_12: -1647145431
-      fire-breath-ezgif.com-gif-to-sprite-converter_13: 56057256
-      fire-breath-ezgif.com-gif-to-sprite-converter_2: 113987135
-      fire-breath-ezgif.com-gif-to-sprite-converter_3: 1036900559
-      fire-breath-ezgif.com-gif-to-sprite-converter_4: -2098559728
-      fire-breath-ezgif.com-gif-to-sprite-converter_5: -1930083081
-      fire-breath-ezgif.com-gif-to-sprite-converter_6: 985370319
-      fire-breath-ezgif.com-gif-to-sprite-converter_7: -484875729
-      fire-breath-ezgif.com-gif-to-sprite-converter_8: 999867649
-      fire-breath-ezgif.com-gif-to-sprite-converter_9: 2146794069
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_0: -1783765517
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_1: 1010922978
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_10: 184365028
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_11: -90701922
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_2: -890441124
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_3: 1960792305
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_4: -1726573910
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_5: 583741062
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_6: -1794651461
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_7: 1884320768
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_8: -1450725350
+      tail-attack-single-ezgif.com-gif-to-sprite-converter_9: -1656102434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
