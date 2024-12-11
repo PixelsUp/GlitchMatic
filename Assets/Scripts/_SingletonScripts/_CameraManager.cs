@@ -39,7 +39,6 @@ public class _CameraManager : MonoBehaviour
         if (player == null) return;
 
         int index = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("asd" + index);
         switch (index)
         {
             case 10:

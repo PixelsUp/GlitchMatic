@@ -68,7 +68,6 @@ public class Enemigo_Range_Behavior : Enemy
             if (gruntTimer <= 0f)
             {
                 // Ejecuta un gruñido y reinicia el temporizador
-                Debug.Log("GRUNT1");
                 SfxScript.TriggerSfx("SfxGrunt1");
                 ResetGruntTimer();
             }

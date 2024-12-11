@@ -19,7 +19,7 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Total spawn points: " + spawnPoints.Length); // Verifica el número de spawn points
+        //Debug.Log("Total spawn points: " + spawnPoints.Length); // Verifica el número de spawn points
         StartCoroutine(DelayedSpawn());
     }
 

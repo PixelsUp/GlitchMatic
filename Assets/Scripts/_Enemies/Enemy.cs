@@ -116,10 +116,10 @@ public abstract class Enemy : MonoBehaviour
                 {
                     
                     animator.SetTrigger("IsDead");
-                    Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
+                    //Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
                 }
                 DisableCollider();
-                Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
+                //Debug.Log("Enemy defeated. Calling EnemyManager.OnEnemyDefeated.");
             }
 
             Destroy(gameObject, 0.65f); // Destruir el objeto después de 0.65 segundos
@@ -137,7 +137,7 @@ public abstract class Enemy : MonoBehaviour
         if (collider != null)
         {
             collider.enabled = false;
-            Debug.Log("Collider desactivado.");
+            //Debug.Log("Collider desactivado.");
         }
     }
 

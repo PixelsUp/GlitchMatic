@@ -68,7 +68,6 @@ public class Enemigo_Melee_Behavior : Enemy
             gruntTimer -= Time.deltaTime;
             if (gruntTimer <= 0f)
             {
-                Debug.Log("GRUNT2");
                 SfxScript.TriggerSfx("SfxGrunt2");
                 ResetGruntTimer();
             }
@@ -234,7 +233,7 @@ public class Enemigo_Melee_Behavior : Enemy
         if (bodyCollider != null)
         {
             bodyCollider.enabled = false;
-            Debug.Log("Collider del cuerpo desactivado.");
+            //Debug.Log("Collider del cuerpo desactivado.");
         }
         else
         {

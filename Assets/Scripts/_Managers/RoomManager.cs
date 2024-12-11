@@ -39,7 +39,6 @@ public class RoomManager : MonoBehaviour
 
     public void LoadNextRoom()
     {
-        Debug.Log(currentRoom);
         currentRoom++;
 
         // Check if it’s time to go to a shop.
@@ -71,7 +70,7 @@ public class RoomManager : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
         SceneManager.sceneLoaded += (scene, mode) => PlacePlayerAtSpawn();
-        Debug.Log("Nuemro de escena: " + currentRoom);
+        //Debug.Log("Nuemero de sala: " + currentRoom);
     }
 
     private void LoadBossRoom()
@@ -118,6 +117,6 @@ public class RoomManager : MonoBehaviour
         // Reinicia las variables para la próxima partida.
         currentRoom = 0;
         currentThemeIndex = 0;
-        Debug.Log("Número de sala reseteado a 0.");
+        //Debug.Log("Número de sala reseteado a 0.");
     }
 }
