@@ -21,6 +21,7 @@ public class SfxScript : MonoBehaviour
     public AudioClip sfxGrunt1;
     public AudioClip sfxGrunt2;
     public AudioClip sfxDash;
+    public AudioClip sfxBossDefeated;
 
     // Evento para reproducir efectos de sonido
     public static event Action<string> OnPlaySfx;
@@ -114,6 +115,9 @@ public class SfxScript : MonoBehaviour
                 break;
             case "SfxDash":
                 clipToPlay = sfxDash;
+                break;
+            case "SfxBossDefeated":
+                clipToPlay = sfxBossDefeated;
                 break;
             default:
                 Debug.LogWarning("Efecto de sonido no encontrado");

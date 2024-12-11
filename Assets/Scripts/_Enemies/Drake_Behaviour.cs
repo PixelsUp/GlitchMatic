@@ -415,7 +415,7 @@ public class Drake_Behaviour : MonoBehaviour
                     animator.SetTrigger("IsDead");
                     up50 = true;
                     playing = false;
-                    //SfxScript.TriggerSfx("bossDefeated");
+                    SfxScript.TriggerSfx("SfxBossDefeated");
                     DisableCollider();
                 }
             }

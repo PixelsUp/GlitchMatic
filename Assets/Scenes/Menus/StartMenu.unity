@@ -1150,6 +1150,7 @@ MonoBehaviour:
   sfxGrunt1: {fileID: 8300000, guid: bcfd18e992da0084db5a01a956b362c3, type: 3}
   sfxGrunt2: {fileID: 8300000, guid: f043377040d170e498e99418c37793a0, type: 3}
   sfxDash: {fileID: 8300000, guid: bd2c84baa76009f4aacaec78f7a027f9, type: 3}
+  sfxBossDefeated: {fileID: 8300000, guid: bca30508e001dec43a640f8dbbeb9cb1, type: 3}
 --- !u!82 &806451008
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1867,9 +1868,6 @@ MonoBehaviour:
   gameMusic4: {fileID: 8300000, guid: 25e3e812af76f8d40bffd9a0e46ea78c, type: 3}
   gameMusic5: {fileID: 8300000, guid: 21e0584587d55e94ca06bac1cf1b3cdd, type: 3}
   gameMusic6: {fileID: 8300000, guid: 43018db526e4645438eaf123c2f8631f, type: 3}
-  deadMusic: {fileID: 8300000, guid: 27409a8fb201898468796b9e15d95500, type: 3}
-  bossUp50: {fileID: 8300000, guid: bf5a6ba1313deca448cd63f6755c8264, type: 3}
-  bossUnder50: {fileID: 8300000, guid: e306de6331a92d243ba545c90d2769ac, type: 3}
 --- !u!82 &1236262046
 AudioSource:
   m_ObjectHideFlags: 0
