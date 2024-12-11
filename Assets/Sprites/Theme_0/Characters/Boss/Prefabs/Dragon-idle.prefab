@@ -127,6 +127,8 @@ MonoBehaviour:
   fireballPrefab: {fileID: 0}
   tailPrefab: {fileID: 0}
   fireballSpeed: 10
+  bossUnder50: {fileID: 8300000, guid: e306de6331a92d243ba545c90d2769ac, type: 3}
+  bossUp50: {fileID: 8300000, guid: bf5a6ba1313deca448cd63f6755c8264, type: 3}
 --- !u!95 &3947524931620093158
 Animator:
   serializedVersion: 5

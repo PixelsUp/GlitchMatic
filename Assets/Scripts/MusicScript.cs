@@ -22,9 +22,6 @@ public class MusicScript : MonoBehaviour
     public AudioClip gameMusic4;
     public AudioClip gameMusic5;
     public AudioClip gameMusic6;
-    public AudioClip deadMusic;
-    public AudioClip bossUp50;
-    public AudioClip bossUnder50;
 
     void Awake()
     {
@@ -142,7 +139,11 @@ public class MusicScript : MonoBehaviour
         }
         else if (clipToPlay == null)
         {
-            Debug.LogWarning($"No se encontró música para la escena {sceneName}");
+            //Debug.LogWarning($"No se encontró música para la escena {sceneName}");
+            if (sceneName == "BossRoom")
+            {
+                Source.clip = null;
+            }
         }
     }
     

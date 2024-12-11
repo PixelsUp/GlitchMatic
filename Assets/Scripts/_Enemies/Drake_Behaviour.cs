@@ -42,7 +42,11 @@ public class Drake_Behaviour : MonoBehaviour
 
     public float fireballSpeed = 10f; // Velocidad de las bolas de fuego
 
-
+    //Canciones de boss
+    private bool playing = false;
+    private bool up50 = true;
+    public AudioClip bossUnder50;
+    public AudioClip bossUp50;
 
     // Método Start: Inicialización del script
     void Start()
@@ -66,6 +70,24 @@ public class Drake_Behaviour : MonoBehaviour
         playerDistance = Vector2.Distance(transform.position, posicionProtagonista);
         attackTimer += Time.deltaTime;
 
+        if (!playing)
+        {
+            playing = true;
+            MusicScript.TriggerMusic(bossUnder50);
+        }
+        else
+        {
+            if (health < (maxHealth / 2) && health > 0)
+            {
+                playing = false;
+                up50 = false;
+            }
+            else if (up50)
+            {
+                up50 = false;
+                MusicScript.TriggerMusic(bossUp50);
+            }
+        }
         // Evaluar y realizar la mejor acción
         Heal();
         UpdateFireballCount();
@@ -391,6 +413,9 @@ public class Drake_Behaviour : MonoBehaviour
                     EnemyManager.OnEnemyDefeated();
                     isDead = true;
                     animator.SetTrigger("IsDead");
+                    up50 = true;
+                    playing = false;
+                    //SfxScript.TriggerSfx("bossDefeated");
                     DisableCollider();
                 }
             }
