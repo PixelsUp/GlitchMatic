@@ -122,6 +122,22 @@ public class _CameraManager : MonoBehaviour
                 GetComponent<Camera>().orthographicSize = 40;
                 GetComponent<Camera>().backgroundColor = HexToColor("131926");
                 break;
+            case 20:
+                minX = 171;
+                maxX = 175;
+                minY = 139;
+                maxY = 161;
+                GetComponent<Camera>().orthographicSize = 40;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
+                break;
+            case 21:
+                minX = 171;
+                maxX = 175;
+                minY = 139;
+                maxY = 161;
+                GetComponent<Camera>().orthographicSize = 40;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
+                break;
             default:
                 break;
         }
