@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  particles: {fileID: 5860377053777990345, guid: 01460ebef7af30d49a5b8c69d7c11ab1, type: 3}
 --- !u!95 &-5844227994268282698
 Animator:
   serializedVersion: 5

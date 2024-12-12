@@ -10,7 +10,7 @@ public class FireBreathScript : MonoBehaviour
     private Vector2[][] colliderPoints;
     private Vector2[][] colliderPoints2;
 
-
+    public GameObject particles;
 
 
     // Método Start: Inicialización del script
@@ -154,6 +154,11 @@ public class FireBreathScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             protagonista.TakeDamage(damage); // Infligir daño al jugador
+        }
+        else if (collision.CompareTag("Walls"))
+        {
+            Instantiate(particles, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 
