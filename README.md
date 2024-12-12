@@ -451,16 +451,16 @@ Regarding the elements designed for the interface itself, numerous buttons have 
 
 <p align=center>
 	<img src="https://github.com/user-attachments/assets/965b6ff3-a48f-4e18-8dd0-4f6331a7b17f", width= '600' 
-height='300'/>
+height='150'/>
 <p align=center> Image 9.8 Play button </p>
 
 <p align=center>
-	<img src="https://github.com/user-attachments/assets/d408c332-cb5c-4cbf-811a-87ff6c93f364", width= '600' 
-height='300'/>
-	<img src="https://github.com/user-attachments/assets/36209aa7-9b67-4cd1-8c3e-e79ef64c6fc0", width= '600' 
-height='300'/>
-	<img src="https://github.com/user-attachments/assets/168abbfb-e15c-46dc-bd18-c02932f902bc", width= '600' 
-height='300'/>
+	<img src="https://github.com/user-attachments/assets/d408c332-cb5c-4cbf-811a-87ff6c93f364", width= '1200' 
+height='150'/>
+	<img src="https://github.com/user-attachments/assets/36209aa7-9b67-4cd1-8c3e-e79ef64c6fc0", width= '1200' 
+height='150'/>
+	<img src="https://github.com/user-attachments/assets/168abbfb-e15c-46dc-bd18-c02932f902bc", width= '1200' 
+height='150'/>
 <p align=center> Image 9.9 Life and options bar </p>
 
 <p align=center>
