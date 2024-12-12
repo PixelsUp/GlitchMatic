@@ -78,9 +78,12 @@ public class RoomManager : MonoBehaviour
         string theme = Theme[currentThemeIndex];
         string sceneName = $"Scenes/Gameplay/Themes/{theme}/Boss_Rooms/BossRoom";
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
-        //currentThemeIndex = (currentThemeIndex + 1) % Theme.Length; // Rotate to the next theme.
-        currentThemeIndex += 1;
+        // Incrementa el índice del tema y lo reinicia si es necesario.
+        currentThemeIndex = (currentThemeIndex + 1) % Theme.Length; // Rotate to the next theme.
+        //currentThemeIndex += 1;
     }
+
+
 
     private void LoadShop()
     {
@@ -118,5 +121,6 @@ public class RoomManager : MonoBehaviour
         currentRoom = 0;
         currentThemeIndex = 0;
         //Debug.Log("Número de sala reseteado a 0.");
+
     }
 }

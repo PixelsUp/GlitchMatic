@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     private int remainingEnemies;
 
     public int currentRoom = 1; // Track room progression (linked with RoomManager)
-    public float scalingFactor = 1.1f; // Health scaling factor per room
+    public float scalingFactor = 1.15f; // Health scaling factor per room
 
     void Start()
     {
