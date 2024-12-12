@@ -64,6 +64,18 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.29
       objectReference: {fileID: 0}
+    - target: {fileID: 6928252693727750493, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928252693727750493, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: detectionRadius
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928252693727750493, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: distanceToMaintain
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9075579602773348320, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -57,12 +57,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989826705357275835, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24955085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989826705357275835, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.022030607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989826705357275835, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4989826705357275835, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928252693727750493, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928252693727750493, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928252693727750493, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: distanceToMaintain
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 9075579602773348320, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
       propertyPath: m_Sprite

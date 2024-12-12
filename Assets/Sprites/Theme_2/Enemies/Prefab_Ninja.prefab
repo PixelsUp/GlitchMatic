@@ -89,9 +89,29 @@ PrefabInstance:
       value: -0.035
       objectReference: {fileID: 0}
     - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: distanciaAtaque
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: distanciaMinima
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
       propertyPath: proyectilPrefab
       value: 
       objectReference: {fileID: 5818374948066685075, guid: d6d823915c15c3e47bc5e5303a05368d, type: 3}
+    - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: distanciaDeteccion
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673820813732210866, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: velocidadMovimiento
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8707146185934370915, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
       propertyPath: m_Sprite
       value: 

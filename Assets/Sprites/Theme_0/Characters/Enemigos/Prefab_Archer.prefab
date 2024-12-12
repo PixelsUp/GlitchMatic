@@ -218,12 +218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489b18673a5293f47b3ddf6ff89d1e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 95
   detectionRadius: 5
   proyectilPrefab: {fileID: 5818374948066685075, guid: 38d611d28d63ca743a8414b7c78801d9, type: 3}
   puntoDisparo: {fileID: 8040344290043744176}
-  velocidadMovimiento: 4
-  vida: 50
+  velocidadMovimiento: 5
   distanciaDeteccion: 50
   distanciaAtaque: 30
   distanciaMinima: 25

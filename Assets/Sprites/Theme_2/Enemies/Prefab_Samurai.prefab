@@ -80,6 +80,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f3ad2ea66d731f542aac3bee1a992f9c, type: 3}
+    - target: {fileID: 7208608220231080961, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+      propertyPath: health
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208608220231080961, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+      propertyPath: distanciaAtaque
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208608220231080961, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
+      propertyPath: velocidadMovimiento
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7424231796405899659, guid: 9902438b21f908c4184cfd86707f763c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.153

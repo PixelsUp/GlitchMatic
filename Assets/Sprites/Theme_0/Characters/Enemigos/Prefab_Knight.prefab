@@ -239,12 +239,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfeb596943bff748b14d357812b7013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 175
   detectionRadius: 5
-  velocidadMovimiento: 10
+  velocidadMovimiento: 6
   distanciaDeteccion: 40
   distanciaDeteccionAmpliada: 50
-  distanciaAtaque: 10
+  distanciaAtaque: 7
   tiempoEntreAtaques: 1
   rolling: 0
 --- !u!50 &-4334851903039421280
