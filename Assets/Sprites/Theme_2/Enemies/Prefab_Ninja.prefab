@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8ccc8c55825d85b4f9e59e2d39b3f284, type: 2}
+    - target: {fileID: 2926697039215362787, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
+      propertyPath: m_Name
+      value: weapon-shuriken
+      objectReference: {fileID: 0}
     - target: {fileID: 4391855643640338667, guid: 339e1fff05e98a643922a4faf26b436d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 173.21078

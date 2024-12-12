@@ -1,0 +1,347 @@
+fileFormatVersion: 2
+guid: 11fc52c43bca8c445b165fe61d9774f0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.59173536, y: 0.36999995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5836c3e3809c5a04baea72df24ddcdc3
+      internalID: 969085252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5943565, y: 0.37892148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36b3297b593394469b4daf743b23b24
+      internalID: -1571701518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5917353, y: 0.37892148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c72814af0d585b44ad06311f853314e
+      internalID: 1643404496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5891144, y: 0.38189533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972364c19dd74c840a502e8f1692c973
+      internalID: 1700908957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.59435624, y: 0.3729738}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb7f8c9a6af9e54cbac9d84a85ac13a
+      internalID: 1164814771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_5
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5969771, y: 0.38189533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551048cbb2a8b694ea242ed01f8f3203
+      internalID: 1766928029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_6
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.41865772, y: 0.5023389}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1d2d3138c2cff4dba409757b0f43e0
+      internalID: 496568587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_7
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.46503305, y: 0.4565791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a23fb9e521a58d4abe57fc4897bf437
+      internalID: -836791101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_8
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.50380075, y: 0.37685853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef878f6c2da6e446ad9cc2bff94c829
+      internalID: -1087294603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-robot-attack-ezgif.com-gif-to-sprite-converter_9
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.49940413, y: 0.38074315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc06d7d989db05940bac3d7ba1aef153
+      internalID: -922077691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_0: 969085252
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_1: -1571701518
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_2: 1643404496
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_3: 1700908957
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_4: 1164814771
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_5: 1766928029
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_6: 496568587
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_7: -836791101
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_8: -1087294603
+      sword-robot-attack-ezgif.com-gif-to-sprite-converter_9: -922077691
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

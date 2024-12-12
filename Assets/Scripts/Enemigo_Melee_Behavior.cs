@@ -28,7 +28,7 @@ public class Enemigo_Melee_Behavior : Enemy
     [SerializeField] private float tiempoEntreAtaques = 1f; // Tiempo de espera entre ataques
     //[SerializeField] private int vida = 50; 
     private bool puedeAtacar = true; // Controla si el enemigo puede atacar
-
+    private Animator swordAnimator;
 
     private bool protagonistaDetectado = false; // Para controlar el cambio de rango
 
@@ -47,6 +47,9 @@ public class Enemigo_Melee_Behavior : Enemy
         protagonista = FindObjectOfType<_CharacterManager>();
 
         bodyCollider = GetComponentInChildren<Collider2D>();
+
+        swordAnimator = transform.Find("Aim/Weapon").GetComponent<Animator>();
+
 
 
         if (protagonista == null)
@@ -151,6 +154,7 @@ public class Enemigo_Melee_Behavior : Enemy
             case TEstado.ATACANDO:
                 animator.SetBool("IsRunning", false); // Detener animación de correr al atacar
 
+
                 // Verificar la distancia actual entre el enemigo y el protagonista
                 if ((distanciaAlProtagonista <= distanciaAtaque) && puedeAtacar)
                 {
@@ -183,6 +187,7 @@ public class Enemigo_Melee_Behavior : Enemy
     {
         if (puedeAtacar && protagonista.hp > 0)
         {
+            swordAnimator.SetTrigger("IsAttacking");
             StartCoroutine(AtacarCoroutine());
         }
     }
@@ -190,6 +195,7 @@ public class Enemigo_Melee_Behavior : Enemy
     // Coroutine para manejar el ataque y el tiempo de espera
     private IEnumerator AtacarCoroutine()
     {
+        
         puedeAtacar = false; // Desactivar el ataque
         protagonista.TakeDamage(danoAtaque); // Aplicar daño
         Debug.Log("Salud restante del protagonista: " + protagonista.hp);
