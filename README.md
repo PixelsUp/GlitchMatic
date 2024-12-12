@@ -167,7 +167,7 @@ Represents a business ecosystem. Pixels Up functions as a central platform conne
 
 | **Product**              | **Price Range**           |
 |--------------------------|---------------------------|
-| Remove ads (One-time purchase) | $XX.XX                  |
+| Remove ads (One-time purchase) | $9.99                  |
 | In-Game Currency Packages  | $X.XX - $XX.XX           |
 | Character Skins           | X In-Game Currency         |
 | Weapon Skins              | X In-Game Currency         |
@@ -264,7 +264,7 @@ The tower stands as the central point of the time-world’s corruption. The Glit
     - The rooms are neverending, and they are placed there as the protectors of the root of the glitches that are happening around the world. The glitches' origin stops anyone who tries to destroy it by creating more and harder rooms as the player gets closer to it.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/642341ce-1c40-4444-a9c9-96a16aad847c" width= '500' height='300'/>
+  <img src="https://github.com/user-attachments/assets/de47e342-a4b6-43a2-b2a2-f04d06d998f2" width= '500' height='400'/>
 </p>
 <p align=center>Image 5.3 Medieval Room</p>
 
@@ -288,12 +288,27 @@ The tower stands as the central point of the time-world’s corruption. The Glit
   <img src="https://github.com/user-attachments/assets/270befe2-4f92-4c32-9d23-4f83ae70b800" width= '500' height='300'/>
 </p>
 <p align=center>Image 6.1 Character concept art with different variations</p>
+	Making  a moodboard has been key in the creation of the visual elements. Allowing to make the game visually cohesive.
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/a78260a1-ea46-4201-96ca-2f5e9d3d1a1c" width= '500' height='300'/>
+</p>
+<p align=center>Image 6.2  Game Art Moodboard</p>
+
 
 ### 2D Pixel Art  
   The decision to use 2D pixel art helps avoid unnecessary complications while perfectly suiting the game's aesthetic. The simplicity of pixel art allows us to focus on glitch effects and detailed environmental storytelling. This style complements the digital instability and chaotic nature of the game's world, enabling smooth gameplay transitions and easier asset creation.
 
 Additionally, we will create social media links and marketing content to showcase the development process. Concept art, early character animations, and teasers will be shared across platforms like Twitter, Instagram, and YouTube. These posts will help build excitement and draw in our target audience.
 
+### Game Backgrounds
+
+The style of the game backgrounds, like the rest, is made with pixelart. There are three different themes, where the said style changes. Additionally, the size and shape of the room changes.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f602edad-0912-45bb-b6ba-ba535ccdcc90" width= '300' height='200'/>
+  <img src="https://github.com/user-attachments/assets/ae55a034-6b67-4639-8576-81e5a6d00563" width= '300' height='200'/>
+  <img src="https://github.com/user-attachments/assets/8288cdf7-64fa-445a-a16c-59d243ea853b" width= '300' height='200'/>
+</p>
+<p align=center>Image 6.3 Game Background</p>
 ---
 
 ## 7. Animation
@@ -301,23 +316,69 @@ Additionally, we will create social media links and marketing content to showcas
 ### Animation Style
 
 - **Character Animations**: Smooth, responsive movements including running, rolling, and attacking. They respond to the players' inputs, selected to be as intuitive as possible. They try to be as clear as possible and interact responsively with the weapon animations of the character. These are developed to get a clear feel of the combat.
-
-
 - **Enemy Animations**: Erratic and glitchy movements reflecting the unstable environment. They act according to the player's actions, as they are adjusted to be used along the main mechanics of the game.
+- **Mele enemies**: This type of enemy will attack the player by approaching him with a melee weapon, which will vary depending on the theme of the enemy.
+<p align=center>
+  <img src="https://github.com/user-attachments/assets/e753876c-8704-4b6f-82ff-9531b8e7c5f9" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/3fff2c4b-bab4-4970-a258-1224fc2bddb5" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/7bb212c2-9a76-456e-84b5-b9cf6eb9a8ec" width= '300' height='300'/>
+ </p>
+<p align=center>Image 7.1 Mele enemies</p>
+
+- **Ranged enemies** :
+This type of enemy will attack the player by keeping distance with the player and attacking him with a ranged weapon, which will vary depending on the theme of the enemy.
+<p align=center>
+  <img src="https://github.com/user-attachments/assets/9f7918ad-3724-409c-a05a-ed6971502c94" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/0cd40319-5b3a-45ef-9965-8634342e9f43" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/b40d191a-febd-40eb-864f-8ca59bf74c76" width= '300' height='300'/>
+</p>
+<p align=center>Image 7.2 Ranged enemies</p>
+
+- **Whistler enemies**:
+This enemy will not attack the player, but will notify the rest of the enemies of their location.
+<p align=center>
+  <img src="https://github.com/user-attachments/assets/80c89d73-ea65-432f-9235-b5002256bdcd" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/dbfec219-e481-41ed-9743-e4d7a6a89799" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/e0990f0f-3bbd-460a-85f8-4c17c5fb5413" width= '300' height='300'/>
+</p>
+<p align=center>Image 7.3 Whistler enemies</p>
+
+
 - **Scenario Animations**: Glitchy environmental elements change in every room, making the player feel better about the replayability of the game. They make the enemies feel more alive and intractable.
 - **Damage Animations**: When the main character or enemies take damage, a glitch effect briefly distorts their bodies, emphasizing the impact. This visual "glitch" animation gives the sensation that the character is destabilized by the attack.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c9931d22-0e6e-463d-bd6e-7534358f95ba" width= '300' height='300'/>
 </p>
-<p align=center>Image 7.1 Character hurt animation</p>
+<p align=center>Image 7.4 Character hurt animation</p>
 
 - **Death Animations**: Upon death, the glitch effect becomes more aggressive, fully corrupting their form. The character or enemy breaks apart into a chaotic sequence of glitchy distortions, signifying their complete destruction within the game world.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b9c74592-8106-4127-9357-9890d7574d4c" width= '300' height='300'/>
 </p>
-<p align=center>Image 7.2 Character dead animation</p>
+<p align=center>Image 7.5 Character dead animation</p>
+
+- **Drake Animations**: 
+The boss of the medieval theme is a drake. Three attack animations have been made, along with damage and death animations.
+
+<p align=center>
+  <img src="https://github.com/user-attachments/assets/15da9803-f77b-43d8-bcc0-b56c811c571d" width= '250' height='300'/>
+  <img src="https://github.com/user-attachments/assets/0fed56d3-956c-4a9f-ad53-6cc86f838f1f" width= '250' height='300'/>
+  <img src="https://github.com/user-attachments/assets/32f684e4-5332-49b1-aad6-b5f4cf2b46c7" width= '250' height='300'/>
+
+<p align=center>Image 7.6 Drake animation</p>
+
+- **Cyber Skull Animations**:
+The boss of the cyberpunk theme is a flying robotic skull. Three attack animations have been made, along with damage and death animations.
+
+<p align=center>
+  <img src="https://github.com/user-attachments/assets/e87d6a68-4908-4548-a06a-e2dd5a68b556" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/ac9a66b8-373a-43eb-a25e-9c6c3c68ffe5" width= '300' height='300'/>
+  <img src="https://github.com/user-attachments/assets/64b06d19-d2b9-48c5-8134-550223fc2c90" width= '300' height='300'/>
+
+<p align=center> Image 7.7 Cyber Skull animation </p>
+
 
 
 ---
