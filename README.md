@@ -278,7 +278,6 @@ The tower stands as the central point of the time-world’s corruption. The Glit
 ### Pixel Art  
   The pixel art style is retro-inspired, bringing a nostalgic feel to the game. However, the addition of glitch effects, such as pixel scrambling and color disintegration, creates a chaotic, disorienting atmosphere. These distortions emphasize the core game theme of a fractured, unstable reality. By using pixel art, we can keep development streamlined while leveraging the aesthetic's simplicity to enhance visual effects without overcomplicating the production pipeline.
   
-
 ### Visual Style  
   The game’s visual style is dark, futuristic, and focused on the idea of digital corruption. Broken environments, distorted assets, and glitchy characters contribute to an overall feeling of instability. The color palette will reflect this with muted tones, punctuated by bright, glitchy visuals. Shadows, light distortions, and flickering environments will play an important role in conveying a world on the edge of collapse.
 
