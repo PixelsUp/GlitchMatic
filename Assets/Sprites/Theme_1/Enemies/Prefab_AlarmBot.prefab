@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6778065014374693753, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3e21b63c20f9c7543badda1467e2f74a, type: 2}
     - target: {fileID: 925130425340089546, guid: 2615e381ad795fc4f898ef60c6705d3e, type: 3}
       propertyPath: m_Name
       value: Prefab_AlarmBot

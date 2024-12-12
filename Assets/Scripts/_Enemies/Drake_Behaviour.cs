@@ -308,7 +308,7 @@ public class Drake_Behaviour : MonoBehaviour
     {
         // Crear una instancia del prefab de la bola de fuego
         GameObject fireball = Instantiate(fireballPrefab, startFBAttack.position, Quaternion.identity);
-
+        animator.SetTrigger("IsFireball");
         // Convertir el ángulo a radianes
         float angleInRadians = angle * Mathf.Deg2Rad;
 
