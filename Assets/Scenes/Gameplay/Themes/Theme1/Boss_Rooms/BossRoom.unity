@@ -6963,6 +6963,14 @@ PrefabInstance:
       propertyPath: criticalHealthThreshold
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 3744613777950219298, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744613777950219298, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4345013196183741410, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: m_Name
       value: Dragon-idle

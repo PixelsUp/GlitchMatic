@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Drake_Behaviour : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Drake_Behaviour : MonoBehaviour
     public Transform startTail;
     public Transform startFBAttack;
     private bool isBreathingFire = false;
-
+    public Slider bossHealthBar;
 
     // Referencia al jugador
     private _CharacterManager protagonista;
@@ -360,9 +361,9 @@ public class Drake_Behaviour : MonoBehaviour
 
         while (health < maxHealth * 0.4f)
         {
-            health += 4f; // Curar 4 puntos de vida por segundo
+            health += 30f; // Curar 4 puntos de vida por segundo
             health = Mathf.Min(health, maxHealth); // Limitar la salud al máximo
-
+            bossHealthBar.value = health / maxHealth;
             yield return new WaitForSeconds(1f); // Esperar 1 segundo entre curaciones
         }
         isHealing = false;
@@ -402,6 +403,7 @@ public class Drake_Behaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        bossHealthBar.value = health / maxHealth;
         Debug.Log("Health: " + health);
         if (health <= 0)
         {
