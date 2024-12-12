@@ -783,8 +783,8 @@ MonoBehaviour:
   weapon2Button: {fileID: 771442303}
   weapon3Button: {fileID: 108154190}
   weapon1Cost: 100
-  weapon2Cost: 300
-  weapon3Cost: 250
+  weapon2Cost: 150
+  weapon3Cost: 200
   boughtSprite: {fileID: 21300000, guid: d9d5c09da0b27844e80e1d3f1496994e, type: 3}
   noAdsButton: {fileID: 631066615}
 --- !u!1 &704537198
