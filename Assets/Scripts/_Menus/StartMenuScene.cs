@@ -129,22 +129,26 @@ public class StartMenuScene : MonoBehaviour
 
     public void playSb()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         sbObject.SetActive(true);
         sbCanvas.SetActive(true);
     }
 
     public void backSb()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         sbObject.SetActive(false);
         sbCanvas.SetActive(false);
     }
     public void playControls()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         controlsObject.SetActive(true);
     }
 
     public void backControls()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         controlsObject.SetActive(false);
     }
 }

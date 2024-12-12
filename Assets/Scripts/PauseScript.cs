@@ -159,11 +159,13 @@ public class PauseScript : MonoBehaviour
     }
     public void playControls()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         controlsObject.SetActive(true);
     }
 
     public void backControls()
     {
+        SfxScript.TriggerSfx("SfxButton1");
         controlsObject.SetActive(false);
     }
 }
