@@ -51,6 +51,7 @@ public class Whistler : Enemy
 
     private void MaintainDistance()
     {
+        animator.SetBool("IsRunning", true);
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         if (distance < distanceToMaintain)
@@ -78,6 +79,7 @@ public class Whistler : Enemy
 
     private void SearchForPlayer()
     {
+        animator.SetBool("IsRunning", false);
         rb.velocity = Vector2.zero;
     }
 
