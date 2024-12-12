@@ -415,11 +415,70 @@ Sound effects are essential for immersing players in the distinct environments o
 </p>
 <p align=center>Image 9.1 Main menu</p>
 
-- **Flow Diagram**: 
+For the character selection, credits, and leaderboard interfaces, the same background image format has been maintained for the interface, featuring elements in purple with vibrant shades.
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/569d7280-f7e2-46fa-ae3a-6829a675e151", width= '250' height='300'/>
+<p align=center> Image 9.2 Leaderboard interface </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/055112ff-8c00-47e0-acff-55a43bb7aeaa", width= '250' height='300'/>
+<p align=center> Image 9.3 Select skin interface </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/9c5f8d69-995b-4b62-a787-ecdb9b5b79cf", width= '250' 
+height='300'/>
+<p align=center> Image 9.4 Credits interface </p>
+
+For the options, login, and store interfaces, a futuristic cyberpunk-style background has been designed with a purple and gray color palette of a similar aesthetic.
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/63f696da-0034-44ff-946d-be65136e2013", width= '250' 
+height='300'/>
+<p align=center> Image 9.5 Shop interface </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/d11babbf-b013-42b4-9dfe-518d74b4543a", width= '250' 
+height='300'/>
+<p align=center> Image 9.6 Login interface </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/25ec1c14-9494-4f12-a891-05b3fe5df36e", width= '250' 
+height='300'/>
+<p align=center> Image 9.7 Options interface </p>
+
+Regarding the elements designed for the interface itself, numerous buttons have been developed, along with a new cursor style when hovering over an enemy, health bars, game settings bars, and a goal indicator.
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/965b6ff3-a48f-4e18-8dd0-4f6331a7b17f", width= '250' 
+height='300'/>
+<p align=center> Image 9.8 Play button </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/d408c332-cb5c-4cbf-811a-87ff6c93f364", width= '250' 
+height='300'/>
+	<img src="[https://github.com/user-attachments/assets/d408c332-cb5c-4cbf-811a-87ff6c93f364](https://github.com/user-attachments/assets/36209aa7-9b67-4cd1-8c3e-e79ef64c6fc0)", width= '250' 
+height='300'/>
+	<img src="https://github.com/user-attachments/assets/168abbfb-e15c-46dc-bd18-c02932f902bc", width= '250' 
+height='300'/>
+<p align=center> Image 9.9 Life and options bar </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/d585ac66-f24a-46f3-bd9d-c46b6fe223e0", width= '250' 
+height='300'/>
+<p align=center> Image 9.10 Attack cursor </p>
+
+<p align=center>
+	<img src="https://github.com/user-attachments/assets/e309abb4-299c-4aaa-b543-91254f0756a8", width= '250' 
+height='300'/>
+<p align=center> Image 9.11 Goal indicator </p>
+
+- **Flow Diagram**:
 <p align="center">
   <img src="https://github.com/user-attachments/assets/be9b9fbf-64f6-4c33-812e-58e778f3c6ba" width= '600' height='300'/>
+  <img src="https://github.com/user-attachments/assets/23d97a61-514f-4057-b8bb-d64a74fc0988" width= '600' height='300'/>
 </p>
-<p align=center>Image 9.2 Flow Diagram</p>
+<p align=center>Image 9.12 Flow Diagram</p>
 ---
 
 ## 10. Development Roadmap
