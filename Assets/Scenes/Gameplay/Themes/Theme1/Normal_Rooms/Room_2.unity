@@ -3301,7 +3301,7 @@ Transform:
   m_GameObject: {fileID: 945568612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.1, y: 12.8, z: 0}
+  m_LocalPosition: {x: 33.5, y: 12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 8.46}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4603,6 +4603,8 @@ MonoBehaviour:
   masterSlider: {fileID: 1888962573}
   musicSlider: {fileID: 537192692}
   sfxSlider: {fileID: 2109763978}
+  sureText: {fileID: 0}
+  completa: 0
 --- !u!114 &1325227942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5810,7 +5812,7 @@ Transform:
   m_GameObject: {fileID: 1782017727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.2, y: -28.8, z: 2.49}
+  m_LocalPosition: {x: -50.5, y: -33.5, z: 2.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

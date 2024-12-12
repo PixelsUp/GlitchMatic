@@ -134,6 +134,10 @@ public class _CharacterManager : MonoBehaviour
         {
             TakeDamage(200f);
         }
+        if (Input.GetKeyDown(KeyCode.H)) // Presiona "H" para simular health
+        {
+            hp = hp + 100;
+        }
 
         // Handle movement input
         movement.x = Input.GetAxisRaw("Horizontal");
