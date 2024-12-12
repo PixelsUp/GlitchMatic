@@ -141,7 +141,14 @@ public class Enemigo_Range_Behavior : Enemy
                 {
                     disparando = true; // Activar la bandera antes de disparar
                     StartCoroutine(DispararProyectilCoroutine());
-                    SfxScript.TriggerSfx("SfxBowShot");
+                    if (proyectilPrefab.name == "prefab_Laser")
+                    {
+                        SfxScript.TriggerSfx("SfxLaser");
+                    }
+                    else if (proyectilPrefab.name == "prefab_Arrow")
+                    {
+                        SfxScript.TriggerSfx("SfxBowShot");
+                    }
                 }
                 break;
 

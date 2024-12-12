@@ -13,6 +13,7 @@ public class SfxScript : MonoBehaviour
     public AudioClip sfxHurt;
     public AudioClip sfxDead;
     public AudioClip sfxBowShot;
+    public AudioClip sfxLaser;
     public AudioClip sfxSword1;
     public AudioClip sfxSword2;
     public AudioClip sfxSword3;
@@ -91,6 +92,9 @@ public class SfxScript : MonoBehaviour
                 break;
             case "SfxBowShot":
                 clipToPlay = sfxBowShot;
+                break;
+            case "SfxLaser":
+                clipToPlay = sfxLaser;
                 break;
             case "SfxSword1":
                 clipToPlay = sfxSword1;
