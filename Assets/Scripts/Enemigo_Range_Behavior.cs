@@ -149,6 +149,9 @@ public class Enemigo_Range_Behavior : Enemy
                     {
                         SfxScript.TriggerSfx("SfxBowShot");
                     }
+                    else if (proyectilPrefab.name == "prefab_Shuriken"){
+                        SfxScript.TriggerSfx("SfxShuriken");
+                    }
                 }
                 break;
 

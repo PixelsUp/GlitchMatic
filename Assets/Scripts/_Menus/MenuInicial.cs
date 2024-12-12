@@ -12,6 +12,8 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] private float movementMultiplier = 0.1f; // Controla cuánto se mueve el fondo
     [SerializeField] private Camera mainCamera; // Cámara principal
 
+    public GameObject controlsObject;
+
     private void Awake()
     {
         // Guarda la posición inicial del fondo
@@ -131,4 +133,15 @@ public class MenuInicial : MonoBehaviour
         SfxScript.TriggerSfx("SfxButton1");
         SceneManager.LoadScene("StartMenu");
     }
+
+    public void playControls()
+    {
+        controlsObject.SetActive(true);
+    }
+
+    public void backControls()
+    {
+        controlsObject.SetActive(false);
+    }
+
 }

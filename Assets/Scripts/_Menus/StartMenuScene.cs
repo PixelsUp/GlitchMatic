@@ -15,6 +15,7 @@ public class StartMenuScene : MonoBehaviour
 
     public GameObject sbObject;
     public GameObject sbCanvas;
+    public GameObject controlsObject;
     private void Awake()
     {
         // Configura la posición inicial del fondo
@@ -131,9 +132,19 @@ public class StartMenuScene : MonoBehaviour
         sbObject.SetActive(true);
         sbCanvas.SetActive(true);
     }
+
     public void backSb()
     {
         sbObject.SetActive(false);
         sbCanvas.SetActive(false);
+    }
+    public void playControls()
+    {
+        controlsObject.SetActive(true);
+    }
+
+    public void backControls()
+    {
+        controlsObject.SetActive(false);
     }
 }

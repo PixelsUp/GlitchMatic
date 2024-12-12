@@ -128,7 +128,7 @@ public class _CharacterManager : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
-
+        /*
         // Ejemplo de daño para probar
         if (Input.GetKeyDown(KeyCode.K)) // Presiona "K" para simular la muerte
         {
@@ -138,6 +138,7 @@ public class _CharacterManager : MonoBehaviour
         {
             hp = hp + 100;
         }
+        */
 
         // Handle movement input
         movement.x = Input.GetAxisRaw("Horizontal");

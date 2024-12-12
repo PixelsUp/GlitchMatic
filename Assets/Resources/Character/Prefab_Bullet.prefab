@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4fb8efcc455e54183a1ebbaf45f7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 30
+  velocidad: 40
   dano: 30
   tiempoDeVida: 3
   particulas: {fileID: 5860377053777990345, guid: 35db1cb0fcf23af4985f25ff1472729d, type: 3}

@@ -23,6 +23,8 @@ public class PauseScript : MonoBehaviour
     public GameObject sureText;
     public bool completa;
 
+    public GameObject controlsObject;
+
     void Start()
     {
         if (PauseUI == null)
@@ -154,5 +156,14 @@ public class PauseScript : MonoBehaviour
     {
         sureText.SetActive(false);
         completa = false;
+    }
+    public void playControls()
+    {
+        controlsObject.SetActive(true);
+    }
+
+    public void backControls()
+    {
+        controlsObject.SetActive(false);
     }
 }

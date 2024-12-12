@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SfxScript : MonoBehaviour
@@ -14,6 +15,7 @@ public class SfxScript : MonoBehaviour
     public AudioClip sfxDead;
     public AudioClip sfxBowShot;
     public AudioClip sfxLaser;
+    public AudioClip sfxShuriken;
     public AudioClip sfxSword1;
     public AudioClip sfxSword2;
     public AudioClip sfxSword3;
@@ -95,6 +97,9 @@ public class SfxScript : MonoBehaviour
                 break;
             case "SfxLaser":
                 clipToPlay = sfxLaser;
+                break;
+            case "SfxShuriken":
+                clipToPlay = sfxShuriken;
                 break;
             case "SfxSword1":
                 clipToPlay = sfxSword1;
