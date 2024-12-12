@@ -3796,7 +3796,7 @@ SpriteRenderer:
   m_SortingLayerID: -2109311181
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a32ee6ffcfae9a2489ebf5df822513d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49797e29d5e22fd4cab64bc44387d87d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4603,6 +4603,8 @@ MonoBehaviour:
   masterSlider: {fileID: 1888962573}
   musicSlider: {fileID: 537192692}
   sfxSlider: {fileID: 2109763978}
+  sureText: {fileID: 0}
+  completa: 0
 --- !u!114 &1325227942
 MonoBehaviour:
   m_ObjectHideFlags: 0
