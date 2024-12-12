@@ -418,11 +418,11 @@ Sound effects are essential for immersing players in the distinct environments o
 For the character selection, credits, and leaderboard interfaces, the same background image format has been maintained for the interface, featuring elements in purple with vibrant shades.
 
 <p align=center>
-	<img src="https://github.com/user-attachments/assets/569d7280-f7e2-46fa-ae3a-6829a675e151", width= '250' height='300'/>
+	<img src="https://github.com/user-attachments/assets/569d7280-f7e2-46fa-ae3a-6829a675e151", width= '600' height='300'/>
 <p align=center> Image 9.2 Leaderboard interface </p>
 
 <p align=center>
-	<img src="https://github.com/user-attachments/assets/055112ff-8c00-47e0-acff-55a43bb7aeaa", width= '250' height='300'/>
+	<img src="https://github.com/user-attachments/assets/055112ff-8c00-47e0-acff-55a43bb7aeaa", width= '600' height='300'/>
 <p align=center> Image 9.3 Select skin interface </p>
 
 <p align=center>
