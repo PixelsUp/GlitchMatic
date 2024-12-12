@@ -303,6 +303,23 @@ public class _CharacterManager : MonoBehaviour
         }
     }
 
+    public void Health(bool boss)
+    {
+        if (boss)
+        {
+            hp += 15;
+        }
+        else
+        {
+            hp += 5;
+        }
+        if (hp > 100)
+        {
+            hp = 100;
+        }
+        healthBar.value = hp / 100f;
+    }
+
     private IEnumerator ActivateInvincibility()
     {
         isInvincible = true;

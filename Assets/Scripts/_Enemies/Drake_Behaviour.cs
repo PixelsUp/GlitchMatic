@@ -410,6 +410,7 @@ public class Drake_Behaviour : MonoBehaviour
             {
                 if (isDead == false)
                 {
+                    protagonista.Health(true);
                     EnemyManager.OnEnemyDefeated();
                     isDead = true;
                     animator.SetTrigger("IsDead");

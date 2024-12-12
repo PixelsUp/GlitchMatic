@@ -33,6 +33,7 @@ public class TransitionPoint : MonoBehaviour
         isActive = true;
         Debug.Log("TransitionPoint activated.");
         GameObject character = GameObject.Find("Character");
+        character.GetComponent<_CharacterManager>().Health(false);
         PointToDoor point = character.GetComponent<PointToDoor>();
         point.Activate();
         // igual podemos hacer una animacion para habilitar el transition point
