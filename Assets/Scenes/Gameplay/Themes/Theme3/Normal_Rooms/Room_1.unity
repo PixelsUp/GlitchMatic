@@ -5354,6 +5354,8 @@ MonoBehaviour:
   masterSlider: {fileID: 1477516606}
   musicSlider: {fileID: 432408084}
   sfxSlider: {fileID: 455906250}
+  sureText: {fileID: 0}
+  completa: 0
 --- !u!1 &1673171019
 GameObject:
   m_ObjectHideFlags: 0

@@ -6897,11 +6897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692621492799338737, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.5226415
       objectReference: {fileID: 0}
     - target: {fileID: 692621492799338737, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: m_Color.r
-      value: 0.9948015
+      value: 0.99812806
       objectReference: {fileID: 0}
     - target: {fileID: 1514363162514628955, guid: 4bb71cb95e82aa643bb788c4b95a394e, type: 3}
       propertyPath: health
