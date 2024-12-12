@@ -137,6 +137,102 @@ public class _CameraManager : MonoBehaviour
                 GetComponent<Camera>().orthographicSize = 40;
                 GetComponent<Camera>().backgroundColor = HexToColor("250814");
                 break;
+            case 22:
+                minX = 141;
+                maxX = 205;
+                minY = 130;
+                maxY = 175;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
+                break;
+            case 23:
+                minX = 141;
+                maxX = 205;
+                minY = 122;
+                maxY = 178;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
+                break;
+            case 24:
+                minX = 141;
+                maxX = 206;
+                minY = 135;
+                maxY = 165;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
+                break;
+            case 25:
+                minX = 141;
+                maxX = 205;
+                minY = 126;
+                maxY = 175;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
+                break;
+            case 26:
+                minX = 141;
+                maxX = 205;
+                minY = 136;
+                maxY = 174;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
+                break;
+            case 27:
+                minX = 141;
+                maxX = 205;
+                minY = 118;
+                maxY = 183;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
+                break;
+            case 28:
+                minX = 141;
+                maxX = 205;
+                minY = 127;
+                maxY = 177;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
+                break;
+            case 29:
+                minX = 141;
+                maxX = 205;
+                minY = 139;
+                maxY = 176;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
+                break;
+            case 30:
+                minX = 141;
+                maxX = 205;
+                minY = 120;
+                maxY = 180;
+                GetComponent<Camera>().orthographicSize = 23;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
+                break;
+            case 31:
+                minX = 171;
+                maxX = 175;
+                minY = 139;
+                maxY = 161;
+                GetComponent<Camera>().orthographicSize = 40;
+                GetComponent<Camera>().backgroundColor = HexToColor("131926");
+                break;
+            case 32:
+                minX = 171;
+                maxX = 175;
+                minY = 139;
+                maxY = 161;
+                GetComponent<Camera>().orthographicSize = 40;
+                GetComponent<Camera>().backgroundColor = HexToColor("211826");
+                break;
+            case 33:
+                minX = 171;
+                maxX = 175;
+                minY = 139;
+                maxY = 161;
+                GetComponent<Camera>().orthographicSize = 40;
+                GetComponent<Camera>().backgroundColor = HexToColor("250814");
+                break;
             default:
                 break;
         }

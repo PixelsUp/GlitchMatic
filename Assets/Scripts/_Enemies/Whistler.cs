@@ -18,7 +18,7 @@ public class Whistler : Enemy
         player = FindObjectOfType<_CharacterManager>();
         originalDetectionRadius = GetDetectionRadius();
         rb = GetComponent<Rigidbody2D>();  // Obtener el Rigidbody2D
-        rb.isKinematic = true;
+        rb.isKinematic = false;
         animator = GetComponent<Animator>();
         StartCoroutine(BehaviorTree());
     }
@@ -51,7 +51,7 @@ public class Whistler : Enemy
 
     private void MaintainDistance()
     {
-        animator.SetBool("IsRunning", true);
+        //animator.SetBool("IsRunning", true);
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         if (distance < distanceToMaintain)

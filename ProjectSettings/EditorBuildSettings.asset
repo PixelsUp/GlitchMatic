@@ -71,4 +71,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay/Themes/Theme3/Boss_Rooms/BossRoom.unity
     guid: 91d885d1e80bb644d85251e8822a9709
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme4/Normal_Rooms/Room_1.unity
+    guid: 2ccd543b3c6904443b657e9edc6c7752
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme4/Normal_Rooms/Room_2.unity
+    guid: 836ccafbe81525249bd86ad853cda864
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme4/Normal_Rooms/Room_3.unity
+    guid: 8837db3ad2b92e74d8f13d09b9a6813b
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme5/Normal_Rooms/Room_1.unity
+    guid: 7d78f7098a6c02b44a2748cef6263799
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme5/Normal_Rooms/Room_2.unity
+    guid: ece1450f064cd914cbc448dcaea8b7f5
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme5/Normal_Rooms/Room_3.unity
+    guid: a5c25aab9f836974dbfd7e3f5b8b6ccd
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme6/Normal_Rooms/Room_1.unity
+    guid: 4c12ff4e3ee06cd42a6b050ce73823d1
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme6/Normal_Rooms/Room_2.unity
+    guid: 8c90ab6f057a5f3439520fcb057c7fac
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme6/Normal_Rooms/Room_3.unity
+    guid: d66bd3fb13a52864cb0033a951bcc8ba
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme4/Boss_Rooms/BossRoom.unity
+    guid: 1c2d5fe825b50454a83ebe3bac606736
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme5/Boss_Rooms/BossRoom.unity
+    guid: d6cb183b85f98d241b4dd4f66e9ded93
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Themes/Theme6/Boss_Rooms/BossRoom.unity
+    guid: 9bddca8db7b7c104d8cd0ea296b014d2
   m_configObjects: {}
