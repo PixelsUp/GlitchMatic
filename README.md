@@ -465,7 +465,7 @@ height='150'/>
 
 <p align=center>
 	<img src="https://github.com/user-attachments/assets/d585ac66-f24a-46f3-bd9d-c46b6fe223e0", width= '600' 
-height='300'/>
+height='600'/>
 <p align=center> Image 9.10 Attack cursor </p>
 
 <p align=center>
