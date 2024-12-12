@@ -147,7 +147,7 @@ MonoBehaviour:
   velocidad: 30
   dano: 20
   tiempoDeVida: 3
-  proyectil: {fileID: 5818374948066685075, guid: 969a2727110a2d446afd75e810158570, type: 3}
+  proyectil: {fileID: 5860377053777990345, guid: 31d3341842af2174fb4071ab6fd39aca, type: 3}
 --- !u!50 &4566025360556341857
 Rigidbody2D:
   serializedVersion: 4
