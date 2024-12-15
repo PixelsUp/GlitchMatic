@@ -12,28 +12,33 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
 
 ## Index
 
-1. [Introduction](#introduction)  
-    1.1 [Brief Concept Description](#brief-concept-description)  
-    1.2 [Brief Story and Characters Description](#brief-story-and-characters-description)  
-    1.3 [Purpose, Target Audience, and Platforms](#purpose-target-audience-and-platforms)  
+1. [Introduction](#introduction)  <br />
+    1.1 [Brief Concept Description](#brief-concept-description)  <br />
+    1.2 [Brief Story and Characters Description](#brief-story-and-characters-description)  <br />
+    1.3 [Purpose, Target Audience, and Platforms](#purpose-target-audience-and-platforms)  <br />
 
-2. [Business and Monetization Model](#business-and-monetization-model)  
-    2.1 [Business Model](#business-model)  
-        2.1.1 [Ad-Supported Model](#ad-supported-model)  
-        2.1.2 [Empathy Map](#empathy-map)  
-        2.1.3 [Canvas](#canvas)  
-        2.1.4 [Toolbox](#toolbox)  
-    2.2 [Monetization Model](#monetization-model)  
-        2.2.1 [Ad-Supported Gameplay](#ad-supported-gameplay)  
-        2.2.2 [In-Game Currency and Cosmetic Purchases](#in-game-currency-and-cosmetic-purchases)  
-    2.3 [Product and Pricing Tables](#product-and-pricing-tables)  
+2. [Business and Monetization Model](#business-and-monetization-model)  <br />
+    2.1 [Business Model](#business-model)  <br />
+        2.1.1 [Ad-Supported Model](#ad-supported-model)  <br />
+        2.1.2 [Empathy Map](#empathy-map)  <br />
+        2.1.3 [Canvas](#canvas)  <br />
+        2.1.4 [Toolbox](#toolbox)  <br />
+    2.2 [Monetization Model](#monetization-model)  <br />
+        2.2.1 [Ad-Supported Gameplay](#ad-supported-gameplay)  <br />
+        2.2.2 [In-Game Currency and Cosmetic Purchases](#in-game-currency-and-cosmetic-purchases)  		<br />
+    2.3 [Product and Pricing Tables](#product-and-pricing-tables)		<br />
+    2.4 [Marketing campaign](#marketing-campaign)<br />		
+   	2.4.1 [Social Media](#social-media)  		<br />
+   	2.4.2 [Weekly Devlogs](#weekly-devlogs)  	<br />	
+	2.4.3 [Team Spotlight](#team-spotlight)  	<br />	
+   	2.4.4 [Community Engagement](#community-engagement)  <br />		
 
-3. [Planning and Costs](#planning-and-costs)  
+4. [Planning and Costs](#planning-and-costs)  
     3.1 [Human Team](#human-team)  
     3.2 [Estimated Development Time](#estimated-development-time)  
     3.3 [Associated Costs](#associated-costs)  
 
-4. [Gameplay Mechanics and Game Elements](#gameplay-mechanics-and-game-elements)  
+5. [Gameplay Mechanics and Game Elements](#gameplay-mechanics-and-game-elements)  
     4.1 [Detailed Concept](#detailed-concept)  
     4.2 [Detailed Mechanics](#detailed-mechanics)  
     4.3 [Controls](#controls)  
@@ -41,19 +46,19 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
     4.5 [Objects, Weapons, and Power-ups](#objects-weapons-and-power-ups)  
     4.6 [Software Architecture](#software-architecture)  
 
-5. [Backstory](#backstory)  
+6. [Backstory](#backstory)  
     5.1 [Detailed Story](#detailed-story)  
     5.2 [Characters](#characters)  
     5.3 [Environments and Places](#environments-and-places)  
 
-6. [Art](#art)  
+7. [Art](#art)  
     6.1 [General Aesthetic](#general-aesthetic)  
     6.2 [Pixel Art](#pixel-art)  
     6.3 [Visual Style](#visual-style)  
     6.4 [Concept Art](#concept-art)  
     6.5 [2D Pixel Art](#2d-pixel-art)  
 
-7. [Animation](#animation)  
+8. [Animation](#animation)  
     7.1 [Animation Style](#animation-style)  
         7.1.1 [Character Animations](#character-animations)  
         7.1.2 [Enemy Animations](#enemy-animations)  
@@ -61,16 +66,16 @@ Iván Jiménez Blas, Sergio López Llorente, Sonia Montero Nogales, Álvaro Redo
         7.1.4 [Damage Animations](#damage-animations)  
         7.1.5 [Death Animations](#death-animations)  
 
-8. [Sound](#sound)  
+9. [Sound](#sound)  
     8.1 [Ambient Sound and Music](#ambient-sound-and-music)  
     8.2 [Sound Effects](#sound-effects)  
     8.3 [Sound List](#sound-list)  
 
-9. [Interface](#interface)  
+10. [Interface](#interface)  
     9.1 [Basic Menu Designs](#basic-menu-designs)  
     9.2 [Flow Diagram](#flow-diagram)  
 
-10. [Development Roadmap](#development-roadmap)  
+11. [Development Roadmap](#development-roadmap)  
     10.1 [Milestone 1: Prototype](#milestone-1-prototype)  
     10.2 [Milestone 2](#milestone-2)  
     10.3 [Milestone 3: Testing & Polishing](#milestone-3-testing-polishing)  
@@ -173,6 +178,30 @@ Represents a business ecosystem. Pixels Up functions as a central platform conne
 | Weapon Skins              | X In-Game Currency         |
 | Special Visual Effects    | X In-Game Currency         |
 | Pay-Per-Tap Ad Reward     | Free by Watching Ads       |
+
+## Marketing Campaign
+
+To ensure *GlitchMatic* reaches a wide audience, a robust and engaging marketing campaign across multiple platforms has been implemented.
+
+### Social media
+
+- *GitHub*: The entire development journey, including code updates and collaboration, is documented here.
+- *Itch.io*: Players can playtest the latest builds and provide feedback.
+- *Instagram, X (formerly Twitter), TikTok*: Sneak peeks, devlogs, updates, and community interactions.
+- *Linktree*: Access all our links, including our personal webpage portfolio, in one convenient location.
+
+### Weekly Devlogs
+
+There have been uploads of weekly devlogs to showcase progress, share behind-the-scenes insights, and build anticipation. From concept art and mechanics previews to bug fixes and polish, these updates let followers experience the development journey firsthand.
+
+### Team Spotlight
+
+The 6 talented team members behind *GlitchMatic* were properly presented to the public. All members have been introduced across platforms, sharing our roles, inspirations, and contributions to the game. This personal touch helps connect with the audience on a deeper level.
+
+### Community Engagement
+
+Interactive posts and stories were a priority, keeping our followers engaged through polls and even letting them vote on certain design decisions. Regular updates and behind-the-scenes content have made our community feel like a part of the development process.
+
 
 ---
 
