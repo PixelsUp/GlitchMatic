@@ -498,7 +498,8 @@ height='300'/>
 
 - Playtesting and refining the game for balance.
 - Finalizing assets, animations, and sound.
+- Implementing bosses and new dynamics
 
 ### Release Date
 
-- **Estimated Release Date**: TBD
+- **Estimated Release Date**: December 12th, 2024
