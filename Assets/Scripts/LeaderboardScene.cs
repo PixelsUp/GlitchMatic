@@ -8,7 +8,7 @@ public class LeaderboardScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && LeaderboardManager.Instance != null)
         {
-            LeaderboardManager.Instance.Back();
+            //LeaderboardManager.Instance.Back();
         }
     }
 

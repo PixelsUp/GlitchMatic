@@ -18,7 +18,7 @@ public class PauseScript : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
-    private bool dead = false;
+    //private bool dead = false;
 
     public GameObject sureText;
     public bool completa;
@@ -59,7 +59,7 @@ public class PauseScript : MonoBehaviour
 
         //_CharacterManager.ResetLife();
 
-        dead = false;
+        //dead = false;
         Time.timeScale = 1f;
     }
 

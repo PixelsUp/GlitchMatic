@@ -14,8 +14,8 @@ public class LeaderboardManager : MonoBehaviour
     [SerializeField] int score;
     [SerializeField] TextMeshProUGUI leaderboardText; // Referencia al texto del leaderboard
 
-    string url = "http://glitchmaticv2-env.eba-cpptua3t.eu-west-3.elasticbeanstalk.com/";
-
+    //string url = "http://glitchmaticv2-env.eba-cpptua3t.eu-west-3.elasticbeanstalk.com/"; //servicio de aws cerrado
+    /*
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -154,5 +154,5 @@ public class LeaderboardManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         GetComponentInChildren<Canvas>().enabled = false;
     }
-
+    */
 }

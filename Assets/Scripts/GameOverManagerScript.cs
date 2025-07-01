@@ -46,7 +46,7 @@ public class GameOverManagerScript : MonoBehaviour
             string room = RoomManager.Instance.currentRoom.ToString();
             if (LeaderboardManager.Instance != null)
             {
-                LeaderboardManager.Instance.addScore(user, room);
+                //LeaderboardManager.Instance.addScore(user, room);
             }
         }
     }
